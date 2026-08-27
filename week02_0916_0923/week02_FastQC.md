@@ -113,7 +113,7 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 
   ```
   #!/usr/bin/sh
-  #SBATCH -A ACD114093              # Account name/project number
+  #SBATCH -A ACD115175              # Account name/project number
   #SBATCH -J fastqc                 # Job name
   #SBATCH -p ngscourse              # Partition Name (equivalent to PBS's -q Queue name)
   #SBATCH -c 2                      # Number of cores used (refer to Queue resource settings)
@@ -295,7 +295,7 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 
   ```
   #!/usr/bin/sh
-  #SBATCH -A ACD114093                      # Account name/project number
+  #SBATCH -A ACD115175                      # Account name/project number
   #SBATCH -J fastqc                         # Job name
   #SBATCH -p ngscourse                      # Partition Name 等同PBS裡面的 -q Queue name
   #SBATCH -c 2                              # 使用的core數 請參考Queue資源設定
