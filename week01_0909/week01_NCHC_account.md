@@ -12,16 +12,14 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 > [!CAUTION]
 > ‼️ Please Do Not skip steps, and pay close attention to the instructions
 
-1. NCHC registration and login
-2. Thinlinc download and connect NCHC 
-3. Uploading files to NCHC and downloading files
+1. [NCHC registration and login](## step 1: NCHC Operations and Settings)
+2. [Uploading files to NCHC and downloading files](## Step 2: File Transfer)
 
 
 ## Tool Overview
  1. **iServer (Website)**: Used to create server accounts and enable OTP (One-Time Password) functionality to secure accounts.
  2. **Terminal (macOS) or CMD (Windows)**: Access the server or supercomputer remotely from the local machine for command-line operations.
- 3. **ThinLinc (Local Software)**: Provides a graphical interface for remote server operations, suitable for tasks requiring a desktop environment.
- 4. **rsync (macOS Tool) or WinSCP (Windows Software)**: Used for transferring and managing files between the local machine and the server.
+ 3. **rsync (macOS Tool) or WinSCP (Windows Software)**: Used for transferring and managing files between the local machine and the server.
 
 
 ## step 1: NCHC Operations and Settings
@@ -103,7 +101,7 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 5. If the login is successful, you will see the following screen:
 ![](https://hackmd.io/_uploads/S1H454mha.png)
 
- 
+---------------------------------------------
  
 ## Step 2: File Transfer  
 
@@ -111,19 +109,20 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 ### Uploading/Downloading Files
 - Mac users can use the terminal and the rsync command to [upload](#Uploading-Files-with-rsync) or [download](#Downloading-Files-Using-rsync) files.
 - Windows users can use WinSCP to [upload](#Uploading-Files-Using-WinSCP) or [download](#Downloading-Files-with-WinSCP-files).
+- Provide a [file](https://drive.google.com/file/d/1xu47eNwk6H98Nms1DHp9iAqrzKiloMfY/view?usp=sharing) for everyone to practice uploading/downloading. It is recommended to create a separate folder on your Desktop and place the practice file there.
 
 ## Uploading Files with rsync
 1. First, ensure that the three files you want to upload are placed together in a separate folder on your computer (Do not store them in your computer’s desktop or download folder, as the subsequent steps will upload all files in that folder).
 (You can just pick any small file to use for practice)
 
-3. Open the **local terminal** on your computer (**Note: Open a new terminal, not the one where you are logged into the NCHC host!**).
+2. Open the **local terminal** on your computer (**Note: Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/Bk3Q4L7pp.png)
 
-4. Use the `cd` command to navigate to the directory containing the files you want to upload (You can quickly input the folder path by dragging the folder into the terminal command line).
+3. Use the `cd` command to navigate to the directory containing the files you want to upload (You can quickly input the folder path by dragging the folder into the terminal command line).
 ![image](https://hackmd.io/_uploads/HyrRNL7aa.png)
 (For reference on how to display the file or folder path in Finder on a Mac, see [macOS User Guide](https://support.apple.com/zh-tw/guide/mac-help/mchlp1774/mac)).
 
-5. Use the following command to upload the files from your local directory to `/home/spercomputer account/HW1` on the NCHC host (Replace your_username with your actual username): ``rsync -azrvh .supercomputeraccount@t3-c4.nchc.org.tw:/home/suppercomputeraccount/HW1``
+4. Use the following command to upload the files from your local directory to `/home/supercomputer account/HW1` on the NCHC host (Replace your_username with your actual username): ``rsync -azrvh .supercomputeraccount@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1``
 
 > [!IMPORTANT]
 > #### Command Lecture
@@ -143,20 +142,22 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 
 5. Enter your two-factor authentication, supercomputer password, and OTP (required only if you selected 1 or 3 as your authentication method) in sequence to start uploading the files.
 
+---------------------------------------------
 ### Downloading Files Using rsync
 1. Open the local terminal and `cd` to the **directory where you want to download the files** (You can input the folder path by dragging the folder into the terminal command line). 
 (Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
 
-2. Use the following command to download files from NCHC to the current local directory:
+2. Use the following command to download the folder `/home/your_username/HW1` from the NCHC server to the current local directory:
    ``` 
-   rsync -azvh supercomputeraccount@t3-c4.nchc.org.tw:file path .
+   rsync -azvh supercomputeraccount@twnia3.nchc.org.tw:file path .
    ```
    If you need to download a **folder**, modify the command to `rsync -azrvh`.
    (Important: **There must be a space between the file and "."**)
 
 3. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
-
+   
+---------------------------------------------
 ### Uploading Files Using WinSCP
 1. If you haven’t installed WinSCP, go to this [link](https://winscp.net/download/WinSCP-6.5.3-Setup.exe/download) and click **Direct Download** to download.
 ![image](https://hackmd.io/_uploads/SkgMA6gcex.png)
@@ -205,17 +206,15 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 > ‼️不要跳步驟、不要跳步驟、不要跳步驟
 > ‼️請看好文字及注意事項、請看好文字及注意事項、請看好文字及注意事項
 
-1. 國網註冊及登入
-2. Thinlinc下載並連結國網
-3. 上傳檔案至國網及至國網下載檔案
+1. [國網註冊及登入](## Step 1:國網操作與設定)
+2. [上傳檔案至國網及至國網下載檔案](## Step 2:檔案資料傳輸)
 
 
 ## 工具概述
 
 1. **iServer（網站）**：用於建立伺服器帳號，並啟用 OTP（一次性密碼）功能來保護帳號安全
 2. **Terminal開啟終端機（macOS）或CMD命令列（Windows）**：從本地電腦遠端登入伺服器或超級電腦，進行指令操作
-3. **ThinLinc（local 軟體）**：用於透過圖形化介面遠端操作伺服器，適合處理需要桌面環境的工作
-4. **rsync（macOS 工具）或 WinSCP（Windows 軟體）**：在本地與伺服器之間傳輸與管理檔案
+3. **rsync（macOS 工具）或 WinSCP（Windows 軟體）**：在本地與伺服器之間傳輸與管理檔案
 
 
 ## Step 1:國網操作與設定
