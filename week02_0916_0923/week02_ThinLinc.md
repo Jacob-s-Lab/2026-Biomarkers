@@ -1,6 +1,15 @@
 Date：20260916 & 20260923  
 Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-II) / [中文](#生物標記物與它們的產地實作課程二)  
 
+# Fantastic Genomic Biomarkers and Where to Find Them Practical Course (Part II)
+
+
+## Main Content of This Course
+ Thinlinc download and connect NCHC 
+
+## Tool Overview
+ ThinLinc (Local Software): Provides a graphical interface for remote server operations, suitable for tasks requiring a desktop environment.
+
 ## Step 1: Download ThinLinc
 1. Download software: ThinLinc
   - Download and install the version corresponding to your computer from the [ThinLinc official website](https://www.cendio.com/thinlinc/download/).      
@@ -8,7 +17,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 2. Ensure that [NCHC OTP is enabled](###Logging-into-NCHC).
 
  
-### Using ThinLinc to Log into NCHC, Access the Remote Host, and Open Terminal
+### Step 2: Using ThinLinc to Log into NCHC, Access the Remote Host, and Open Terminal
 > [!CAUTION]
 > If you still cannot log in after following the steps below, please check the following:
 > > (1) If you encounter "Permission denied (keyboard-interaction)", please ensure you have filled out the form provided by the instructor. If not, fill it out immediately and notify the TA.\
@@ -44,7 +53,7 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
    **If the system logs you out after a period of inactivity, you will need to repeat the login process**
 
   
-### Entering the Remote Host file `/work`
+### Step 3: Entering the Remote Host file `/work`
 1. In the terminal, use the `cd` command to navigate to your directory under the `/work` path on the host:
  ```
  cd /work/{your_username}
@@ -76,9 +85,14 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 ---------------------------------------------
 ---------------------------------------------
 
-# 生物標記物與它們的產地實作課程(一)
 
+# 生物標記物與它們的產地實作課程(二)
 
+## 本次課程主要內容
+ Thinlinc下載並連結國網
+
+## 工具概述
+ ThinLinc（local 軟體）：用於透過圖形化介面遠端操作伺服器，適合處理需要桌面環境的工作
 
 ## Step 1:下載 ThinLinc
 ### 下載ThinLinc
@@ -88,7 +102,7 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 
 2. 確認[國網OTP是否已啟用](###登入國網)
 
-### 使用ThinLinc登入國網、進入遠端主機、開啟終端機 (terminal)
+### Step 2: 使用ThinLinc登入國網、進入遠端主機、開啟終端機 (terminal)
 > [!CAUTION]
 > 依照以下步驟仍無法登入時，請先確認：
 > > (1) 如果出現Permission denied (keyboard-interaction)，請確認當時是否有填寫老師給你的表單，如果沒有請立馬填寫、通知助教\
@@ -120,7 +134,7 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
  
     **小提醒：如果過一陣子沒有使用，系統會自動跳出，這時候再重新操作登入流程**
 
-### 進入遠端主機的資料夾 `/work`
+### Step 3: 進入遠端主機的資料夾 `/work`
 
 1. 在terminal利用 `cd` 指令，進入自己的主機、位於 `/work` 路徑下的空間
 
