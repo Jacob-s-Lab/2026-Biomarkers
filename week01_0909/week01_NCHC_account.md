@@ -74,7 +74,7 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 - For Mac users, open Terminal.     
 ![image](https://hackmd.io/_uploads/rkP16IH3A.png)     
 
-1. In CMD (or Terminal), type`ssh supercomputeraccount@t3-c4.nchc.org.tw`to log into the NCHC biomedical node.
+1. In CMD (or Terminal), type`ssh supercomputeraccount@twnia3.nchc.org.tw`to log into the NCHC biomedical node.
 
 > [!IMPORTANT]
 > #### Commands Lecture
@@ -82,7 +82,7 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 > - Usage: `ssh user@hostname`
 > - `user` is your username on the remote server, and 'hostname'is the IP address or hostname of the remote server.
 >   
-> ⚠️ The biomedical node is `t3-c4.nchc.org.tw`. When logging into the node for the first time, you will be prompted with the message: "Are you sure you want to continue connecting (yes/no/[fingerprint])?". Please type `yes` to proceed.
+> ⚠️ The biomedical node is `twnia3.nchc.org.tw`. When logging into the node for the first time, you will be prompted with the message: "Are you sure you want to continue connecting (yes/no/[fingerprint])?". Please type `yes` to proceed.
 
   - Terminal screen:
     ![](https://hackmd.io/_uploads/BkvbPN7ha.png)
@@ -170,7 +170,7 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 ![image](https://hackmd.io/_uploads/SJze0T9_ee.png)
  ```
  File protocol: SFTP
- Host name: t3-c4.nchc.org.tw
+ Host name: twnia3.nchc.org.tw
  User name: your supercomputer account
  Password: your supercomputer passward
  ```
@@ -263,14 +263,14 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 * 使用Mac的同學開啟終端機 (terminal)      
 ![](https://hackmd.io/_uploads/H1K5YKDna.png)      
 
-1. 在CMD(或terminal)中打上`ssh 主機帳號@t3-c4.nchc.org.tw`登入國網生醫節點
+1. 在CMD(或terminal)中打上`ssh 主機帳號@twnia3.nchc.org.tw`登入國網生醫節點
 > [!IMPORTANT]
 > #### 命令小學堂
 > - `ssh`:登錄到遠程伺服器
 > - 用法:`ssh user@hostname`
 > - `user` 你在遠程伺服器上的用戶名，'hostname' 是遠程伺服器的 IP 地址或主機名。
 >  
-> ⚠️ `t3-c4.nchc.org.tw`為生醫節點。另外，第一次登入節點時會出現 "Are you sure you want to continue connecting (yes/no/[fingerprint])?"，請輸入 `yes`。
+> ⚠️ `twnia3.nchc.org.tw`為生醫節點。另外，第一次登入節點時會出現 "Are you sure you want to continue connecting (yes/no/[fingerprint])?"，請輸入 `yes`。
 
 - 終端機畫面：
 ![](https://hackmd.io/_uploads/BkvbPN7ha.png)
