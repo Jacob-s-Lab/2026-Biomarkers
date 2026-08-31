@@ -12,9 +12,8 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 > [!CAUTION]
 > ‼️ Please Do Not skip steps, and pay close attention to the instructions
 
-1. [NCHC registration and login](## step 1: NCHC Operations and Settings)
-2. [Uploading files to NCHC and downloading files](## Step 2: File Transfer)
-
+1. [NCHC registration and login](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-1-nchc-operations-and-settings)
+2. [Uploading files to NCHC and downloading files](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-2-file-transfer)
 
 ## Tool Overview
  1. **iServer (Website)**: Used to create server accounts and enable OTP (One-Time Password) functionality to secure accounts.
@@ -206,8 +205,8 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 > ‼️不要跳步驟、不要跳步驟、不要跳步驟
 > ‼️請看好文字及注意事項、請看好文字及注意事項、請看好文字及注意事項
 
-1. [國網註冊及登入](## Step 1:國網操作與設定)
-2. [上傳檔案至國網及至國網下載檔案](## Step 2:檔案資料傳輸)
+1. [國網註冊及登入](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-1國網操作與設定)
+2. [上傳檔案至國網及至國網下載檔案](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-2檔案資料傳輸)
 
 
 ## 工具概述
