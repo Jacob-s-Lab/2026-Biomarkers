@@ -1,6 +1,6 @@
 Date: 20260909
 
-Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-I) / [中文](#生物標記物與它們的產地實作課程一)  
+Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-i) / [中文](#生物標記物與它們的產地實作課程一)  
 
 
 
@@ -106,11 +106,11 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 
  
 ### Uploading/Downloading Files
-- Mac users can use the terminal and the rsync command to [upload](#Uploading-Files-with-rsync) or [download](#Downloading-Files-Using-rsync) files.
-- Windows users can use WinSCP to [upload](#Uploading-Files-Using-WinSCP) or [download](#Downloading-Files-with-WinSCP-files).
+- Mac users can use the terminal and the rsync command to [upload](#uploading-files-with-rsync) or [download](#downloading-files-using-rsync) files.
+- Windows users can use WinSCP to [upload](#uploading-files-using-winscp) or [download](#downloading-files-with-winscp).
 - Provide a [file](https://drive.google.com/file/d/1xu47eNwk6H98Nms1DHp9iAqrzKiloMfY/view?usp=sharing) for everyone to practice uploading/downloading. It is recommended to create a separate folder on your Desktop and place the practice file there.
 
-## Uploading Files with rsync
+### Uploading Files with rsync
 1. First, ensure that the three files you want to upload are placed together in a separate folder on your computer (Do not store them in your computer’s desktop or download folder, as the subsequent steps will upload all files in that folder).
 (You can just pick any small file to use for practice)
 
@@ -162,8 +162,8 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
    
 ---------------------------------------------
 ### Uploading Files Using WinSCP
-1. If you haven’t installed WinSCP, go to this [link](https://winscp.net/download/WinSCP-6.5.3-Setup.exe/download) and click **Direct Download** to download.
-![image](https://hackmd.io/_uploads/SkgMA6gcex.png)
+1. If you haven’t installed WinSCP, go to this [link](https://winscp.net/eng/download.php) and click **Download WINSCP 6.5.6** to download.
+<br><img src="https://hackmd.io/_uploads/H1TktkPufe.png" width="90%">
 
 2. Follow the prompts: click Accept → Next → Next → Install. When the following screen appears, click Finish to complete the installation.
 ![image](https://hackmd.io/_uploads/Sysw0Te9xl.png)
@@ -171,7 +171,8 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 3. Open WinSCP
 
 4. Fill in or change the options as shown in the following screen:
-![image](https://hackmd.io/_uploads/SJze0T9_ee.png)
+<br><img src="https://hackmd.io/_uploads/ByNo21Pdfx.png" width="65%">
+
  ```
  File protocol: SFTP
  Host name: twnia3.nchc.org.tw
@@ -195,8 +196,8 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 2. On the left side, navigate to the directory where you want to download the files (to avoid losing track of where the files are saved).
 
 3. On the right side (NCHC directories), select the files you want to download, right-click and choose Download. The files will be downloaded to the directory displayed on the left side of the screen.        
-![image](https://hackmd.io/_uploads/Bywn5Cqdgl.jpg)
- (**Note: If you want to open the file, do not open it directly from the local site panel in WinSCP. Instead, go back to your computer’s desktop, navigate to the path where you saved the file, and open it from there. Opening it directly from the local site panel in WinSCP will upload the file to NCHC.**)
+![image](https://hackmd.io/_uploads/Bywn5Cqdgl.jpg)\
+(**Note: If you want to open the file, do not open it directly from the local site panel in WinSCP. Instead, go back to your computer’s desktop, navigate to the path where you saved the file, and open it from there. Opening it directly from the local site panel in WinSCP will upload the file to NCHC.**)
 
 ---------------------------------------------
 ---------------------------------------------
@@ -297,7 +298,7 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 ### 上傳/下載檔案
 
 - 使用Mac的同學可使用終端機並搭配[rsync指令上傳](#使用rsync上傳檔案)/[下載](#使用rsync下載檔案)
-- 使用Windows的同學可使用[WinSCP上傳](#使用WinSCP上傳檔案)/[下載](#使用WinSCP下載檔案)
+- 使用Windows的同學可使用[WinSCP上傳](#使用winscp上傳檔案)/[下載](#使用winscp下載檔案)
 - 提供大家練習[上傳/下載的檔案](https://drive.google.com/file/d/1xu47eNwk6H98Nms1DHp9iAqrzKiloMfY/view?usp=sharing)，建議放在桌面獨立新增的資料夾
 
 -----------------------------
@@ -364,15 +365,16 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 -----------------------------
 
 ### 使用WinSCP上傳檔案
-1. 若沒安裝WinSCP的同學，請至[此網址](https://winscp.net/download/WinSCP-6.5.3-Setup.exe/download)下載，點選 **Direct Download** 並點選download
-![image](https://hackmd.io/_uploads/SkgMA6gcex.png)
+1. 若沒安裝WinSCP的同學，請至[此網址](https://winscp.net/eng/download.php)下載，點選 **Download WINSCP 6.5.6** 
+<br><img src="https://hackmd.io/_uploads/H1TktkPufe.png" width="90%">
+
 2. 依序點選 接受 -> 下一步 -> 下一步 -> 安裝，出現以下畫面後按完成即完成安裝     
 ![image](https://hackmd.io/_uploads/Sysw0Te9xl.png)      
 
 3. 開啟WinSCP
 
-4.依照以下畫面填入或更改選項
-  ![image](https://hackmd.io/_uploads/HkYnkTY_gl.png)  
+4. 依照以下畫面填入或更改選項
+<br><img src="https://hackmd.io/_uploads/ByNo21Pdfx.png" width="65%">
    ```
    檔案協定:SFTP
    主機名稱: twnia3.nchc.org.tw
