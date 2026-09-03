@@ -289,7 +289,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 > [!CAUTION]
 > ‼️注意是先輸入主機密碼，再輸入OTP，不要輸反了</span>
 
-5.登入成功則可以看到以下畫面
+5. 登入成功則可以看到以下畫面
 ![](https://hackmd.io/_uploads/S1H454mha.png)
 
 ---------------------------------------------
