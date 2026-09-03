@@ -147,9 +147,13 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
 (Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
 
-2. Use the following command to download the folder `/home/your_username/HW1` from the NCHC server to the current local directory:
+2. Use the following command to download the folder `/home/supercomputeraccount/HW1` from the NCHC server to the current local directory:
    ``` 
    rsync -azvh supercomputeraccount@twnia3.nchc.org.tw:file path .
+   ```
+   or
+   ``` 
+   rsync -azvh supercomputeraccount@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1 .
    ```
    If you need to download a **folder**, modify the command to `rsync -azrvh`.
    (Important: **There must be a space between the file and "."**)
@@ -349,9 +353,13 @@ Language: [EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Co
     ```
     rsync -azvh 主機帳號@twnia3.nchc.org.tw:/home/主機帳號/HW1 .
     ```
+    或
+   ```
+    rsync -azvh 主機帳號@twnia3.nchc.org.tw:{存取資料夾路徑} .
+    ```
     若需要下載的為**資料夾**，則須在前面的指令改為`rsync -azrvh`
     （注意：**檔案與 "." 之間需空一格**）
-3. 依序輸入 **1**、**主機密碼** 與 **OTP** 後就會開始下載，下載完成後即可從本地端開啟檔案
+4. 依序輸入 **1**、**主機密碼** 與 **OTP** 後就會開始下載，下載完成後即可從本地端開啟檔案
 
 -----------------------------
 
