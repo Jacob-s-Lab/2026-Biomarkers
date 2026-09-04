@@ -1,0 +1,20 @@
+/
+|____work
+| |____Username
+|   |____result
+|   | |____fastqc
+|   | | |____SRR13076392_1.fastq.gz
+|   | | |____SRR13076392_2.fastq.gz
+|   | | |____SRR13076393_1.fastq.gz
+|   | | |____SRR13076393_2.fastq.gz
+|   | | |____SRR13076396_1.fastq.gz
+|   | | |____SRR13076396_2.fastq.gz
+|   | |____fastqc__SRR13076392
+|   | | |____SRR13076392_1_fastqc.html
+|   | | |____SRR13076392_1_fastqc.zip
+|   | | |____SRR13076392_2_fastqc.html
+|   | | |____SRR13076392_2_fastqc.zip
+|   | |____err.log
+|   | |____out.log
+|   |____fastqc.sh
+|____home
