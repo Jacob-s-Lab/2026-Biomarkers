@@ -1,0 +1,21 @@
+/
+|____work
+| |____Username
+|   |____result
+|   | |____fastqc
+|   | | |____SRR13076392_S14_L002_R1_001.fastq.gz
+|   | | |____SRR13076392_S14_L002_R2_001.fastq.gz
+|   | | |____SRR13076393_S15_L002_R1_001.fastq.gz
+|   | | |____SRR13076393_S15_L002_R2_001.fastq.gz
+|   | | |____SRR13076396_S16_L002_R1_001.fastq.gz
+|   | | |____SRR13076396_S16_L002_R2_001.fastq.gz
+|   | | |____HW1_materials.zip
+|   | |____fastqc_S14
+|   | | |____SRR13076392_S14_L002_R1_001_fastqc.html
+|   | | |____SRR13076392_S14_L002_R1_001_fastqc.zip
+|   | | |____SRR13076392_S14_L002_R2_001_fastqc.html
+|   | | |____SRR13076392_S14_L002_R2_001_fastqc.zip
+|   | |____err.log
+|   | |____out.log
+|   |____fastqc.sh
+|____home
