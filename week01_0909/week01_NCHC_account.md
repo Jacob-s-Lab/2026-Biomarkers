@@ -126,7 +126,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
    ```
    rsync -azrvh . {supercomputeraccount}@twnia3.nchc.org.tw:/home/{supercomputeraccount}/HW1
    ```
-   or (Replace `{local directory path}` and `{NCHC directory path}` with your actual file path)
+   or   (replace `{local directory path}` and `{NCHC directory path}` with your actual file path)
    ```
    rsync -azrvh {local directory path} {supercomputeraccount}@twnia3.nchc.org.tw:{NCHC directory path}
    ```
@@ -163,7 +163,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
    ``` 
    rsync -azvh {supercomputeraccount}@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1 .
    ```
-   or (Replace `{NCHC directory path}` and `{local directory path}`  with your actual file path)
+   or    (replace `{NCHC directory path}` and `{local directory path}`  with your actual file path)
    ```
    rsync -azvh {supercomputeraccount}@twnia3.nchc.org.tw:{NCHC directory path} {local directory path}
    ```
@@ -335,7 +335,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
   ``` 
     rsync -azrvh . 主機帳號@twnia3.nchc.org.tw:/home/主機帳號/HW1
   ```
-  或 (將 `當前資料夾路徑` 和  `國網資料夾路徑` 更改成實際檔案路徑)
+   或   (將 `當前資料夾路徑` 和  `國網資料夾路徑` 更改成實際檔案路徑)
   ```
    rsync -azrvh `當前資料夾路徑` 主機帳號@twnia3.nchc.org.tw:`國網資料夾路徑`
   ```
@@ -369,10 +369,10 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 ![](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
 
 2. 使用以下指令將國網上的資料夾`/home/主機帳號/HW1`下載到本機端當前路徑
-    ```
+   ```
     rsync -azvh 主機帳號@twnia3.nchc.org.tw:/home/主機帳號/HW1 .
-    ```
-    或 (將 `國網資料夾路徑` 和 `當前資料夾路徑` 更改成實際檔案路徑)
+   ```
+      或   (將 `國網資料夾路徑` 和 `當前資料夾路徑` 更改成實際檔案路徑)
    ```
     rsync -azvh 主機帳號@twnia3.nchc.org.tw:`國網資料夾路徑` `當前資料夾路徑` 
     ```
