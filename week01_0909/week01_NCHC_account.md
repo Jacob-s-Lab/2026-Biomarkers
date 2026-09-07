@@ -121,7 +121,15 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 ![image](https://hackmd.io/_uploads/HyrRNL7aa.png)
 (For reference on how to display the file or folder path in Finder on a Mac, see [macOS User Guide](https://support.apple.com/zh-tw/guide/mac-help/mchlp1774/mac)).
 
-4. Use the following command to upload the files from your local directory to `/home/supercomputer account/HW1` on the NCHC host (Replace your_username with your actual username): ``rsync -azrvh .supercomputeraccount@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1``
+4. Use the following command to upload the files from your local directory to a NCHC directory path.
+   e.g. `/home/supercomputer account/HW1` on the NCHC host (Replace `{supercomputer account}` with your actual username)
+   ```
+   rsync -azrvh . {supercomputeraccount}@twnia3.nchc.org.tw:/home/{supercomputeraccount}/HW1
+   ```
+   or (Replace `{local directory path}` and `{NCHC directory path}` with your actual file path)
+   ```
+   rsync -azrvh {local directory path} {supercomputeraccount}@twnia3.nchc.org.tw:{NCHC directory path}
+   ```
 
 > [!IMPORTANT]
 > #### Command Lecture
@@ -133,11 +141,13 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 >  4. -v : Verbose. This option increases the verbosity of the output, providing more information about what rsync is doing during the synchronization process. It shows details about the files being transferred and other related actions.
 >  5. -h : Human-readable. This option makes the output more readable by converting file sizes into a human-friendly format (e.g., KB, MB) rather than displaying raw byte sizes.
 >  6. "." : This represents the source directory. In this case, it means the current directory. rsync will synchronize the contents of the current directory to the specified destination (which is missing in this command).
->     
-> ⚠️ If the directory name on NCHC is not "HW1", modify it accordingly.\
+> 
+>  ⚠️ If the directory name on NCHC is not "HW1", modify it accordingly.\
 >     (Note: The "."represents the current directory.)\
-> ⚠️ **There must be a space between the file and "."**\
+>  ⚠️ **There must be a space between the file and "."**\
 >     (Note: If the files are large, it may take some time to upload, so be patient.)
+> 
+
 
 5. Enter your two-factor authentication, supercomputer password, and OTP (required only if you selected 1 or 3 as your authentication method) in sequence to start uploading the files.
 
@@ -147,18 +157,21 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 (Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
 
-2. Use the following command to download the folder `/home/supercomputeraccount/HW1` from the NCHC server to the current local directory:
+2. Use the following command to download the folder `/home/{supercomputeraccount}/HW1` from the NCHC server to the current local directory.
+   (Replace `{supercomputer account}` with your actual username)
+
    ``` 
-   rsync -azvh supercomputeraccount@twnia3.nchc.org.tw:file path .
+   rsync -azvh {supercomputeraccount}@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1 .
    ```
-   or
-   ``` 
-   rsync -azvh supercomputeraccount@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1 .
+   or (Replace `{NCHC directory path}` and `{local directory path}`  with your actual file path)
+   ```
+   rsync -azvh {supercomputeraccount}@twnia3.nchc.org.tw:{NCHC directory path} {local directory path}
    ```
    If you need to download a **folder**, modify the command to `rsync -azrvh`.
    (Important: **There must be a space between the file and "."**)
 
-3. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
+
+4. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
    
 ---------------------------------------------
 ### Uploading Files Using WinSCP
@@ -319,9 +332,14 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 
 
 5. 使用以下指令將本機資料夾中的檔案上傳到 `/home/主機帳號/HW1` 下 (請自行將主機帳號替換成自己的)
-    ```
+  ``` 
     rsync -azrvh . 主機帳號@twnia3.nchc.org.tw:/home/主機帳號/HW1
-    ```
+  ```
+  或 (將 `當前資料夾路徑` 和  `國網資料夾路徑` 更改成實際檔案路徑)
+  ```
+   rsync -azrvh `當前資料夾路徑` 主機帳號@twnia3.nchc.org.tw:`國網資料夾路徑`
+  ```
+
 
 > [!IMPORTANT]
 > #### 命令小學堂
@@ -354,10 +372,11 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
     ```
     rsync -azvh 主機帳號@twnia3.nchc.org.tw:/home/主機帳號/HW1 .
     ```
-    或
+    或 (將 `國網資料夾路徑` 和 `當前資料夾路徑` 更改成實際檔案路徑)
    ```
-    rsync -azvh 主機帳號@twnia3.nchc.org.tw:{存取資料夾路徑} .
+    rsync -azvh 主機帳號@twnia3.nchc.org.tw:`國網資料夾路徑` `當前資料夾路徑` 
     ```
+
     若需要下載的為**資料夾**，則須在前面的指令改為`rsync -azrvh`
     （注意：**檔案與 "." 之間需空一格**）
 4. 依序輸入 **1**、**主機密碼** 與 **OTP** 後就會開始下載，下載完成後即可從本地端開啟檔案
