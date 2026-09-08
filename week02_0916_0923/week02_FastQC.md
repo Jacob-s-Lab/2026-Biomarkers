@@ -42,6 +42,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
     ```
 5. Additionally, copy the data required for analysis.
     ```
+    cd fastqc
     rsync -avz /work/u9482849/2026Biomarkers/NGS/ ./
     ```
 > ❗**need to copy six files!!** (6 reads in total, which include three samples) \
@@ -226,6 +227,7 @@ Details available for [download](https://github.com/Jacob-s-Lab/2026-Biomarkers/
 
 5. 另外，複製分析所需資料
     ```
+    cd fastqc
     rsync -avz /work/u9482849/2026Biomarkers/NGS/ ./
     ```
    >❗ **請複製以下六個檔案!!** (6條reads，共包含三個sample，會花費一些時間) \
