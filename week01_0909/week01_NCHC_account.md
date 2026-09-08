@@ -16,7 +16,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 2. [Uploading files to NCHC and downloading files](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-2-file-transfer)
 
 ## Tool Overview
- 1. **iServer (Website)**: Used to create server accounts and enable OTP (One-Time Password) functionality to secure accounts.
+ 1. **iService (Website)**: Used to create server accounts and enable OTP (One-Time Password) functionality to secure accounts.
  2. **Terminal (macOS) or CMD (Windows)**: Access the server or supercomputer remotely from the local machine for command-line operations.
  3. **rsync (macOS Tool) or WinSCP (Windows Software)**: Used for transferring and managing files between the local machine and the server.
 
@@ -64,7 +64,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 ![image](https://hackmd.io/_uploads/Hyk4FkFOel.png)
 2. Please fill NCHC Account Registration form.
 [NCHC Account Registration form](https://docs.google.com/forms/d/e/1FAIpQLSdnunRVXkrLesS0VVylwFRqyK5xhRRZFd27YM5wXWKvIn2ZMg/viewform?usp=dialog)
-3. After filling out the form, please wait for the TA to add your account to the "2025 Fantastic Genomic Biomarkers and Where to Find Them" project.
+3. After filling out the form, please wait for the TA to add your account to the "2026 Fantastic Genomic Biomarkers and Where to Find Them" project.
 
 ### Logging into NCHC
 
@@ -161,7 +161,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
    (Replace `{supercomputer account}` with your actual username)
 
    ``` 
-   rsync -azvh {supercomputeraccount}@twnia3.nchc.org.tw:/home/supercomputeraccount/HW1 .
+   rsync -azvh {supercomputeraccount}@twnia3.nchc.org.tw:/home/{supercomputeraccount}/HW1 .
    ```
    or    (replace `{NCHC directory path}` and `{local directory path}`  with your actual file path)
    ```
@@ -229,7 +229,7 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 
 ## 工具概述
 
-1. **iServer（網站）**：用於建立伺服器帳號，並啟用 OTP（一次性密碼）功能來保護帳號安全
+1. **iService（網站）**：用於建立伺服器帳號，並啟用 OTP（一次性密碼）功能來保護帳號安全
 2. **Terminal開啟終端機（macOS）或CMD命令列（Windows）**：從本地電腦遠端登入伺服器或超級電腦，進行指令操作
 3. **rsync（macOS 工具）或 WinSCP（Windows 軟體）**：在本地與伺服器之間傳輸與管理檔案
 
@@ -272,10 +272,10 @@ Language: [EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-co
 1. 進入iservice網頁後，依序點選畫面上方的：會員中心->計畫管理->我的計畫
 ![image](https://hackmd.io/_uploads/rJDAbL_ueg.png)
 2. 請填寫表單[NCHC Account Registration form](https://docs.google.com/forms/d/e/1FAIpQLSdnunRVXkrLesS0VVylwFRqyK5xhRRZFd27YM5wXWKvIn2ZMg/viewform?usp=dialog)
-4. 完成表單後，**敬請等待**助教們將您的帳號加入本課程「2025生物標記物與它們的產地」的計畫中
+4. 完成表單後，**敬請等待**助教們將您的帳號加入本課程「2026生物標記物與它們的產地」的計畫中
 
 ### 登入國網
-* 使用Windows的同學開啟命令題字元(CMD)      
+* 使用Windows的同學開啟命令提示字元(CMD)      
 ![image](https://hackmd.io/_uploads/HymEIIO_ll.png)      
 
 * 使用Mac的同學開啟終端機 (terminal)      
