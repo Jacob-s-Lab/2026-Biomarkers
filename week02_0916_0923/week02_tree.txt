@@ -2,6 +2,7 @@
 |____work
 | |____Username
 |   |____result
+|   |____fastqc.sh
 |   | |____fastqc
 |   | | |____SRR13076392_1.fastq.gz
 |   | | |____SRR13076392_2.fastq.gz
@@ -16,5 +17,4 @@
 |   | | |____SRR13076392_2_fastqc.zip
 |   | |____err.log
 |   | |____out.log
-|   |____fastqc.sh
 |____home
