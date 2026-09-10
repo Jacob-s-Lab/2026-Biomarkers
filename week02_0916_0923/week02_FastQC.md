@@ -11,16 +11,16 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 ## Copying Course Files
 > [!CAUTION]
-> Since files are being copied to NCHC, the following steps must be executed in your own remote host's `/work/{your_username}` path (**Please ensure you are in your own path!!!**)
+> Since files are being copied to NCHC, the following steps must be executed in your own remote host's `/work/{supercomputer_account}` path (**Please ensure you are in your own path!!!**)
 
 ## The File Tree of This Course
 [FastQC_file tree](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week2_0910_0917/wk2_tree.txt)
 
 ### Step 1: Create a Path on NCHC
-1. Log in to NCHC (for those who forgot how to log in, please refer to this [link](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)).
-2. Enter the work directory and type `cd /work/username`, then type `mkdir result` to create a folder named result in the current location on the NCHC system. This will be the folder where you store your course files.
+1. Log in to NCHC (for those who forgot how to log in, please refer to this [link](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#logging-into-nchc)).
+2. Enter the work directory and type `cd /work/{supercomputer_account}`, then type `mkdir result` to create a folder named result in the current location on the NCHC system. This will be the folder where you store your course files.
     ```
-    cd /work/username
+    cd /work/{supercomputer_account}
     mkdir result
     ```
 3. Next, use cd result and create a folder with mkdir fastq to store the downloaded samples.
@@ -40,18 +40,21 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
     ```
     rsync -avz /work/evelyn92/2025Biomarker/fastqc.sh ./
     ```
-5. Additionally, copy the data required for analysis.
+    or
+    ```
+    rsync -avz /work/evelyn92/2025Biomarker/fastqc.sh /work/{supercomputer_account}/result
+    ```
+6. Additionally, copy the data required for analysis.
     ```
     cd fastqc
-    rsync -avz /work/u9482849/2026Biomarkers/NGS/ ./
+    rsync -avz /work/u9482849/2026Biomarkers/{assigned_folder}/ ./
     ```
-> ❗**need to copy six files!!** (6 reads in total, which include three samples) \
-> SRR13076392_1.fastq.gz \
-> SRR13076392_2.fastq.gz \
-> SRR13076393_1.fastq.gz \
-> SRR13076393_2.fastq.gz \
-> SRR13076396_1.fastq.gz \
-> SRR13076396_2.fastq.gz 
+    or
+    ```
+    rsync -avz /work/u9482849/2026Biomarkers/{assigned_folder}/ /work/{supercomputer_account}/result/fastqc
+    ```
+> ❗Replace `{assigned_folder}` with the folder assigned by Dr. Jacob in class, e.g. `HW1-A`, `HW1-B`, ..., `HW1-G`.
+
 
 > [!CAUTION]
 > - Folder and File Description (strongly recommended to understand): \
@@ -77,7 +80,7 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 
 1. Enter the result directory with 
    ```
-    cd /work/username/result
+    cd /work/{supercomputer_account}/result
     ```
 
 2. Create a shell script by typing 
@@ -128,9 +131,9 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 
 (2) Modify file path
   ```
-  # Please enter the R1 & R2 file name and your username
-  sampleR1=/work/username/result/fastqc/SRR13076392＿1.fastq.gz    # file path of the compressed reads
-  sampleR2=/work/username/result/fastqc/SRR13076392＿2.fastq.gz    # file path of the compressed reads
+  # Please enter the R1 & R2 file name and your supercomputer account
+  sampleR1=/work/{supercomputer_account}/result/fastqc/SRR13076392＿1.fastq.gz    # file path of the compressed reads
+  sampleR2=/work/{supercomputer_account}/result/fastqc/SRR13076392＿2.fastq.gz    # file path of the compressed reads
   ```
 (3) create a directory named fastqc_S14 to store the FastQC results
   ```
@@ -183,6 +186,27 @@ This command is used to list the status of jobs or job arrays associated with an
 - This script will generate an HTML file, which can be downloaded and opened to view the FastQC Report.
 Details available for [download](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-3%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99%E5%82%B3%E8%BC%B8) at the link
 
+### Downloading Files Using rsync
+1. Open the local terminal and `cd` to the **directory where you want to download the files** (You can input the folder path by dragging the folder into the terminal command line). 
+(Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
+![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
+
+2. Use the following command to download the folder `/home/{supercomputer_account}/HW1` from the NCHC server to the current local directory.
+   (Replace `{supercomputer_account}` with your actual username)
+
+   ``` 
+   rsync -azvh {supercomputer_account}@twnia3.nchc.org.tw:/work/{supercomputer_account}/result/fastqc .
+   ```
+   or    (replace `{NCHC directory path}` and `{local directory path}`  with your actual file path)
+   ```
+   rsync -azvh {supercomputer_account}@twnia3.nchc.org.tw:{NCHC directory path} {local directory path}
+   ```
+   If you need to download a **folder**, modify the command to `rsync -azrvh`.
+   (Important: **There must be a space between the file and "."**)
+
+
+4. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
+
 ---------------
 ---------------
 
@@ -196,16 +220,16 @@ Details available for [download](https://github.com/Jacob-s-Lab/2026-Biomarkers/
 
 ## 複製課程檔案
 > [!CAUTION]
-> ‼️因為是將檔案複製至國網，所以以下步驟的指令都需在『你自己的』遠端主機的 `/work/{your_username}` 路徑下 (**請確保現在是在自己的路徑下！！！**)
+> ‼️因為是將檔案複製至國網，所以以下步驟的指令都需在『你自己的』遠端主機的 `/work/{supercomputer_account}` 路徑下 (**請確保現在是在自己的路徑下！！！**)
 
 ## 本次課程的樹狀資料結構
 [FastQC_file tree](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week2_0910_0917/wk2_tree.txt)
 
 ### step 1 在國網上建立路徑
-1. 登入國網（忘記怎麼登入的人請參見[連結](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)）
-2. 進入work資料夾輸入`cd /work/username`，接著輸入`mkdir result`可以在國網主機目前的位置下建立一個叫做result的資料夾，作為本次作業檔案儲存的資料夾
+1. 登入國網（忘記怎麼登入的人請參見[連結](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#%E7%99%BB%E5%85%A5%E5%9C%8B%E7%B6%B2)）
+2. 進入work資料夾輸入`cd /work/{supercomputer_account}`，接著輸入`mkdir result`可以在國網主機目前的位置下建立一個叫做result的資料夾，作為本次作業檔案儲存的資料夾
     ```
-    cd /work/username
+    cd /work/{supercomputer_account}
     mkdir result
     ```
 3. 接著`cd result`在建立一個資料夾`mkdir fastqc`儲存下載的sample
@@ -228,15 +252,15 @@ Details available for [download](https://github.com/Jacob-s-Lab/2026-Biomarkers/
 5. 另外，複製分析所需資料
     ```
     cd fastqc
-    rsync -avz /work/u9482849/2026Biomarkers/NGS/ ./
+    rsync -avz /work/u9482849/2026Biomarkers/{assigned_folder}/ ./
     ```
-   >❗ **請複製以下六個檔案!!** (6條reads，共包含三個sample，會花費一些時間) \
-   > SRR13076392_1.fastq.gz \
-   > SRR13076392_2.fastq.gz \
-   > SRR13076393_1.fastq.gz \
-   > SRR13076393_2.fastq.gz \
-   > SRR13076396_1.fastq.gz \
-   > SRR13076396_2.fastq.gz 
+    or
+    ```
+    rsync -avz /work/u9482849/2026Biomarkers/{assigned_folder}/ /work/{supercomputer_account}/result/fastqc
+    ```
+    
+>❗ 請將 {assigned_folder} 替換為 Dr. Jacob 在課堂上分配給你的資料夾名稱，例如：HW1-A、HW1-B、…、HW1-G。
+
    
 
 > [!CAUTION]
@@ -263,7 +287,7 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 > reference:https://linux.vbird.org/linux_basic/centos7/0340bashshell-scripts.php#script
 
  
-1. 進入result資料夾，輸入`cd /work/username/result`
+1. 進入result資料夾，輸入`cd /work/{supercomputer_account}/result`
 2. 進入shell script，輸入`vim fastqc.sh`
 
 > [!IMPORTANT]
@@ -311,9 +335,9 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 
 (2) 修改檔案路徑  
   ```
-  # Please enter the R1 & R2 file name and your username
-  sampleR1=/work/username/result/fastqc/SRR13076392_1.fastq.gz    # Reads所在的檔案路徑
-  sampleR2=/work/username/result/fastqc/SRR13076392_2.fastq.gz    # Reads所在的檔案路徑
+  # Please enter the R1 & R2 file name and your supercomputer account
+  sampleR1=/work/{supercomputer_account}/result/fastqc/SRR13076392_1.fastq.gz    # Reads所在的檔案路徑
+  sampleR2=/work/{supercomputer_account}/result/fastqc/SRR13076392_2.fastq.gz    # Reads所在的檔案路徑
   ```
 
 (3)建立資料夾(命名為`fastqc_S14`)來存放FastQC結果
@@ -366,7 +390,7 @@ sacct
 > ``sacct`` 此指令用於列出帳號的相關任務或任務集之狀態，例如運行中、已終止或是已完成，是最基本的檢視任務指令。它可以顯示例如ID、使用者、狀態、使用的資源等資訊，這個命令對於追蹤和分析作業的運行情況非常有用。
 
 3. 查看結果  
- `out.log`和`err.log`為執行這個script的標準輸出和標準錯誤，如果執行時有出現錯誤，可以查看`err.log`(檔案會在`/work/username/result/`底下)
+ `out.log`和`err.log`為執行這個script的標準輸出和標準錯誤，如果執行時有出現錯誤，可以查看`err.log`(檔案會在`/work/{supercomputer_account}/result/`底下)
 * 這份執行檔會產生html檔，下載後即可開啟查看FastQC Report
-* 下載詳情可見連結[下載](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-3%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99%E5%82%B3%E8%BC%B8)
+  
   
