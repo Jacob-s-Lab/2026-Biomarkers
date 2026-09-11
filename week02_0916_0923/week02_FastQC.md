@@ -144,7 +144,7 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
   sampleR1=/work/{supercomputer_account}/result/fastqc/{assigned_file＿1.fastq.gz}    # file path of the compressed reads
   sampleR2=/work/{supercomputer_account}/result/fastqc/{assigned_file＿2.fastq.gz}    # file path of the compressed reads
   ```
-(3) create a directory named fastqc_S14 to store the FastQC results
+(3) create a directory named as assigned_file to store the FastQC results
   ```
   mkdir fastqc_{assigned_file}
   ```
@@ -359,18 +359,18 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 (2) 修改檔案路徑  
   ```
   # Please enter the R1 & R2 file name and your supercomputer account
-  sampleR1=/work/主機帳號/result/fastqc/{指定檔案＿1.fastq.gz}    # Reads所在的檔案路徑
-  sampleR2=/work/主機帳號/result/fastqc/{指定檔案＿2.fastq.gz}   # Reads所在的檔案路徑
+  sampleR1=/work/主機帳號/result/fastqc/指定檔案＿1.fastq.gz    # Reads所在的檔案路徑
+  sampleR2=/work/主機帳號/result/fastqc/指定檔案＿2.fastq.gz    # Reads所在的檔案路徑
   ```
 
-(3)建立資料夾(命名為`fastqc_S14`)來存放FastQC結果
+(3)建立資料夾(命名為`fastqc_指定檔案`)來存放FastQC結果
   ```
-  mkdir fastqc_{指定檔案}
+  mkdir fastqc_指定檔案
   ```
     
 (4) 修改執行FastQC的命令
   ```
-  fastqc ${sampleR1} ${sampleR2} -o fastqc_{指定檔案}
+  fastqc ${sampleR1} ${sampleR2} -o fastqc_指定檔案
   ```
 (5)按 <kbd>Esc</kbd> 離開編輯模式  
 (6) 輸入 `:wq` 並按下 <kbd>Enter</kbd> 可儲存結果  
