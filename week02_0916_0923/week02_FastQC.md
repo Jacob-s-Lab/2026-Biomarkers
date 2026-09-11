@@ -198,7 +198,7 @@ This command is used to list the status of jobs or job arrays associated with an
 - Mac users can use the terminal and the rsync command to [download](#downloading-files-using-rsync) files.
 - Windows users can use WinSCP to [download](#downloading-files-with-winscp).
 
-# downloading-files-using-rsync
+### downloading-files-using-rsync
 1. Open the local terminal and `cd` to the **directory where you want to download the files** (You can input the folder path by dragging the folder into the terminal command line). 
 (Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
@@ -269,7 +269,7 @@ This command is used to list the status of jobs or job arrays associated with an
     cd fastqc
     rsync -avz /work/u9482849/2026Biomarkers/指定資料夾/ ./
     ```
-    or
+    或
     ```
     rsync -avz /work/u9482849/2026Biomarkers/指定資料夾/ /work/主機帳號/result/fastqc
     ```
@@ -306,7 +306,6 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
 > shell  script(程式化草稿)
 > - 簡單來說，是利用 shell 的功能所寫的一個『程式 (program)』，這個程式是使用純文字檔，將一些 shell 的語法與指令(含外部指令)寫在裡面， 搭配正規表示法、管線命令與資料流重導向等功能，以達到我們所想要的處理目的，通過編寫和使用 Shell 草稿，可以提高工作效率並減少重複操作命令
 > - 可在 Unix、Linux 或其他類 Unix 系統的 shell 環境中運行。最常用的 shell 草稿語言包括 Bash（Bourne Again Shell）、Sh（Bourne Shell）和 Zsh（Z Shell）。
-
 > reference:https://linux.vbird.org/linux_basic/centos7/0340bashshell-scripts.php#script
 
  
@@ -418,7 +417,7 @@ sacct
 - 使用Mac的同學可使用終端機並搭配[使用rsync下載檔案](#使用rsync下載檔案)
 - 使用Windows的同學可使用[WinSCP下載](#使用winscp下載檔案)
 
-# 使用rsync下載檔案
+### 使用rsync下載檔案
 1. 開啟**本機端的**終端機並 `cd` 到**檔案要下載到的位置**（可用滑鼠拖曳的方式將資料夾位置輸入到終端機中）
    (**注意，要另外開一個終端機，不是你現在有登入國網主機的終端機！**)
 ![](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
@@ -436,4 +435,4 @@ sacct
     （注意：**檔案與 "." 之間需空一格**）
 4. 依序輸入 **1**、**主機密碼** 與 **OTP** 後就會開始下載，下載完成後即可從本地端開啟檔案
 
-# [使用winscp下載檔案](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#%E4%BD%BF%E7%94%A8winscp%E4%B8%8B%E8%BC%89%E6%AA%94%E6%A1%88)
+ [使用winscp下載檔案](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#%E4%BD%BF%E7%94%A8winscp%E4%B8%8B%E8%BC%89%E6%AA%94%E6%A1%88)
