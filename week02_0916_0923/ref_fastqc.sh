@@ -4,9 +4,9 @@
 #SBATCH -p ngscourse          # Partition Name (equivalent to PBS's -q Queue name)
 #SBATCH -c 2                  # Number of cores used (refer to Queue resource settings)
 #SBATCH --mem=13g             # Amount of memory used (refer to Queue resource settings)
-#SBATCH -o out.log            # Path to the standard output file
-#SBATCH -e err.log
-#SBATCH --mail-user=b9999999@gmail.com   #Email
+#SBATCH -o 115Biomarker_FastQC.out.log    # Path to the standard output file
+#SBATCH -e 115Biomarker_FastQC.err.log
+#SBATCH --mail-user=b9999999@gmail.com    #Email
 #SBATCH --mail-type=END       # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
 # For NCHC usage
 
