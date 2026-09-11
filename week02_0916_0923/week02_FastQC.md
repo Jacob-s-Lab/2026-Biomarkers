@@ -218,7 +218,7 @@ This command is used to list the status of jobs or job arrays associated with an
 
 3. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
 
-# [downloading-files-with-winscp](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#downloading-files-with-winscp)
+ [downloading-files-with-winscp](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#downloading-files-with-winscp)
 
 
 ---------------
