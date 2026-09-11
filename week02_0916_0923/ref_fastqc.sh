@@ -15,7 +15,7 @@ echo "start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 
-# Please enter your username and the R1 & R2 file name 
+# Please enter your supercomputer account and the R1 & R2 file name 
 sampleR1=/work/b9999999/result/fastqc/SRR13076392＿1.fastq.gz
 sampleR2=/work/b9999999/result/fastqc/SRR13076392＿2.fastq.gz
 mkdir fastqc_SRR13076392
