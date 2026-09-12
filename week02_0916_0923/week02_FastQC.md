@@ -1,5 +1,5 @@
 Date：20250916 & 20250923  
-Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-II) / [中文](#生物標記物與它們的產地實作課程二)  
+Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-ii) / [中文](#生物標記物與它們的產地實作課程二)  
 
 
 # Fantastic Genomic Biomarkers and Where to Find Them Practical Course (Part II)
@@ -77,7 +77,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 ---------------
 
 ## Sample QC
-Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week2_0910_0917/fastqc.sh).
+Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/ref_fastqc.sh).
 
 ### Step 1: Create a Shell Script
 
@@ -223,11 +223,12 @@ This command is used to list the status of jobs or job arrays associated with an
 > #### 📢 A new version of WinSCP is available; please update it before proceeding with the following steps.
 > When you open WinSCP and see an update notification, please click "Update". The software will direct you to the official website to download the latest installer.
 1. Open WinSCP and login.
-   ![image](https://hackmd.io/_uploads/Skgy6SGYGe.png)
+   <br><img src="https://hackmd.io/_uploads/Skgy6SGYGe.png" width="75%"> \
    In the pop-up window, enter in sequence: **1** → **supercomputer password** → **OTP**.
 3. Open folder
 4. Drag the file you want to download from NCHC area to Local area
-5. Open **File Explorer on your computer**, find the file and double click to open. \
+5. Open **File Explorer on your computer**, find the file and double click to open.
+   <br><img src="https://hackmd.io/_uploads/H1H1rvfKfe.png" width="50%"> \
 (**Note:Do not open files directly from the local site panel in WinSCP, as this will automatically upload them to NCHC.**)
 
 ---------------
@@ -309,7 +310,7 @@ This command is used to list the status of jobs or job arrays associated with an
 ---------------
 
 # Sample QC
-Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week2_0910_0917/fastqc.sh).
+Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/ref_fastqc.sh).
 
 ## Step 1 建立shell script
 
@@ -452,8 +453,10 @@ sacct
 > #### 📢 WinSCP 已推出全新版本；在進行以下步驟之前，請先完成軟體更新。
 > 當您開啟 WinSCP 並看到更新通知時，請點擊 "Update"，軟體將會引導您至官方網站下載最新的安裝檔。
 1. 開啟WinSCP並登入國網
-   ![image](https://hackmd.io/_uploads/H1FR3BMtfe.png)
+   <br><img src="https://hackmd.io/_uploads/Skgy6SGYGe.png" width="75%"> \
+   在跳出的視窗依序輸入 ：**1** -> **主機密碼** -> **OTP**
 3. 開啟欲下載檔案的所在資料夾
 4. 點選並拖曳檔案至本地區域
-5. 開啟本機的檔案總管，打開下載檔案的位置，雙擊檔案開啟 \
+5. 開啟本機的**檔案總管**，打開下載檔案的位置，雙擊檔案開啟
+   <br><img src="https://hackmd.io/_uploads/H1H1rvfKfe.png" width="50%"> \
 (**注意，請不要直接在WinSCP的本地站台點開，若直接從WinSCP的本地站台點選檔名，將會把檔案上傳到國網**）
