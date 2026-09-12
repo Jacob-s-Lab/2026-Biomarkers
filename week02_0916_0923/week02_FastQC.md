@@ -225,11 +225,15 @@ This command is used to list the status of jobs or job arrays associated with an
 1. Open WinSCP and login.
    <br><img src="https://hackmd.io/_uploads/Skgy6SGYGe.png" width="75%"> \
    In the pop-up window, enter in sequence: **1** → **supercomputer password** → **OTP**.
-3. Open folder
-4. Drag the file you want to download from NCHC area to Local area
-5. Open **File Explorer on your computer**, find the file and double click to open.
+2. Open folder \
+   `Left` Local space-Target folder to save files \
+   `Right` NCHC space-Folder where files are located
+
+   Then, drag and drop files into the local area. \
+   <img src="https://hackmd.io/_uploads/rkjlmYGKfe.png" width="75%">
+4. Open **File Explorer on your computer**, find the file and double click to open.
    <br><img src="https://hackmd.io/_uploads/H1H1rvfKfe.png" width="50%"> \
-(**Note:Do not open files directly from the local site panel in WinSCP, as this will automatically upload them to NCHC.**)
+**❗Do not open files directly from the local site panel in WinSCP, as this will automatically upload them to NCHC.❗**
 
 ---------------
 ---------------
@@ -455,8 +459,12 @@ sacct
 1. 開啟WinSCP並登入國網
    <br><img src="https://hackmd.io/_uploads/Skgy6SGYGe.png" width="75%"> \
    在跳出的視窗依序輸入 ：**1** -> **主機密碼** -> **OTP**
-3. 開啟欲下載檔案的所在資料夾
-4. 點選並拖曳檔案至本地區域
-5. 開啟本機的**檔案總管**，打開下載檔案的位置，雙擊檔案開啟
+2. 開啟資料夾 \
+   `左` 本機空間-檔案欲儲存的本地資料夾 \
+   `右` 國網空間-檔案所在資料夾
+   
+   點選並拖曳檔案至本地區域 \
+   <img src="https://hackmd.io/_uploads/rk0t6uMYMx.png" width="75%">
+4. 開啟本機的**檔案總管**，打開檔案所在位置，雙擊檔案開啟
    <br><img src="https://hackmd.io/_uploads/H1H1rvfKfe.png" width="50%"> \
-(**注意，請不要直接在WinSCP的本地站台點開，若直接從WinSCP的本地站台點選檔名，將會把檔案上傳到國網**）
+   **❗請不要直接在WinSCP的本地站台點開，若直接從WinSCP的本地站台點選檔名，將會把檔案上傳到國網❗**
