@@ -219,12 +219,15 @@ This command is used to list the status of jobs or job arrays associated with an
 3. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
 
 ### Downloading Files with WinSCP
+> [!IMPORTANT]
+> #### 📢 A new version of WinSCP is available; please update it before proceeding with the following steps.
+> When you open WinSCP and see an update notification, please click "Update". The software will direct you to the official website to download the latest installer.
 1. Open WinSCP and login.
    ![image](https://hackmd.io/_uploads/Skgy6SGYGe.png)
    In the pop-up window, enter in sequence: **1** → **supercomputer password** → **OTP**.
 3. Open folder
 4. Drag the file you want to download from NCHC area to Local area
-5. Open **File Explorer on your computer**, find the file and double click to open.
+5. Open **File Explorer on your computer**, find the file and double click to open. \
 (**Note:Do not open files directly from the local site panel in WinSCP, as this will automatically upload them to NCHC.**)
 
 ---------------
@@ -445,9 +448,12 @@ sacct
 4. 依序輸入 **1**、**主機密碼** 與 **OTP** 後就會開始下載，下載完成後即可從本地端開啟檔案
 
 ### 使用WinSCP下載檔案
+> [!IMPORTANT]
+> #### 📢 WinSCP 已推出全新版本；在進行以下步驟之前，請先完成軟體更新。
+> 當您開啟 WinSCP 並看到更新通知時，請點擊 "Update"，軟體將會引導您至官方網站下載最新的安裝檔。
 1. 開啟WinSCP並登入國網
    ![image](https://hackmd.io/_uploads/H1FR3BMtfe.png)
 3. 開啟欲下載檔案的所在資料夾
 4. 點選並拖曳檔案至本地區域
-5. 開啟本機的檔案總管，打開下載檔案的位置，雙擊檔案開啟
+5. 開啟本機的檔案總管，打開下載檔案的位置，雙擊檔案開啟 \
 (**注意，請不要直接在WinSCP的本地站台點開，若直接從WinSCP的本地站台點選檔名，將會把檔案上傳到國網**）
