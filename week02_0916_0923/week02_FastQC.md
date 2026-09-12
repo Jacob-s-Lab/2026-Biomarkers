@@ -198,7 +198,7 @@ This command is used to list the status of jobs or job arrays associated with an
 - Mac users can use the terminal and the rsync command to [download](#downloading-files-using-rsync) files.
 - Windows users can use WinSCP to [download](#downloading-files-with-winscp).
 
-### downloading-files-using-rsync
+### Downloading Files Using rsync
 1. Open the local terminal and `cd` to the **directory where you want to download the files** (You can input the folder path by dragging the folder into the terminal command line). 
 (Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
@@ -218,8 +218,14 @@ This command is used to list the status of jobs or job arrays associated with an
 
 3. Enter your **authentication method**, **supercomputer password**, and **OTP** in sequence to start the download. After the download is complete, you can access the files from your local machine.
 
- [downloading-files-with-winscp](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#downloading-files-with-winscp)
-
+### Downloading Files with WinSCP
+1. Open WinSCP and login.
+   ![image](https://hackmd.io/_uploads/Skgy6SGYGe.png)
+   In the pop-up window, enter in sequence: **1** → **supercomputer password** → **OTP**.
+3. Open folder
+4. Drag the file you want to download from NCHC area to Local area
+5. Open **File Explorer on your computer**, find the file and double click to open.
+(**Note:Do not open files directly from the local site panel in WinSCP, as this will automatically upload them to NCHC.**)
 
 ---------------
 ---------------
@@ -438,4 +444,10 @@ sacct
     （注意：**檔案與 "." 之間需空一格**）
 4. 依序輸入 **1**、**主機密碼** 與 **OTP** 後就會開始下載，下載完成後即可從本地端開啟檔案
 
- [使用winscp下載檔案](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#%E4%BD%BF%E7%94%A8winscp%E4%B8%8B%E8%BC%89%E6%AA%94%E6%A1%88)
+### 使用WinSCP下載檔案
+1. 開啟WinSCP並登入國網
+   ![image](https://hackmd.io/_uploads/H1FR3BMtfe.png)
+3. 開啟欲下載檔案的所在資料夾
+4. 點選並拖曳檔案至本地區域
+5. 開啟本機的檔案總管，打開下載檔案的位置，雙擊檔案開啟
+(**注意，請不要直接在WinSCP的本地站台點開，若直接從WinSCP的本地站台點選檔名，將會把檔案上傳到國網**）
