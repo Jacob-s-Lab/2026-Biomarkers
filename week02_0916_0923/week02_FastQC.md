@@ -39,11 +39,11 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 1. Use the rsync command to copy the required scripts (bash file) and samples to your path:\
     **❗In this step, you need to learn how to copy files from someone else's folder on the NCHC to your own folder on the NCHC.❗**
     ```
-    rsync -avz /work/evelyn92/2025Biomarker/fastqc.sh ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh ./
     ```
     or
     ```
-    rsync -avz /work/evelyn92/2025Biomarker/fastqc.sh /work/{supercomputer_account}/result
+    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh /work/{supercomputer_account}/result
     ```
 2. Additionally, copy the data required for analysis.
     ```
@@ -131,8 +131,8 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
   #SBATCH -p ngscourse              # Partition Name (equivalent to PBS's -q Queue name)
   #SBATCH -c 2                      # Number of cores used (refer to Queue resource settings)
   #SBATCH --mem=13g                 # Amount of memory used (refer to Queue resource settings)
-  #SBATCH -o out.log                # Path to the standard output file
-  #SBATCH -e err.log                # Path to the standard error output file
+  #SBATCH -o 115Biomarker_FastQC.out.log    # Path to the standard output file
+  #SBATCH -e 115Biomarker_FastQC.err.log    # Path to the standard error output file
   #SBATCH --mail-user=yourmail@gmail.com    # Email
   #SBATCH --mail-type=END           # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
   # For NCHC usage
@@ -261,9 +261,12 @@ This command is used to list the status of jobs or job arrays associated with an
 1. 在terminal利用`rsync`指令，將分析所需的指令(bash檔)，複製到自己的路徑下使用\
     **❗此步驟你需要學會如何從國網別人的資料夾中複製檔案到自己在國網的資料夾❗**
     ```
-    rsync -avz /work/evelyn92/2025Biomarker/fastqc.sh ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh ./
     ```
-
+    or
+    ```
+    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh /work/{supercomputer_account}/result
+    ```
 2. 另外，複製分析所需資料
     ```
     cd fastqc
@@ -348,8 +351,8 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2025-Biomarkers
   #SBATCH -p ngscourse                      # Partition Name 等同PBS裡面的 -q Queue name
   #SBATCH -c 2                              # 使用的core數 請參考Queue資源設定
   #SBATCH --mem=13g                         # 使用的記憶體量 請參考Queue資源設定
-  #SBATCH -o out.log                        # Path to the standard output file
-  #SBATCH -e err.log                        # Path to the standard error ouput file
+  #SBATCH -o 115Biomarker_FastQC.out.log    # Path to the standard output file
+  #SBATCH -e 115Biomarker_FastQC.err.log    # Path to the standard error ouput file
   #SBATCH --mail-user=yourmail@gmail.com    # email
   #SBATCH --mail-type=END                   # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
   # 國網使用
