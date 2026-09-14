@@ -39,11 +39,11 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 1. Use the rsync command to copy the required scripts (bash file) and samples to your path:\
     **❗In this step, you need to learn how to copy files from someone else's folder on the NCHC to your own folder on the NCHC.❗**
     ```
-    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/fastqc.sh ./
     ```
     or
     ```
-    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh /work/{supercomputer_account}/result
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/fastqc.sh /work/{supercomputer_account}/result
     ```
 2. Additionally, copy the data required for analysis.
     ```
@@ -275,11 +275,11 @@ This command is used to list the status of jobs or job arrays associated with an
 1. 在terminal利用`rsync`指令，將分析所需的指令(bash檔)，複製到自己的路徑下使用\
     **❗此步驟你需要學會如何從國網別人的資料夾中複製檔案到自己在國網的資料夾❗**
     ```
-    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/fastqc.sh ./
     ```
     or
     ```
-    rsync -avz /work/u2777445/2026Biomarker_TA/result/fastqc.sh /work/{supercomputer_account}/result
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/fastqc.sh /work/{supercomputer_account}/result
     ```
 2. 另外，複製分析所需資料
     ```
