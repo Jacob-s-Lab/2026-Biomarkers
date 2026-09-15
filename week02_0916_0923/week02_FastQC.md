@@ -207,11 +207,11 @@ This command is used to list the status of jobs or job arrays associated with an
 (Note: **Open a new terminal, not the one where you are logged into the NCHC host!**).
 ![image](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
 
-2. Use the following command to download the folder `/work/{supercomputer_account}/result/{assigned_file_name}` from the NCHC server to the current local directory.
+2. Use the following command to download the folder `/work/{supercomputer_account}/result/{fastqc_assigned_file_name}` from the NCHC server to the current local directory.
    (Replace `{supercomputer_account}` and `{assigned_file_name}` with your actual username/file name)
 
    ``` 
-   rsync -azvh {supercomputer_account}@twnia3.nchc.org.tw:/work/{supercomputer_account}/result/{assigned_file_name} .
+   rsync -azvh {supercomputer_account}@twnia3.nchc.org.tw:/work/{supercomputer_account}/result/{fastqc_assigned_file_name} .
    ```
    or    (replace `{NCHC directory path}` and `{local directory path}`  with your actual file path)
    ```
@@ -448,10 +448,10 @@ sacct
    (**注意，要另外開一個終端機，不是你現在有登入國網主機的終端機！**)
 ![](https://hackmd.io/_uploads/HJ2t2Aq2a.png)
 
-2. 使用以下指令將國網上的資料夾`/work/主機帳號/result/指定檔案`下載到本機端當前路徑
+2. 使用以下指令將國網上的資料夾`/work/主機帳號/result/fastqc_指定檔案`下載到本機端當前路徑
    (將 `指定檔案` 更改成實際檔案名稱)
    ```
-    rsync -azvh 主機帳號@twnia3.nchc.org.tw:/work/主機帳號/result/指定檔案 .
+    rsync -azvh 主機帳號@twnia3.nchc.org.tw:/work/主機帳號/result/fastqc_指定檔案 .
    ```
       或   (將 `國網資料夾路徑` 和 `當前資料夾路徑` 更改成實際檔案路徑)
    ```
