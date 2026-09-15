@@ -14,7 +14,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 1. Download software: ThinLinc
   - Download and install the version corresponding to your computer from the [ThinLinc official website](https://www.cendio.com/thinlinc/download/).      
   ![image](https://hackmd.io/_uploads/rJPh0U_dlg.png)
-2. Ensure that [NCHC OTP is enabled](###Logging-into-NCHC).
+2. Ensure that [NCHC OTP is enabled](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-1-nchc-operations-and-settings).
 
  
 ### Step 2: Using ThinLinc to Log into NCHC, Access the Remote Host, and Open Terminal
@@ -32,7 +32,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 * The ThinLinc login screen is as follows:      
  ![image](https://hackmd.io/_uploads/rJmiJgtuxl.png)
  
-1. Enter the login node `t3-c4.nchc.org.tw` in the server field.
+1. Enter the login node `twnia3.nchc.org.tw` in the server field.
 2. Enter your "NCHC supercomputer account" in the username field.
 3. Enter "1"or"3" in the password field, then press enter to log in.
    (**Note: Do not enter the supercomputer password or iService password here!**)
@@ -100,7 +100,7 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 - 在[ThinLinc官網](https://www.cendio.com/thinlinc/download/)下載您的電腦相對應的版本並安裝即可
 ![image](https://hackmd.io/_uploads/rJPh0U_dlg.png)
 
-2. 確認[國網OTP是否已啟用](###登入國網)
+2. 確認[國網OTP是否已啟用](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-1%E5%9C%8B%E7%B6%B2%E6%93%8D%E4%BD%9C%E8%88%87%E8%A8%AD%E5%AE%9A)
 
 ### Step 2: 使用ThinLinc登入國網、進入遠端主機、開啟終端機 (terminal)
 > [!CAUTION]
@@ -116,7 +116,7 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 - ThinLinc登入畫面如下      
   ![](https://i.imgur.com/XvGJFXA.png)
 
-1. 請在server輸入登入節點`t3-c4.nchc.org.tw`
+1. 請在server輸入登入節點`twnia3.nchc.org.tw`
 2. 請在username 輸入「國網主機帳號」
 3. 請在password 輸入「**1**」，再按 enter 登入 
    (**注意：這裡不是輸入主機密碼、不是iservice密碼！！！**)
