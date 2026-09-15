@@ -8,15 +8,14 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 1. Copy course files to your folder on the National Center for High-Performance Computing (NCHC) system
 2. **Sample QC**: A rapid quality control check on raw sequencing data. Through Quality Control, researchers can identify potential issues in the data, allowing them to make decisions about data filtering or correction. In high-throughput sequencing experiments, quality control is the process of inspecting and evaluating raw sequencing data to ensure data integrity and reliability.
 
+#### The File Tree of This Course: [FastQC_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_tree.txt)
 
 ## Copying Course Files
 > [!CAUTION]
 > Since files are being copied to NCHC, the following steps must be executed in your own remote host's `/work/{supercomputer_account}` path (**Please ensure you are in your own path!!!**)
 
-## The File Tree of This Course
-[FastQC_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_tree.txt)
 
-### Step 1: Create a Path on NCHC
+## Step 1: Create a Path on NCHC
 1. Log in to NCHC (for those who forgot how to log in, please refer to this [link](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#logging-into-nchc)).
 2. Enter the work directory and type `cd /work/{supercomputer_account}`, then type `mkdir result` to create a folder named result in the current location on the NCHC system. This will be the folder where you store your course files.
     ```
@@ -35,7 +34,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 > - Make directory, used to create a new directory (folder) at the specified location.
 > - Usage of mkdir: mkdir [options] # Create a new directory (folder)
 
-### Step 2: Copying Course Files
+## Step 2: Copying Course Files
 1. Use the rsync command to copy the required scripts (bash file) and samples to your path:\
     **❗In this step, you need to learn how to copy files from someone else's folder on the NCHC to your own folder on the NCHC.❗**
     ```
@@ -84,7 +83,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 ## Sample QC
 Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/ref_fastqc.sh).
 
-### Step 1: Create a Shell Script
+## Step 1: Create a Shell Script
 
 > [!IMPORTANT]
 > #### What is a Shell Script?
@@ -115,7 +114,7 @@ Shell script for running [FastQC](https://github.com/Jacob-s-Lab/2026-Biomarkers
   
 3. Press the <kbd>i</kbd> key to enter insert mode (you will see "–- INSERT –-" at the bottom) and paste the shell script you downloaded into `fastqc.sh`.
 
-### Step 2: Modify the Analysis Script
+## Step 2: Modify the Analysis Script
 
 1. Change the following code:
 > The example below uses the SEA folder in the fastq directory (format should follow the provided example, excluding the file extension).
@@ -199,7 +198,7 @@ This command is used to list the status of jobs or job arrays associated with an
 > This script will generate an HTML file, which can be downloaded and opened to view the FastQC Report.
 
 
-### Step 3:Downloading Files and view the FastQC Report.
+## Step 3:Downloading Files and view the FastQC Report.
 - Mac users can use the terminal and the rsync command to [download](#downloading-files-using-rsync) files.
 - Windows users can use WinSCP to [download](#downloading-files-with-winscp).
 
@@ -250,13 +249,13 @@ This command is used to list the status of jobs or job arrays associated with an
  1. 複製課程檔案至國網中自己的資料夾
  2. sample QC:對原始測序數據進行快速質量控制檢查。通過Quality Control研究人員可以識別數據中的潛在問題，從而做出數據過濾、修正的決定。在高通量測序實驗中，質量控制是對原始測序數據進行檢查和評估的過程，以確保數據的完整性和可靠性。
 
+#### 本次課程的樹狀資料結構 [FastQC_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_tree.txt)
 
 ## 複製課程檔案
 > [!CAUTION]
 > ‼️因為是將檔案複製至國網，所以以下步驟的指令都需在『你自己的』遠端主機的 `/work/主機帳號` 路徑下 (**請確保現在是在自己的路徑下！！！**)
 
-## 本次課程的樹狀資料結構
-[FastQC_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_tree.txt)
+
 
 ### step 1 在國網上建立路徑
 1. 登入國網（忘記怎麼登入的人請參見[連結](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#%E7%99%BB%E5%85%A5%E5%9C%8B%E7%B6%B2)）
