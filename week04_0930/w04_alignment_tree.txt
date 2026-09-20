@@ -1,0 +1,25 @@
+/
+|____work
+| |____Username
+|   |____result
+|   | |____fastqc.sh
+|   | |____fastqc
+|   | | |____SRR13076392_1.fastq.gz
+|   | | |____SRR13076392_2.fastq.gz
+|   | |____fastqc_SRR13076392
+|   | | |____SRR13076392_1_fastqc.html
+|   | | |____SRR13076392_1_fastqc.zip
+|   | | |____SRR13076392_2_fastqc.html
+|   | | |____SRR13076392_2_fastqc.zip
+|   | |____err.log
+|   | |____out.log
+|   |____alignment
+|     |____bwa.sh
+|     |____alignmentR
+|     | |____SRR13076392.bam
+|     | |____SRR13076392.sam
+|     | |____SRR13076392.sorted.bam
+|     | |____SRR13076392.sorted.bam.bai
+|     |____err_al.log
+|     |____out_al.log
+|____home
