@@ -3,6 +3,12 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 # Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part III)
 
+## Main Content of the Course
+1. [View FastQC Report](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#fastqc-report)
+2. [Use BWA for alignment](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#alignment)
+3. [Use ThinLinc to open IGV to view the alignment results](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#viewing-results-in-igv)
+Before proceeding, make sure to download ThinLinc. Detailed instructions can be found at the [link](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_ThinLinc.md)
+
 -------------------------
 ## FastQC Report
 #### Introduction to the FastQC Report from Course II
@@ -38,21 +44,16 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 -------------------------
 
-## Main Content of the Course
-1. Use BWA for alignment
-2. Use ThinLinc to open IGV to view the alignment results.
-Before proceeding, make sure to download ThinLinc. Detailed instructions can be found at the [link](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week1_0903/week1_0903.md) 
-
 ## Alignment
 > [!Important]
 > #### What is Alignment?
 > Alignment in bioinformatics refers to comparing two or more sequences to identify their similarities and differences. These sequences can be DNA, RNA, or protein sequences. The main goal of alignment is to infer evolutionary relationships, functional similarities, or structural features by comparing different biological sequences.
 
 ## The File Tree of This Course
-[Alignment_file tree](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week4_0924/wk4_tree.txt)
+[Alignment_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_alignment_tree.txt)
 
 ## Step 1: Create a Path to NCHC
-1. Log into the NCHC (if you’ve forgotten how, please refer to this [link](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)).
+1. Log into the NCHC (if you’ve forgotten how, please refer to this [link](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md).
 2. Enter the work folder by `cd /work/username` and `mkdir alignment` ,this creates a folder named "alignment" in your work directory for storing files. 
 ```markdown=
 cd /work/username
@@ -71,7 +72,7 @@ rsync -azv /work/u9482849/2026Biomarkers/bwa.sh .
 
 
 ## Step 2: Modify the Shell Script
-Enter the [bwa.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week4_0924/bwa.sh) file by typing:
+Enter the [bwa.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/ref_alignment.sh) file by typing:
 ```
 vim bwa.sh
 ```
@@ -306,10 +307,10 @@ https://igv.org/doc/desktop/#
 # 生物標記物與它們的產地實作課程(三)
 
 ## 本次課程主要內容
-1. [介紹第二週做出來的fastqc report]
-2. [利用BWA做alignment]
-3. [用thinlinc打開IGV查看alignment的結果]
-所以在這之前必須要先下載好thinlinc，詳細[連結](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week1_0903/week1_0903.md)可見此
+1. [介紹第二週做出來的fastqc report](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#fastqc-report%E4%BB%8B%E7%B4%B9)
+2. [利用BWA做alignment](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#alignment-1)
+3. [用thinlinc打開IGV查看alignment的結果](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#alignment-1)
+所以在這之前必須要先下載好thinlinc，詳細[連結](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_ThinLinc.md)可見此
 
 -----------
 ### Fastqc Report介紹
@@ -354,10 +355,10 @@ https://igv.org/doc/desktop/#
 > Alignment（比對）是bioinformatics中的一個重要概念，指的是將兩條或多條序列進行比較，以找出它們之間的相似性和差異性。這些序列可以是DNA、RNA或蛋白質的序列。Alignment 的主要目的是通過比較不同的生物序列來推測它們之間的進化關係、功能相似性或結構特徵。
 
 ## 本次課程的樹狀資料結構
-[Alignment_file tree](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week4_0924/wk4_tree.txt)
+[Alignment_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_alignment_tree.txt)
 
 ### Step 1在國網上建立路徑
-1. 登入國網（忘記怎麼登入的人請參見[連結](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)）
+1. 登入國網（忘記怎麼登入的人請參見[連結](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md）)
 2. 進入work資料夾輸入`cd /work/username`，接著輸入`mkdir alignment`可以在國網主機目前的位置下建立一個叫做alignment的資料夾，作為本次檔案儲存的資料夾
 ```marksown=
 cd /work/username
@@ -376,7 +377,7 @@ rsync -azv /work/u9482849/2026Biomarkers/bwa.sh .
 > pwd 指令代表 "print working directory"（打印工作目錄），用於類 Unix 系統（例如 Linux 和 macOS）中，顯示當前正在工作的目錄。當在終端中執行 `pwd`時，它會顯示當前目錄的完整路徑。
 
 ### Step 2 修改分析執行檔
-1. 進入 [bwa.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week4_0924/bwa.sh) 輸入`vim bwa.sh`
+1. 進入 [bwa.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/ref_alignment.sh) 輸入`vim bwa.sh`
 ```
 vim bwa.sh
 ```
