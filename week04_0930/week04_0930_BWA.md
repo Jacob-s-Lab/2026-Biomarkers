@@ -309,7 +309,7 @@ https://igv.org/doc/desktop/#
 ## 本次課程主要內容
 1. [介紹第二週做出來的fastqc report](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#fastqc-report%E4%BB%8B%E7%B4%B9)
 2. [利用BWA做alignment](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#alignment-1)
-3. [用thinlinc打開IGV查看alignment的結果](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#alignment-1)
+3. [用thinlinc打開IGV查看alignment的結果](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#%E7%94%A8igv%E5%AF%9F%E7%9C%8B%E7%B5%90%E6%9E%9C)
 所以在這之前必須要先下載好thinlinc，詳細[連結](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week02_0916_0923/week02_ThinLinc.md)可見此
 
 -----------
