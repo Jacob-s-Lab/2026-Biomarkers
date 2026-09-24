@@ -1,21 +1,24 @@
 Date：20260930
-Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-II) / [中文](#生物標記物與它們的產地實作課程二)  
+Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-ii) / [中文](#生物標記物與它們的產地實作課程二)  
 
 # Fantastic Genomic Biomarkers and Where to Find Them Practical Course (Part II)
 
+> [!IMPORTANT]
+> This tutorial is for Windows users only!
 
 ## Main Content of This Course
- Using IGV on MobaXterm (Windows laptop users only!!)
+ Use MobaXterm to open IGV and view the sorted.bam file.
 
 ## Tool Overview
- MobaXterm (Local Software): An all-in-one terminal client that provides SSH access, built-in SFTP file transfer, and an embedded X11 server for remote computing and graphical tool display.
+ **MobaXterm (Local Software)**: An all-in-one terminal client that provides SSH access, built-in SFTP file transfer, and an embedded X11 server for remote computing and graphical tool display. \
+ **IGV (Integrative Genomics Viewer)**: A tool used for visualizing and analyzing large-scale genomic data. It is widely applied in genomics, bioinformatics, and molecular biology, allowing users to intuitively display various types of genomic data, such as sequences, variants, transcription data, and epigenetic data.
 
 ### Step 1: Download MobaXterm
 1. Download software: MobaXterm
-  - Click [here](https://drive.google.com/file/d/1rUIF8k3mm2clIrDIFA9hGMiqlRj1BXjj/view?usp=sharing) to download MobaXterm_Portable_v26.5.zip      
-  ![image](https://hackmd.io/_uploads/SJRDCQz5fe.png)
-2. **Unzip** MobaXterm_Portable_v26.5.zip, and you will see three files. Click MobaXterm_Personal_26.5 to open the software.
-  ![image](https://hackmd.io/_uploads/r17X1Vz9zg.png)
+  - Click [here](https://drive.google.com/file/d/1rUIF8k3mm2clIrDIFA9hGMiqlRj1BXjj/view?usp=sharing) to download ``MobaXterm_Portable_v26.5.zip``   
+    <img src="https://hackmd.io/_uploads/SJRDCQz5fe.png" width="80%">
+2. **Unzip** ``MobaXterm_Portable_v26.5.zip``, and you will see three files. Click ``MobaXterm_Personal_26.5`` to open the software.
+    <img src="https://hackmd.io/_uploads/r17X1Vz9zg.png" width="80%">
 
  
 ### Step 2: Using MobaXterm to Log into NCHC, Access the Remote Host, and Open Terminal
@@ -31,56 +34,60 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 > ⚠️ **If all the above issues are resolved and you still cannot log in, please notify the instructor or TA. Do not force a login attempt, as it may lock your account!**    
 
 * The MobaXterm login screen is as follows:      
- ![image](https://hackmd.io/_uploads/rJmiJgtuxl.png)
+ ![image](https://hackmd.io/_uploads/r1xf1oz5Me.png)
  
-1. Enter the login node `twnia3.nchc.org.tw` in the server field.
-2. Enter your "NCHC supercomputer account" in the username field.
-3. Enter "1"or"3" in the password field, then press enter to log in.
-   (**Note: Do not enter the supercomputer password or iService password here!**)
-4. Enter your "NCHC supercomputer password" 
-   (**Note: This is the supercomputer password, not the iService password!**)     
-![image](https://hackmd.io/_uploads/rJTPkYEhA.png)
-
-5. Use your mobile app to obtain the OTP.
-Enter the OTP just obtained (**This is not the supercomputer password or the iService password!**), this step should be down twice!      
-![image](https://hackmd.io/_uploads/rkAY1YVnC.png)
-
-6. After successfully logging in, click "Forward" and "OK."
-![image](https://hackmd.io/_uploads/H133yFVnA.png)
-![image](https://hackmd.io/_uploads/Hy3-gtVhC.png)
-
-7. After logging in, click on the top left "Activities" to see nine dots (Show Applications) appear on the left. Click on it, then select Xfce Terminal.    
-![image](https://hackmd.io/_uploads/HktElt42C.png)      
-   **If the system logs you out after a period of inactivity, you will need to repeat the login process**
+1. Click Session
+2. Click SSH
+3. Enter the login node `twnia3.nchc.org.tw` in the server field.
+4. Enter your "NCHC supercomputer account" in the username field.
+5. OK
+6. Accept \
+   <img src="https://hackmd.io/_uploads/B1vyuoMczl.png" width="60%">
+7. Enter in sequence: 1 → supercomputer password → OTP. \
+   <img src="https://hackmd.io/_uploads/rJhnZsG5fl.png" width="80%">
+8. Save password: No \
+   <img src="https://hackmd.io/_uploads/SyLKvoGqMg.png" width="60%">
+9. Terminal is opened.       
+**If the system logs you out after a period of inactivity, you will need to repeat the login process**
 
   
 ### Step 3: Opening sorted.bam file in IGV on MobaXterm
-1. In the terminal, use the `cd` command to navigate to your directory under the `/work` path on the host:
- ```
- cd /work/{your_username}
- ```
-2. Use the `pwd` command to verify if you are in the correct directory.
+1. In the terminal, use the `sh` command to start the IGV software.
+   ```
+   sh /opt/ohpc/Taiwania3/pkg/biology/IGV/IGV_v2.10.3/igv.sh
+   ```
+   >Copy and paste is disabled. Please type using your keyboard.
+3. Use the area in the upper left corner of the screen to select the corresponding reference genome.
+  ![image](https://hackmd.io/_uploads/HJa0cGxpA.png)
+    
+    (1) Select "More..." from the dropdown menu in the upper left corner.  
+      ![image](https://hackmd.io/_uploads/BJmviGeTC.jpg)
+    
+    (2) Search for hg38 and download Human hg38.
+      ![image](https://hackmd.io/_uploads/B1loizeaR.png)
+   
+    (3) Use File → Load from file in the upper left corner to import SAM and BAM files (using BAM files as an example). The files are located at the following path:   
+    - bam file:
+    `/work/username/alignment/SRR13076392.sorted.bam/`
+      ![image](https://hackmd.io/_uploads/SkeIz-Vcle.png)
+    
+    (4) In the upper left corner, you can select the chromosome and range to view (blue box), while in the upper right corner (red box), you can select the view size (you may need to zoom in to a sufficient scale to see the results). 
+      ![image](https://hackmd.io/_uploads/rkfvbOYPh.jpg)
+    
+>For example, using chr16:
+>
+>- Enter 16:175,000-178,500 in the box above (you can >adjust the range as needed). If successful, the result will be displayed as shown in the image below.
+>![image](https://hackmd.io/_uploads/r1myUreTA.png)   
+ >   
+>- Right-click in the gray area on the left side.
+>    1. Check "View as pairs."
+>    2. Select "Color alignments by → insert size and pair >orientation."
+>    3. Choose "Sort alignments by → insert size." \
+ ![image](https://hackmd.io/_uploads/Hkr0ckj80.png)
 
-> [!IMPORTANT]
-> #### Commands Lecture
-> `cd` is a commonly used command in command-line tools. It stands for change directory and is used to switch the current working directory in a terminal or command-line interface.
-> Usage of `cd`:
-> ```
-> cd [directory path]# Switch to the specified directory
-> cd ..               # Move up to the parent directory
-> cd ~                # Return to the user's home directory
-> cd                  # Used without arguments, it will switch the current directory back to the user's home directory
-> cd -                # Switch back to the previous working directory
-> ```
-> 
-> - ⚠️ **There is a "space" between the command and the path. Do not type it as "cd/work/{your_username}".** The same applies to the following code as well.
->    - Tip: Use your mouse to select and confirm if there is a space.
-> - ⚠️ If you copy the command, make sure to check if anything needs to be modified!
-> - ⚠️ Replace {your_username} entirely with your supercomputer account. **Do not include the {} symbols! Also, do not delete the /**. The same applies to the following code as well.
-
-> [!IMPORTANT]
-> #### Commands Lecture
-> ``pwd`` print working directory, is used to display the full path of the current working directory. It is especially useful when working in multi-level directories, allowing you to check your current location at any time.
+If you want to understand what each read's color represents in IGV, you can refer to the following link:
+https://igv.org/doc/desktop/#
+[User Guide > Tracks and Data Types > Alignments > Paired-end alignments > Detecting structral variants]
 
 
 ---------------------------------------------
@@ -90,19 +97,21 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 # 生物標記物與它們的產地實作課程(二)
 
 ## 本次課程主要內容
- MobaXterm下載並連結國網，開啟IGV查看sorted.bam檔案
+ 使用 MobaXterm 開啟 IGV 查看 sorted.bam 檔案
 
 ## 工具概述
- MobaXterm（本機軟體）： 全功能遠端連線終端工具，整合了 SSH 連線、SFTP 檔案傳輸介面與內建 X11 伺服器，適用於遠端指令操作與簡易圖形化介面顯示。
+ **MobaXterm (本機軟體)**：全功能遠端連線終端工具，整合了 SSH 連線、SFTP 檔案傳輸介面與內建 X11 伺服器，適用於遠端指令操作與簡易圖形化介面顯示。 \
+ **IGV (Integrative Genomics Viewer)**：一個用於視覺化和分析大規模基因組數據的工具。它被廣泛應用於基因組學、生物信息學和分子生物學領域，能夠直觀展示基因組序列、變異、轉錄數據、表觀遺傳數據等不同類型的基因數據。
+ 
 ## Step 1:下載 MobaXterm
 ### 下載 MobaXterm
-1. 下載需要用到的軟體：MobaXterm
-- 在[ThinLinc官網](https://www.cendio.com/thinlinc/download/)下載您的電腦相對應的版本並安裝即可
-![image](https://hackmd.io/_uploads/rJPh0U_dlg.png)
-
-2. 確認[國網OTP是否已啟用](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-1%E5%9C%8B%E7%B6%B2%E6%93%8D%E4%BD%9C%E8%88%87%E8%A8%AD%E5%AE%9A)
-
-### Step 2: 使用ThinLinc登入國網、進入遠端主機、開啟終端機 (terminal)
+1. 下載 MobaXterm 的壓縮檔
+  - 點擊 [here](https://drive.google.com/file/d/1rUIF8k3mm2clIrDIFA9hGMiqlRj1BXjj/view?usp=sharing) 下載 ``MobaXterm_Portable_v26.5.zip``   
+    <img src="https://hackmd.io/_uploads/SJRDCQz5fe.png" width="80%">
+2. **解壓縮** ``MobaXterm_Portable_v26.5.zip``，總共有三個檔案。點擊 ``MobaXterm_Personal_26.5`` 開啟軟體。
+    <img src="https://hackmd.io/_uploads/r17X1Vz9zg.png" width="80%">
+    
+### Step 2: 使用 MobaXterm 登入國網、進入遠端主機、開啟終端機 (terminal)
 > [!CAUTION]
 > 依照以下步驟仍無法登入時，請先確認：
 > > (1) 如果出現Permission denied (keyboard-interaction)，請確認當時是否有填寫老師給你的表單，如果沒有請立馬填寫、通知助教\
@@ -113,54 +122,56 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 >        
 > **若上述問題都排除後，仍無法登入，請通知老師or助教，千萬不要硬登！會被鎖起來！！！**      
   
-- ThinLinc登入畫面如下      
-  ![](https://i.imgur.com/XvGJFXA.png)
-
-1. 請在server輸入登入節點`twnia3.nchc.org.tw`
-2. 請在username 輸入「國網主機帳號」
-3. 請在password 輸入「**1**」，再按 enter 登入 
-   (**注意：這裡不是輸入主機密碼、不是iservice密碼！！！**)
-4. 請輸入「國網主機密碼」
-   (**注意：是輸入主機密碼、不是iservice密碼！！！**)
-    ![](https://hackmd.io/_uploads/r1zwCwdOxe.png)
-5. 手機app取得OTP請在此輸入剛剛取得的 OTP (**不是主機密碼！！！不是iservice密碼！！！**)
-    ![image](https://hackmd.io/_uploads/H1B9CPdOxl.png)
-6. 成功登入後，請點選 「Forward」、「OK」
-   ![image](https://hackmd.io/_uploads/H12_8P__gx.png)
-   ![image](https://hackmd.io/_uploads/BJzFIwOuxl.png)
-
-7. 登入之後，點選左上角 Activitives 後會看到左邊出現九個點 (Show Applications)，點進去之後，選擇 Xfce Terminal
-   ![image](https://hackmd.io/_uploads/SyT2p5I80.png)
+* MobaXterm 登入畫面如下：
+ ![image](https://hackmd.io/_uploads/r1xf1oz5Me.png)
  
-    **小提醒：如果過一陣子沒有使用，系統會自動跳出，這時候再重新操作登入流程**
+1. 點選 Session
+2. 點選 SSH
+3. 在登入節點輸入 `twnia3.nchc.org.tw`
+4. 輸入國網主機帳號名稱
+5. 點選 OK
+6. 點選 Accept \
+   <img src="https://hackmd.io/_uploads/B1vyuoMczl.png" width="60%">
+7. 按順序輸入： 1 → supercomputer password → OTP \
+   <img src="https://hackmd.io/_uploads/rJhnZsG5fl.png" width="80%">
+8. 不儲存密碼 \
+   <img src="https://hackmd.io/_uploads/SyLKvoGqMg.png" width="60%">
+9. 終端機已開啟
+**小提醒：如果過一陣子沒有使用，系統會自動跳出，這時候再重新操作登入流程**
 
-### Step 3: 進入遠端主機的資料夾 `/work`
+### Step 3: 在 MobaXterm 上開啟 IGV，查看 sorted.bam 檔案
 
-1. 在terminal利用 `cd` 指令，進入自己的主機、位於 `/work` 路徑下的空間
+1. 在開啟的終端機中, 使用 `sh` 指令開啟IGV
+   ```
+   sh /opt/ohpc/Taiwania3/pkg/biology/IGV/IGV_v2.10.3/igv.sh
+   ```
+   >本操作不支援複製貼上，請使用鍵盤手動輸入
+2. 透過畫面左上角的區域來選取相對應的reference genome
+  ![image](https://hackmd.io/_uploads/HJa0cGxpA.png)
+    
+    (1) 左上角下拉選單選取**More...**  
+      ![image](https://hackmd.io/_uploads/BJmviGeTC.jpg)
+    
+    (2) 搜尋**hg38**，下載**Human hg38**
+      ![image](https://hackmd.io/_uploads/B1loizeaR.png)
+   
+    (3) 透過左上角的**File → Load from file**可匯入sam檔及bam檔(在這以bam檔為範例)，檔案位於以下路徑：   
+    - bam file:
+    `/work/username/alignment/SRR13076392.sorted.bam/`
+      ![image](https://hackmd.io/_uploads/SkeIz-Vcle.png)
+    
+    (4) 左上角可選取要看的染色體以及範圍（藍色框），右上角（紅色框）可選取要看的大小（需要放大到足夠的級距才能看到結果） 
+      ![image](https://hackmd.io/_uploads/rkfvbOYPh.jpg)
 
-    ```
-    cd /work/{your_username}
-    ```
+> 以*chr16*為例：
+> * 請在上方輸入**16:175,000-178,500**（可自行調整級距），若成功開啟會呈現如下圖的結果
+![image](https://hackmd.io/_uploads/r1myUreTA.png)
 
-2. 使用 `pwd` 可查看所在位置是否正確
+> * 在左側灰色區域點右鍵
+>   1. 勾選 "View as pairs"
+>   2. Color alignments by → insert size and pair orientation
+>   3. Sort alignments by → insert size \
+> ![image](https://hackmd.io/_uploads/Hkr0ckj80.png)
 
-> [!IMPORTANT]
-> #### 命令小學堂
-> ``cd`` 是命令列工具中的一個常用指令，全稱為 change directory，用來在終端或命令列中切換當前工作目錄
-> `cd`的用法:
-> ```
-> cd [目錄路徑] #切換到指定目錄
-> cd ..        #返回上一級目錄
-> cd ~         #回到使用者主目錄
-> cd           #直接使用，會將當前目錄切換回使用者的主目錄
-> cd -         #這會將當前目錄切換到上一次使用的目錄
-> ```
->
-> * ⚠️ **指令跟路徑之間有"空白"，不要輸成"cd/work/{your_username}"**，後面的程式碼也是一樣
->    * 小技巧：用滑鼠選取、確認一下有無空白\
-> * ⚠️ **如果直接複製指令碼、記得看一下是否有要改的地方！！！**\
-> * ⚠️ **請將 `{your_username}` 整個改成你的主機帳號，不要把"{}"也打入！也請不要把"/"刪掉！** 後面的程式碼也是一樣
-
-> [!IMPORTANT]
-> #### 命令小學堂
-> ``pwd``print working directory，用來顯示當前所在的工作目錄的完整路徑，特別是在多層目錄中工作時，可以隨時查看當前的位置
+若你想要了解在 IGV 中每個 read 的顏色所代表的意義，可以參考以下連結(https://igv.org/doc/desktop/#)
+[User Guide > Tracks and Data Types > Alignments > Paired-end alignments > Detecting structral variants]
