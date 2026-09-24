@@ -261,6 +261,10 @@ Since the alignment process using BWA takes a long time, the following steps wil
 > ```
 
 
+> [!NOTE]
+> Due to the ... limit
+> Windows users, please refer to [this tutorial](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/Windows_IGV_on_MobaXterm.md) instead for the following steps.
+
 ### Step 1: Use ThinLinc to Open IGV
 
 1. Use ThinLinc to open the 'Xfce terminal'.
@@ -294,7 +298,7 @@ sh /opt/ohpc/Taiwania3/pkg/biology/IGV/IGV_v2.10.3/igv.sh
 >- Right-click in the gray area on the left side.
 >    1. Check "View as pairs."
 >    2. Select "Color alignments by → insert size and pair >orientation."
->    3. Choose "Sort alignments by → insert size."
+>    3. Choose "Sort alignments by → insert size." \
  ![image](https://hackmd.io/_uploads/Hkr0ckj80.png)
 
 If you want to understand what each read's color represents in IGV, you can refer to the following link:
@@ -601,7 +605,7 @@ sh /opt/ohpc/Taiwania3/pkg/biology/IGV/IGV_v2.10.3/igv.sh
 > * 在左側灰色區域點右鍵
 >   1. 勾選 "View as pairs"
 >   2. Color alignments by → insert size and pair orientation
->   3. Sort alignments by → insert size
+>   3. Sort alignments by → insert size \
 > ![image](https://hackmd.io/_uploads/Hkr0ckj80.png)
 
 若你想要了解在 IGV 中每個 read 的顏色所代表的意義，可以參考以下連結(https://igv.org/doc/desktop/#)
