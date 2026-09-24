@@ -5,19 +5,20 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 
 ## Main Content of This Course
- Using IGV on MobaXterm 
+ Using IGV on MobaXterm (Windows laptop users only!!)
 
 ## Tool Overview
- ThinLinc (Local Software): Provides a graphical interface for remote server operations, suitable for tasks requiring a desktop environment.
+ MobaXterm (Local Software): An all-in-one terminal client that provides SSH access, built-in SFTP file transfer, and an embedded X11 server for remote computing and graphical tool display.
 
-## Step 1: Download ThinLinc
-1. Download software: ThinLinc
-  - Download and install the version corresponding to your computer from the [ThinLinc official website](https://www.cendio.com/thinlinc/download/).      
-  ![image](https://hackmd.io/_uploads/rJPh0U_dlg.png)
-2. Ensure that [NCHC OTP is enabled](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-1-nchc-operations-and-settings).
+### Step 1: Download MobaXterm
+1. Download software: MobaXterm
+  - Click [here](https://drive.google.com/file/d/1rUIF8k3mm2clIrDIFA9hGMiqlRj1BXjj/view?usp=sharing) to download MobaXterm_Portable_v26.5.zip      
+  ![image](https://hackmd.io/_uploads/SJRDCQz5fe.png)
+2. **Unzip** MobaXterm_Portable_v26.5.zip, and you will see three files. Click MobaXterm_Personal_26.5 to open the software.
+  ![image](https://hackmd.io/_uploads/r17X1Vz9zg.png)
 
  
-### Step 2: Using ThinLinc to Log into NCHC, Access the Remote Host, and Open Terminal
+### Step 2: Using MobaXterm to Log into NCHC, Access the Remote Host, and Open Terminal
 > [!CAUTION]
 > If you still cannot log in after following the steps below, please check the following:
 > > (1) If you encounter "Permission denied (keyboard-interaction)", please ensure you have filled out the form provided by the instructor. If not, fill it out immediately and notify the TA.\
@@ -29,7 +30,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 > 
 > ⚠️ **If all the above issues are resolved and you still cannot log in, please notify the instructor or TA. Do not force a login attempt, as it may lock your account!**    
 
-* The ThinLinc login screen is as follows:      
+* The MobaXterm login screen is as follows:      
  ![image](https://hackmd.io/_uploads/rJmiJgtuxl.png)
  
 1. Enter the login node `twnia3.nchc.org.tw` in the server field.
@@ -53,7 +54,7 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
    **If the system logs you out after a period of inactivity, you will need to repeat the login process**
 
   
-### Step 3: Entering the Remote Host file `/work`
+### Step 3: Opening sorted.bam file in IGV on MobaXterm
 1. In the terminal, use the `cd` command to navigate to your directory under the `/work` path on the host:
  ```
  cd /work/{your_username}
@@ -89,14 +90,13 @@ Enter the OTP just obtained (**This is not the supercomputer password or the iSe
 # 生物標記物與它們的產地實作課程(二)
 
 ## 本次課程主要內容
- Thinlinc下載並連結國網
+ MobaXterm下載並連結國網，開啟IGV查看sorted.bam檔案
 
 ## 工具概述
- ThinLinc（local 軟體）：用於透過圖形化介面遠端操作伺服器，適合處理需要桌面環境的工作
-
-## Step 1:下載 ThinLinc
-### 下載ThinLinc
-1. 下載需要用到的軟體：ThinLinc
+ MobaXterm（本機軟體）： 全功能遠端連線終端工具，整合了 SSH 連線、SFTP 檔案傳輸介面與內建 X11 伺服器，適用於遠端指令操作與簡易圖形化介面顯示。
+## Step 1:下載 MobaXterm
+### 下載 MobaXterm
+1. 下載需要用到的軟體：MobaXterm
 - 在[ThinLinc官網](https://www.cendio.com/thinlinc/download/)下載您的電腦相對應的版本並安裝即可
 ![image](https://hackmd.io/_uploads/rJPh0U_dlg.png)
 
