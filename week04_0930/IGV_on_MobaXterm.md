@@ -96,6 +96,9 @@ https://igv.org/doc/desktop/#
 
 # 生物標記物與它們的產地實作課程(二)
 
+> [!IMPORTANT]
+> 本教學僅適用於 Windows 使用者
+
 ## 本次課程主要內容
  使用 MobaXterm 開啟 IGV 查看 sorted.bam 檔案
 
