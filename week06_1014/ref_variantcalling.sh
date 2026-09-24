@@ -67,7 +67,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 # set up the environment for variant calling
 # GATK_PATH=/opt/ohpc/Taiwania3/pkg/biology/GATK/gatk_v4.2.3.0
-module load Biology
+module load biology
 module load Python
 module load GATK/4.2.3.0
 
