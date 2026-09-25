@@ -6,7 +6,7 @@
 #SBATCH --mem=13g                        # 使用的記憶體量 請參考Queue資源設定
 #SBATCH -o 115Biomarker_variantcalling.out_vc.log                    # Path to the standard output file
 #SBATCH -e 115Biomarker_variantcalling.err_vc.log                    # Path to the standard error output file
-#SBATCH --mail-user=christine10608@gmail.com    #Email
+#SBATCH --mail-user=b999999999999@gmail.com    #Email
 #SBATCH --mail-type=FAIL,END
 
 
