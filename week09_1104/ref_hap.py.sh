@@ -6,7 +6,7 @@
 #SBATCH --mem=13g
 #SBATCH -o 115Biomarker_hap.out.log # Path to the standard output file
 #SBATCH -e 115Biomarker_hap.err.log
-#SBATCH --mail-user=christine10608@gmail.com  #Email
+#SBATCH --mail-user=b9999999999999@gmail.com  #Email
 #SBATCH --mail-type=FAIL,END
 
 set -v -x
