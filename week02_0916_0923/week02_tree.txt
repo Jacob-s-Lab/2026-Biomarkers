@@ -2,7 +2,7 @@
 |____work
 | |____Username
 |   |____result
-|   |____fastqc.sh
+|   | |____fastqc.sh
 |   | |____fastqc
 |   | | |____SRR13076392_1.fastq.gz
 |   | | |____SRR13076392_2.fastq.gz
