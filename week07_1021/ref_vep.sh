@@ -5,29 +5,22 @@
 #SBATCH -c 14                        # 使用的core數 請參考Queue資源設定
 #SBATCH --mem=92g                    # 使用的記憶體量 請參考Queue資源設定
 #SBATCH -o 115Biomarker_annotation.out_vc.log    # Path to the standard output file
-#SBATCH -e 115Biomarker_annotation.err_vc.log    # Path to the standard error output file
-#SBATCH --mail-user=r15455017@ntu.edu.tw         #Email
-#SBATCH --mail-type=FAIL,END
-
+#SBATCH -e 115Biomarker_annotation.err_vc.log    # Path to the standard error ouput file
+#SBATCH --mail-user=r15455017@ntu.edu.tw          # email
+#SBATCH --mail-type=FAIL,END                      # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
 
 set -v -x
 echo "start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
-############################
-# Sample / path definition #
-############################
 # Please enter the R1 & R2 file name and your username
 user=u2777445
 sample=SRR13076390
-path1=/work/${user}/alignment/alignmentR
-path2=/work/${user}/alignment/alignmentRM
-path3=/work/${user}/variantcalling/variantcallingR
+OUT_DIR=/work/${user}/2026Biomarker_TA
+DIR_VC=${OUT_DIR}/variantcalling/variantcallingR
 
-mkdir -p ${path1}
-mkdir -p ${path2}
-mkdir -p ${path3}
-
+echo "pwd for analysis reault: "
+pwd
 
 # ------------------------------------ #
 # Please don't change the script below #
@@ -35,22 +28,9 @@ mkdir -p ${path3}
 # Reference: Homo_sapiens_assembly38.fasta
 ref=/opt/ohpc/Taiwania3/pkg/biology/reference/Homo_sapiens/GATK/hg38/Homo_sapiens_assembly38.fasta
 
-#####################################
-# Convert HC bamout BAM to HC CRAM  #
-#####################################
-echo "convert HC bamout to cram: start"
-echo "$(date '+%Y-%m-%d %H:%M:%S')"
-
-samtools view -@ 2 -C -T ${ref} \
-  -o ${sample}.sorted.markdup.HC.cram \
-  ${sample}.sorted.markdup.HC.bam
-
-samtools index -@ 2 ${sample}.sorted.markdup.HC.cram
-
-echo "convert HC bamout to cram: finished"
-echo "$(date '+%Y-%m-%d %H:%M:%S')"
-
-
+###################
+# VEP annotation  #
+###################
 echo "+----------VEP----------+"
 # Create a new directory for variant calling
 DIR_VP=${OUT_DIR}/VP
@@ -75,7 +55,7 @@ set -euo pipefail
 # split multiallelic
 echo "split multiallelic: start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
-${BCFTOOLS} norm -m -any ${sample}.sorted.markdup.HC.vcf.gz \
+${BCFTOOLS} norm -m -any ${DIR_VC}/${sample}.HC.vcf.gz \
     -Oz \
     -o ${sample}.HC.normed.vcf.gz
 ${BCFTOOLS} index -t -f ${sample}.HC.normed.vcf.gz
@@ -98,7 +78,7 @@ ${VEP_PATH} --cache --offline \
     --dir_cache ${VEP_CACHE_DIR} \
     --assembly GRCh38 \
     --fasta ${VEP_FASTA} \
-    --fork 4 \
+    --fork 12 \
     -i ${INPUT_VCF} \
        --check_existing \
     --af_gnomade \
