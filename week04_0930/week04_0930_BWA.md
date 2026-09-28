@@ -261,9 +261,10 @@ Since the alignment process using BWA takes a long time, the following steps wil
 > ```
 
 
-> [!NOTE]
-> Due to the ... limit
-> Windows users, please refer to [this tutorial](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/Windows_IGV_on_MobaXterm.md) instead for the following steps.
+> [!Important]
+> **📢 Alternative Connection Method for Windows Users** \
+> Due to concurrent user limits on ThinLinc, we would like to ask all Windows users to use an alternative tool to ensure everyone can practice and run IGV smoothly during class. \
+> Please refer to the setup guide here for detailed instructions: [Windows_IGV_on_MobaXterm.md](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/Windows_IGV_on_MobaXterm.md)
 
 ### Step 1: Use ThinLinc to Open IGV
 
@@ -563,6 +564,11 @@ less 是一個用於在 Unix 和類 Unix 系統（如 Linux 和 macOS）中查�
 > 
 > rsync -avz /work/u9482849/2026Biomarkers/alignment/SRR13076390.sorted.bam.bai ./
 > ```
+
+> [!Important]
+> **📢 Windows使用者連線方式調整** \
+> 由於原定使用的 ThinLinc 系統有同時連線人數上限，為確保每位同學在課堂上都能順利操作與練習 IGV，請使用 Windows 系統的同學改用另一套替代軟體進行連線。 \
+> 詳細的安裝與設定步驟，請參考這份教學文件: [Windows_IGV_on_MobaXterm.md](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/Windows_IGV_on_MobaXterm.md)
 
 
 ### step 1使用Thinlinc、開啟IGV
