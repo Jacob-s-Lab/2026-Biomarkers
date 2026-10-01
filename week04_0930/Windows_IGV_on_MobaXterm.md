@@ -56,8 +56,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
    ```
    sh /opt/ohpc/Taiwania3/pkg/biology/IGV/IGV_v2.10.3/igv.sh
    ```
-   >Copy and paste is disabled. Please type using your keyboard.
-3. Use the area in the upper left corner of the screen to select the corresponding reference genome.
+2. Use the area in the upper left corner of the screen to select the corresponding reference genome.
   ![image](https://hackmd.io/_uploads/HJa0cGxpA.png)
     
     (1) Select "More..." from the dropdown menu in the upper left corner.  
@@ -148,7 +147,6 @@ https://igv.org/doc/desktop/#
    ```
    sh /opt/ohpc/Taiwania3/pkg/biology/IGV/IGV_v2.10.3/igv.sh
    ```
-   >本操作不支援複製貼上，請使用鍵盤手動輸入
 2. 透過畫面左上角的區域來選取相對應的reference genome
   ![image](https://hackmd.io/_uploads/HJa0cGxpA.png)
     
