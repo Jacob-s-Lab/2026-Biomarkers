@@ -10,6 +10,8 @@
 #SBATCH --mail-type=FAIL,END                      # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
 
 set -v -x
+set -euo pipefail
+
 echo "start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
@@ -22,7 +24,7 @@ DIR_VC=${OUT_DIR}/variantcalling/variantcallingR
 
 mkdir -p ${DIR_VC}
 
-echo "pwd for analysis reault: "
+echo "pwd for analysis result: "
 pwd
 
 # ------------------------------------ #
@@ -39,18 +41,18 @@ echo "Mutect2 variants calling: Start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 # set up the environment for variant calling
-# GATK_PATH=/opt/ohpc/Taiwania3/pkg/biology/GATK/gatk_v4.2.3.0
 module load biology
 module load Python
 module load GATK/4.2.3.0
-set -euo pipefail
 
-gatk Mutect2 \
+# 產出原始未過濾 VCF（供作業與 IGV 判定練習使用）
+gatk --java-options "-Xmx64g" Mutect2 \
   -R ${ref} \
   -I ${path1}/${sample}.sorted.markdup.bam \
   -O ${DIR_VC}/${sample}.M2.vcf.gz \
-  -L chr1 -L chr2 -L chr3 -L chr4 -L chr5 -L chr6 -L chr7 -L chr8 -L chr9  \
-  -L chr10 -L chr11 -L chr12 -L chr13 -L chr14 -L chr15 -L chr16 -L chr17  \
+  --native-pair-hmm-threads 6 \
+  -L chr1 -L chr2 -L chr3 -L chr4 -L chr5 -L chr6 -L chr7 -L chr8 -L chr9 \
+  -L chr10 -L chr11 -L chr12 -L chr13 -L chr14 -L chr15 -L chr16 -L chr17 \
   -L chr18 -L chr19 -L chr20 -L chr21 -L chr22
 
 echo "Mutect2 variants calling: Finished"
@@ -62,7 +64,6 @@ echo "$(date '+%Y-%m-%d %H:%M:%S')"
 # VEP annotation  #
 ###################
 echo "+----------VEP----------+"
-# Create a new directory for variant calling
 DIR_VP=${OUT_DIR}/VP
 mkdir -p ${DIR_VP}
 cd ${DIR_VP}
@@ -76,31 +77,36 @@ VEP_CACHE_DIR=/opt/ohpc/Taiwania3/pkg/biology/DATABASE/VEP/Cache
 VEP_FASTA=/opt/ohpc/Taiwania3/pkg/biology/reference/Homo_sapiens/GATK/hg38/Homo_sapiens_assembly38.fasta
 BCFTOOLS=/opt/ohpc/Taiwania3/pkg/biology/BCFtools/bcftools_v1.13/bin/bcftools
 
-module load biology
 module load Perl/5.28.1
 module load old-module pkg/Anaconda3
 export PATH=${PATH}:/opt/ohpc/Taiwania3/pkg/biology/HTSLIB/htslib_v1.13/bin:/opt/ohpc/Taiwania3/pkg/biology/SAMTOOLS/samtools_v1.15.1/bin
-set -euo pipefail
 
-# split multiallelic
-echo "split multiallelic: start"
-echo "$(date '+%Y-%m-%d %H:%M:%S')"
-${BCFTOOLS} norm -m -any ${DIR_VC}/${sample}.M2.vcf.gz \
-    -Oz \
-    -o ${sample}.M2.normed.vcf.gz
-${BCFTOOLS} index -t -f ${sample}.M2.normed.vcf.gz
-echo "Split multiallelic: Finished"
+# FilterMutectCalls 即時管線：篩選 PASS 並拆分 multiallelic（不落地中間暫存檔）
+echo "FilterMutectCalls, filter PASS, and split multiallelic: start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
+gatk --java-options "-Xmx8g" FilterMutectCalls \
+  -R ${ref} \
+  -V ${DIR_VC}/${sample}.M2.vcf.gz \
+  -O /dev/stdout \
+  | ${BCFTOOLS} view --threads 4 -f PASS -Ou \
+  | ${BCFTOOLS} norm --threads 4 -m -any -Oz -o ${sample}.M2.PASS.normed.vcf.gz
 
-INPUT_VCF=${sample}.M2.normed.vcf.gz
-SAMPLE_ID=${sample}.M2.VEP
+${BCFTOOLS} index --threads 12 -t -f ${sample}.M2.PASS.normed.vcf.gz
+
+echo "Filter PASS & Split multiallelic: Finished"
+echo "$(date '+%Y-%m-%d %H:%M:%S')"
+
+
+INPUT_VCF=${sample}.M2.PASS.normed.vcf.gz
+SAMPLE_ID=${sample}.M2.PASS.VEP
 echo "INPUT VCF directory: " ${INPUT_VCF}
 echo "sample ID: " ${SAMPLE_ID}
+
 #############################
 # Variant annotation by VEP #
 #############################
-echo "VEP annotaion: start"
+echo "VEP annotation: start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 ${VEP_PATH} --cache --offline \
@@ -110,7 +116,7 @@ ${VEP_PATH} --cache --offline \
     --fasta ${VEP_FASTA} \
     --fork 12 \
     -i ${INPUT_VCF} \
-       --check_existing \
+    --check_existing \
     --af_gnomade \
     --af_gnomadg \
     --vcf \
