@@ -30,15 +30,15 @@ abcdefg
 2. Create a folder named "variantcalling" in the "work/username" directory. 
 ```marksown=
 cd /work/username
-mkdir annotation
+mkdir VP
 ```
 3.  Enter the "variantcalling" folder.
  ```marksown=
-cd /work/username/annotation
+cd /work/username/VP
 ```
 4.  Copy the executable files needed for the class.
 ```marksown=
-rsync -avz /work/evelyn92/2025Biomarker/variantcalling.sh(待補) /work/username/annotation
+rsync -avz /work/evelyn92/2025Biomarker/variantcalling.sh(待補) /work/username/VP
 ```
 
 ### Step 2: Modify the Analysis Executable
@@ -177,15 +177,15 @@ q
 2. 在`work/username`建立variantcalling資料夾
 ```marksown=
 cd /work/username
-mkdir variantcalling
+mkdir VP
 ```
 3. 進入variantcalling資料夾
 ```marksown=
-cd /work/username/variantcalling
+cd /work/username/VP
 ```
 4. 複製上課所需執行檔
 ```marksown=
-rsync -avz /work/evelyn92/2025Biomarker/variantcalling.sh /work/username/variantcalling
+rsync -avz /work/evelyn92/2025Biomarker/variantcalling.sh /work/username/VP
 ```
 
 ### step 2 修改分析執行檔
