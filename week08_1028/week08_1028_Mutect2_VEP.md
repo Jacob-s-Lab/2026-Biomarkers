@@ -8,7 +8,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 2. Use VEP for annotation
 
 ## **The File Tree of This Course**
-abcdefg
+[week08_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/week08_tree.txt)
 
 
 > [!Important]
@@ -30,24 +30,24 @@ abcdefg
 2. Create a folder named "variantcalling" in the "work/username" directory. 
 ```marksown=
 cd /work/username
-mkdir VP
+mkdir annotation
 ```
-3.  Enter the "variantcalling" folder.
+3.  Enter the "annotation" folder.
  ```marksown=
-cd /work/username/VP
+cd /work/username/annotation
 ```
 4.  Copy the executable files needed for the class.
 ```marksown=
-rsync -avz /work/evelyn92/2025Biomarker/variantcalling.sh(待補) /work/username/VP
+rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotation
 ```
 
 ### Step 2: Modify the Analysis Executable
 1. Enter [variantcalling.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week6_1008/variantcalling.sh).
 ```
-vim m2_vep.sh
+vim vep.sh
 ```
 2. Please press <kbd>i</kbd> to modify the following code:
->The following serves as an example based on the files  `ref_m2_vep.sh` .
+>The following serves as an example based on the files  `ref_vep.sh` .
 
 ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
 
