@@ -22,21 +22,21 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 
 ### Step 1: Create a Path on the NCHC 
 1.  Enter the "variantcalling" folder.
- ```marksown=
-cd /work/username/variantcalling
-```
+      ```marksown=
+      cd /work/username/variantcalling
+      ```
 2.  Copy the executable files needed for the class.
-```marksown=
-rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh /work/username/variantcalling
-```
+      ```marksown=
+      rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh /work/username/variantcalling
+      ```
 
 ### Step 2: Modify the Analysis Executable
 1. Enter [m2_variantcalling.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/edit/main/week08_1028/ref_m2_variantcalling.sh).
-```
-vim m2_variantcalling.sh
-```
+      ```
+      vim m2_variantcalling.sh
+      ```
 2. Please press <kbd>i</kbd> to modify the following code:
->The following serves as an example based on the files  `ref_m2_variantcalling.sh` .
+      >The following serves as an example based on the files  `ref_m2_variantcalling.sh` .
 
 ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
 
@@ -59,22 +59,22 @@ vim m2_variantcalling.sh
 ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
 
 4. Enter `:wq` to save and exit.
-```
-:wq
-```
+      ```
+      :wq
+      ```
 5. Execute the script \
-(1) Enter the following command to submit the edited draft as an sbatch job:
-```
-sbatch m2_variantcalling.sh
-```
-(2) If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
+a. Enter the following command to submit the edited draft as an sbatch job:
+      ```
+      sbatch m2_variantcalling.sh
+      ```
+    b. If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
 (3) You can use the following command to check the status of the job execution:
-```
-sacct
-```
-![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
+    ```
+    sacct
+    ```
+    ![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
 
 > [!Note]
 > The expected runtime for this job is about 15 hours.\
@@ -117,26 +117,26 @@ sacct
 ### Step 1: Create a Path on the NCHC 
 1. Log in to the NCHC (For those who forgot how to log in, please refer to this [link](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)).
 2. Create a folder named "variantcalling" in the "work/username" directory. 
-```marksown=
-cd /work/username
-mkdir annotation
-```
+      ```marksown=
+      cd /work/username
+      mkdir annotation
+      ```
 3.  Enter the "annotation" folder.
- ```marksown=
-cd /work/username/annotation
-```
+      ```marksown=
+      cd /work/username/annotation
+      ```
 4.  Copy the executable files needed for the class.
-```marksown=
-rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotation
-```
+      ```marksown=
+      rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotation
+      ```
 
 ### Step 2: Modify the Analysis Executable
 1. Enter [vep.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/ref_vep.sh).
-```
-vim vep.sh
-```
+      ```
+      vim vep.sh
+      ```
 2. Please press <kbd>i</kbd> to modify the following code:
->The following serves as an example based on the files  `ref_vep.sh` .
+      >The following serves as an example based on the files  `ref_vep.sh` .
 
 ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
 
@@ -192,26 +192,26 @@ Make sure to replace `username` with your account and change the file path.
 ![Screenshot 2024-10-15 at 16.08.42](https://hackmd.io/_uploads/B1RI7js11g.png)
 
 5. Enter `:wq` to save and exit.
-```
-:wq
-```
-5. Execute the script
+      ```
+      :wq
+      ```
+6. Execute the script \
 (1) Enter the following command to submit the edited draft as an sbatch job:
-```
-sbatch vep.sh
-```
+      ```
+      sbatch vep.sh
+      ```
 (2) If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
 (3) You can use the following command to check the status of the job execution:
-```
-sacct
-```
+      ```
+      sacct
+      ```
 
 > [!Note]
 > The expected runtime for this job is about 20~40 minutes.
 
-6. After execution, the following files will be generated:
+7. After execution, the following files will be generated:
 
 - **sample.HC.normed.vcf.gz**: The VCF after splitting multiallelic variants.
 - **sample.HC.VEP.vcf**:  After VEP annotation, the file sample.HC.VEP.vcf_summary.html is generated first, followed by the output in VCF format.
