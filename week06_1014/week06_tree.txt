@@ -1,0 +1,36 @@
+/
+|____work
+| |____username
+|   |____result
+|   | |____fastqc.sh
+|   | |____fastqc
+|   | | |____SRR13076392_1.fastq.gz
+|   | | |____SRR13076392_2.fastq.gz
+|   | |____fastqc_SRR13076392
+|   | | |____SRR13076392_1_fastqc.html
+|   | | |____SRR13076392_1_fastqc.zip
+|   | | |____SRR13076392_2_fastqc.html
+|   | | |____SRR13076392_2_fastqc.zip
+|   | |____115Biomarker_FastQC.err.log
+|   | |____115Biomarker_FastQC.out.log
+|   |____alignment
+|     |____bwa.sh
+|     |____alignmentR
+|     | |____SRR13076392.bam
+|     | |____SRR13076392.sam
+|     | |____SRR13076392.sorted.bam
+|     | |____SRR13076392.sorted.bam.bai
+|     |____115Biomarker_alignment.err_al.log
+|     |____115Biomarker_alignment.out_al.log
+|     |____alignmentRM
+|     | |____SRR13076392.sorted.markdup.bam
+|     | |____SRR13076392_markdup_metrics.txt
+|     | |____SRR13076392.sorted.markdup.bai
+|   |____variantcalling
+|     |____variantcalling.sh
+|     |____variantcallingR
+|     | |____SRR13076392.HC.vcf.gz
+|     | |____SRR13076392.HC.vcf.gz.tbi
+|     |____115Biomarker_variantcalling.out_vc.log
+|     |____115Biomarker_variantcalling.err_vc.log
+|____home
