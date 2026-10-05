@@ -14,20 +14,21 @@
 |   | |____115Biomarker_FastQC.err.log
 |   | |____115Biomarker_FastQC.out.log
 |   |____alignment
-|   | |____bwa.sh
-|   | |____alignmentR
-|   | | |____SRR13076392.bam
-|   | | |____SRR13076392.sam
-|   | | |____SRR13076392.sorted.bam
-|   | | |____SRR13076392.sorted.bam.bai
-|   | |____115Biomarker_alignment.err_al.log
-|   | |____115Biomarker_alignment.out_al.log
-|   | |____alignmentRM
-|   | | |____SRR13076392.sorted.markdup.bam
-|   | | |____SRR13076392_markdup_metrics.txt
-|   | | |____SRR13076392.sorted.markdup.bai
+|     |____bwa.sh
+|     |____alignmentR
+|     | |____SRR13076392.bam
+|     | |____SRR13076392.sam
+|     | |____SRR13076392.sorted.bam
+|     | |____SRR13076392.sorted.bam.bai
+|     |____115Biomarker_alignment.err_al.log
+|     |____115Biomarker_alignment.out_al.log
+|     |____alignmentRM
+|     | |____SRR13076392.sorted.markdup.bam
+|     | |____SRR13076392_markdup_metrics.txt
+|     | |____SRR13076392.sorted.markdup.bai
 |   |____variantcalling
 |     |____variantcalling.sh
+|     |____m2_variantcalling.sh
 |     |____variantcallingR
 |     | |____SRR13076392.HC.vcf.gz
 |     | |____SRR13076392.HC.vcf.gz.tbi
@@ -36,14 +37,18 @@
 |     | |____SRR13076392.M2.vcf.gz.tbi
 |     |____115Biomarker_variantcalling.out_vc.log
 |     |____115Biomarker_variantcalling.err_vc.log
-|   |____VP
-|     |____m2_vep.sh
-|     |____SRR13076392.M2.normed.vcf.gz
-|     |____SRR13076392.M2.normed.vcf.gz.tbi
-|     |____SRR13076392.M2.VEP_filtered.tsv
-|     |____SRR13076392.M2.VEP.tsv
-|     |____SRR13076392.M2.VEP.vcf
-|     |____SRR13076392.M2.VEP.vcf_summary.html
-|     |____115Biomarker_m2_annotation.out.log
-|     |____115Biomarker_m2_annotation.err.log
+|     |____115Biomarker_m2_variantcalling.out_vc.log
+|     |____115Biomarker_m2_variantcalling.err_vc.log
+|   |____annotation
+|     |____vep.sh
+|     |____annotationR
+|     | |____SRR13076392.HC.normed.vcf.gz
+|     | |____SRR13076392.HC.normed.vcf.gz.tbi
+|     | |____SRR13076392.HC.VEP_filtered.tsv
+|     | |____SRR13076392.HC.VEP.tsv
+|     | |____SRR13076392.HC.VEP.vcf
+|     | |____SRR13076392.HC.VEP.vcf_summary.html
+|     | |____SRR13076392.HC.VEP.vcf_warnings.txt
+|     |____115Biomarker_annotation.out.log
+|     |____115Biomarker_annotation.err.log
 |____home
