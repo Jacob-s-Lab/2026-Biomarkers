@@ -38,39 +38,39 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 2. Please press <kbd>i</kbd> to modify the following code:
       >The following serves as an example based on the files  `ref_m2_variantcalling.sh` .
 
-![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
+    ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
 
-```
-#!/usr/bin/sh
-#SBATCH -A ACD115175           # Account name/project number
-#SBATCH -J m2_variantcalling      # Job name
-#SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
-#SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
-#SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
-#SBATCH -o 115Biomarker_m2_variantcalling.out.log          # Path to the standard output file
-#SBATCH -e 115Biomarker_m2_variantcalling.err.log          # Path to the standard error ouput file
-#SBATCH --mail-user=           # e-mail
-#SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
-# For NCHC usage
-```
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J m2_variantcalling      # Job name
+    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
+    #SBATCH -o 115Biomarker_m2_variantcalling.out.log          # Path to the standard output file
+    #SBATCH -e 115Biomarker_m2_variantcalling.err.log          # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
 
 3. Make sure to replace `username` with your account and change the file path.
 
-![image](https://hackmd.io/_uploads/BJTXESBilx.png)
+    ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
 
 4. Enter `:wq` to save and exit.
       ```
       :wq
       ```
 5. Execute the script \
-a. Enter the following command to submit the edited draft as an sbatch job:
+    a. Enter the following command to submit the edited draft as an sbatch job:
       ```
       sbatch m2_variantcalling.sh
       ```
     b. If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
-(3) You can use the following command to check the status of the job execution:
+    c. You can use the following command to check the status of the job execution:
     ```
     sacct
     ```
@@ -81,25 +81,25 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 > Step 6 should be done after job finished.
 
 6. View Mutect2 Results: In the variantcallingR folder, there will be a M2.vcf file. Check the file's integrity, and the detailed steps are listed below: \
-(1) Open the variantcallingR folder: You can use a relative or absolute path.
+a. Open the variantcallingR folder: You can use a relative or absolute path.
 
    ```
    cd variantcallingR                                 # Use a relative path
    cd /work/username/variantcalling/variantcallingR   # Or use an absolute path
    ```
-(2) Confirm the file exists:
+    b. Confirm the file exists:
 
    ```
    ls
    ```
-(3) Verify the file's integrity:
+    c. Verify the file's integrity:
    ```
    less {ASSIGNED_FILE}.M2.vcf.gz
    ```
-(4) Use <kbd>Shift</kbd> + <kbd>g</kbd> to view the bottom of the file.
+    d. Use <kbd>Shift</kbd> + <kbd>g</kbd> to view the bottom of the file.
    ![image](https://hackmd.io/_uploads/SJofG57C0.png)
 
-(5) Exit:
+    e. Exit:
    ```
    q
    ```
@@ -138,25 +138,25 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 2. Please press <kbd>i</kbd> to modify the following code:
       >The following serves as an example based on the files  `ref_vep.sh` .
 
-![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
+    ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
 
-```
-#!/usr/bin/sh
-#SBATCH -A ACD115175           # Account name/project number
-#SBATCH -J annotation      # Job name
-#SBATCH -p ngscourse92G           # Partition Name (equivalent to PBS's -q Queue name)
-#SBATCH -c 14                   # Number of cores used (refer to Queue resource settings)
-#SBATCH --mem=92g              # Amount of memory used (refer to Queue resource settings)
-#SBATCH -o 115Biomarker_annotation.out.log          # Path to the standard output file
-#SBATCH -e 115Biomarker_annotation.err.log          # Path to the standard error ouput file
-#SBATCH --mail-user=           # e-mail
-#SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
-# For NCHC usage
-```
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J annotation      # Job name
+    #SBATCH -p ngscourse92G           # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 14                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH --mem=92g              # Amount of memory used (refer to Queue resource settings)
+    #SBATCH -o 115Biomarker_annotation.out.log          # Path to the standard output file
+    #SBATCH -e 115Biomarker_annotation.err.log          # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
 
-Make sure to replace `username` with your account and change the file path.
+    Make sure to replace `username` with your account and change the file path.
 
-![image](https://hackmd.io/_uploads/BJTXESBilx.png)
+    ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
 
 
 3. Introduction to commands
@@ -166,44 +166,44 @@ Make sure to replace `username` with your account and change the file path.
 * Split multiallelic and normalized  \
 ![image](https://hackmd.io/_uploads/rJgNiYo2gg.png)
 
-![Screenshot 2024-10-15 at 15.53.38](https://hackmd.io/_uploads/SJockiiyJe.png)
+    ![Screenshot 2024-10-15 at 15.53.38](https://hackmd.io/_uploads/SJockiiyJe.png)
 
-![Screenshot 2024-10-15 at 15.54.49](https://hackmd.io/_uploads/H10RyisJkx.png)
+    ![Screenshot 2024-10-15 at 15.54.49](https://hackmd.io/_uploads/H10RyisJkx.png)
 
-![Screenshot 2024-10-15 at 15.56.42](https://hackmd.io/_uploads/Sy5Ixjj11g.png)
+    ![Screenshot 2024-10-15 at 15.56.42](https://hackmd.io/_uploads/Sy5Ixjj11g.png)
 
-![Screenshot 2024-10-15 at 16.31.47](https://hackmd.io/_uploads/SJp9uiikJx.png)
+    ![Screenshot 2024-10-15 at 16.31.47](https://hackmd.io/_uploads/SJp9uiikJx.png)
 
-[https://genome.sph.umich.edu/wiki/Variant_Normalization](https://)
+    [https://genome.sph.umich.edu/wiki/Variant_Normalization](https://)
 
 * VEP annotation
 
-![image](https://hackmd.io/_uploads/HyGb3Ki3xl.png)
+    ![image](https://hackmd.io/_uploads/HyGb3Ki3xl.png)
 
 * Original VEP output
 
-![Screenshot 2024-10-15 at 16.09.19](https://hackmd.io/_uploads/SyxcSmis1kg.png)
+    ![Screenshot 2024-10-15 at 16.09.19](https://hackmd.io/_uploads/SyxcSmis1kg.png)
 
 
 
 * Format into TSV
 ![Screenshot 2024-10-15 at 16.00.36](https://hackmd.io/_uploads/H1ULbso1kg.png)
 
-![Screenshot 2024-10-15 at 16.08.42](https://hackmd.io/_uploads/B1RI7js11g.png)
+    ![Screenshot 2024-10-15 at 16.08.42](https://hackmd.io/_uploads/B1RI7js11g.png)
 
 5. Enter `:wq` to save and exit.
       ```
       :wq
       ```
 6. Execute the script \
-(1) Enter the following command to submit the edited draft as an sbatch job:
+a. Enter the following command to submit the edited draft as an sbatch job:
       ```
       sbatch vep.sh
       ```
-(2) If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
+    b. If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
-(3) You can use the following command to check the status of the job execution:
+    c. You can use the following command to check the status of the job execution:
       ```
       sacct
       ```
@@ -227,19 +227,19 @@ Make sure to replace `username` with your account and change the file path.
 > rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.VEP_filtered.tsv ./  改成雲端下載連結？
 > ```  
     
-(1) **CHROM**: The chromosome. \
-(2) **POS**: The position of the variant. \
-(3) **REF**: The reference allele. \
-(4) **ALT**: The alternate allele. \
-(5) **DP**: Sequencing depth. \
-(6) **Allele**: Same as ALT. \
-(7) **Consequence**: The effect of the variant on the alternative allele.(https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html) \
-(8) **SYMBOL**: The official gene symbol. \
-(9) **Gene**: The ID of the affected gene (e.g., ENSG00000223972). \
-(10)**gnomADe_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Exome database. \
-(11)**gnomADg_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Genome database (if available). \
-(12)**CLIN_SIG**: Clinical significance records in ClinVar database. \
-(13)**TWB_official_SNV_indel_AF**: The allele frequency of this variant in the Taiwan Biobank.(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
+1. **CHROM**: The chromosome.
+2. **POS**: The position of the variant.
+3. **REF**: The reference allele.
+4. **ALT**: The alternate allele.
+5. **DP**: Sequencing depth.
+6. **Allele**: Same as ALT.
+7. **Consequence**: The effect of the variant on the alternative allele.(https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html)
+8. **SYMBOL**: The official gene symbol.
+9. **Gene**: The ID of the affected gene (e.g., ENSG00000223972).
+10. **gnomADe_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Exome database.
+11. **gnomADg_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Genome database (if available).
+12. **CLIN_SIG**: Clinical significance records in ClinVar database.
+13. **TWB_official_SNV_indel_AF**: The allele frequency of this variant in the Taiwan Biobank.(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
 
 ------------------------------------
 # 生物標記物與它們的產地實作課程(五)
