@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 #SBATCH -A ACD115175                # Account name/project number
-#SBATCH -J variantcalling                # Job name
+#SBATCH -J m2_variantcalling                # Job name
 #SBATCH -p ngscourse                # Partition Name 等同PBS裡面的 -q Queue name
 #SBATCH -c 2                        # 使用的core數 請參考Queue資源設定
 #SBATCH --mem=13g                   # 使用的記憶體量 請參考Queue資源設定
