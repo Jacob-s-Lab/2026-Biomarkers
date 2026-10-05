@@ -1,9 +1,9 @@
 #!/usr/bin/sh
 #SBATCH -A ACD115175                     # Account name/project number
 #SBATCH -J variantcalling                # Job name
-#SBATCH -p ngscourse                     # Partition Name 等同PBS裡面的 -q Queue name
-#SBATCH -c 2                             # 使用的core數 請參考Queue資源設定
-#SBATCH --mem=13g                        # 使用的記憶體量 請參考Queue資源設定
+#SBATCH -p ngscourse                     # Partition Name (equivalent to PBS's -q Queue name)
+#SBATCH -c 2                             # Number of cores used (refer to Queue resource settings)
+#SBATCH --mem=13g                        # Amount of memory used (refer to Queue resource settings)
 #SBATCH -o 115Biomarker_variantcalling.out_vc.log                    # Path to the standard output file
 #SBATCH -e 115Biomarker_variantcalling.err_vc.log                    # Path to the standard error output file
 #SBATCH --mail-user=b999999999999@gmail.com    #Email
