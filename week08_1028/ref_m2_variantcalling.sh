@@ -19,8 +19,8 @@ echo "$(date '+%Y-%m-%d %H:%M:%S')"
 # Sample / path definition #
 ############################
 # Please enter the R1 & R2 file name and your username
-user=SUPERCOMPUTER_ACCOUNT
-sample=ASSIGNED_FILE
+user=u2777445
+sample=SRR13076390
 path1=/work/${user}/alignment/alignmentRM
 path2=/work/${user}/variantcalling/variantcallingR
 
