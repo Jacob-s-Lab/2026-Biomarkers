@@ -17,12 +17,6 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 > - The tool used in this section is Mutect2, GATK’s specialized somatic variant calling tool designed for detecting single nucleotide variants (SNVs) and small Indels in tumor samples. Unlike HaplotypeCaller which models germline ploidy, Mutect2 is optimized to detect low-frequency somatic mutations, even in tumor-only mode. \
 > [https://gatk.broadinstitute.org/hc/en-us](https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2)
 
-> [!Important]
-> #### What is Annotation?
-> **Annotation** refers to the functional annotation of biological sequences (such as DNA, RNA, and proteins) to help interpret their biological significance. It primarily includes structural information, used to mark the location of genes, such as exons and introns, and functional information, used to predict the biological function of genes or the role of proteins. This helps us understand the relationship between structure and function.
-> 
-> #### Introduction to VEP
-> **VEP (Variant Effect Predictor)** is a tool developed by Ensembl, used to analyze genetic information, especially to assess the impact of different variants in genes (such as SNVs, insertions, deletions, and structural variants) on biological function. It is particularly suitable for annotation purposes.
 
 ## Using GATK Mutect2 for somatic Variant Calling
 
@@ -110,6 +104,12 @@ sacct
    q
    ```
 
+> [!Important]
+> #### What is Annotation?
+> **Annotation** refers to the functional annotation of biological sequences (such as DNA, RNA, and proteins) to help interpret their biological significance. It primarily includes structural information, used to mark the location of genes, such as exons and introns, and functional information, used to predict the biological function of genes or the role of proteins. This helps us understand the relationship between structure and function.
+> 
+> #### Introduction to VEP
+> **VEP (Variant Effect Predictor)** is a tool developed by Ensembl, used to analyze genetic information, especially to assess the impact of different variants in genes (such as SNVs, insertions, deletions, and structural variants) on biological function. It is particularly suitable for annotation purposes.
 
 
 ## Use VEP for annotation
@@ -131,7 +131,7 @@ rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotati
 ```
 
 ### Step 2: Modify the Analysis Executable
-1. Enter [variantcalling.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week6_1008/variantcalling.sh).
+1. Enter [vep.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/ref_vep.sh).
 ```
 vim vep.sh
 ```
@@ -198,18 +198,18 @@ sacct
 > rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.VEP_filtered.tsv ./  改成雲端下載連結？
 > ```  
     
-(1) **CHROM**: The chromosome.
-(2) **POS**: The position of the variant.
-(3) **REF**: The reference allele.
-(4) **ALT**: The alternate allele.
-(5) **DP**: Sequencing depth.
-(6) **Allele**: Same as ALT.
-(7) **Consequence**: The effect of the variant on the alternative allele.(https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html)
-(8) **SYMBOL**: The official gene symbol.
-(9) **Gene**: The ID of the affected gene (e.g., ENSG00000223972).
-(10)**gnomADe_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Exome database.
-(11)**gnomADg_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Genome database (if available).
-(12)**CLIN_SIG**: Clinical significance records in ClinVar database.
+(1) **CHROM**: The chromosome. \
+(2) **POS**: The position of the variant. \
+(3) **REF**: The reference allele. \
+(4) **ALT**: The alternate allele. \
+(5) **DP**: Sequencing depth. \
+(6) **Allele**: Same as ALT. \
+(7) **Consequence**: The effect of the variant on the alternative allele.(https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html) \
+(8) **SYMBOL**: The official gene symbol. \
+(9) **Gene**: The ID of the affected gene (e.g., ENSG00000223972). \
+(10)**gnomADe_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Exome database. \
+(11)**gnomADg_EAS_AF**: The allele frequency of this variant in the East Asian population in the gnomAD Genome database (if available). \
+(12)**CLIN_SIG**: Clinical significance records in ClinVar database. \
 (13)**TWB_official_SNV_indel_AF**: The allele frequency of this variant in the Taiwan Biobank.(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
 
 ------------------------------------
