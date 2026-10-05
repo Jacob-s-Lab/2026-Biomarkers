@@ -154,17 +154,44 @@ vim vep.sh
 # For NCHC usage
 ```
 
-3. Make sure to replace `username` with your account and change the file path.
+Make sure to replace `username` with your account and change the file path.
 
 ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
 
-> [!Warning]
-> #### The step we add today: Variant calling
-> ![image](https://hackmd.io/_uploads/ry55CpE6xe.png)
 
-(1)指令介紹...
+3. Introduction to commands
+* VEP PATH
+![image](https://hackmd.io/_uploads/rJMI4jDixl.png)
 
-4. Enter `:wq` to save and exit.
+* Split multiallelic and normalized  \
+![image](https://hackmd.io/_uploads/rJgNiYo2gg.png)
+
+![Screenshot 2024-10-15 at 15.53.38](https://hackmd.io/_uploads/SJockiiyJe.png)
+
+![Screenshot 2024-10-15 at 15.54.49](https://hackmd.io/_uploads/H10RyisJkx.png)
+
+![Screenshot 2024-10-15 at 15.56.42](https://hackmd.io/_uploads/Sy5Ixjj11g.png)
+
+![Screenshot 2024-10-15 at 16.31.47](https://hackmd.io/_uploads/SJp9uiikJx.png)
+
+[https://genome.sph.umich.edu/wiki/Variant_Normalization](https://)
+
+* VEP annotation
+
+![image](https://hackmd.io/_uploads/HyGb3Ki3xl.png)
+
+* Original VEP output
+
+![Screenshot 2024-10-15 at 16.09.19](https://hackmd.io/_uploads/SyxcSmis1kg.png)
+
+
+
+* Format into TSV
+![Screenshot 2024-10-15 at 16.00.36](https://hackmd.io/_uploads/H1ULbso1kg.png)
+
+![Screenshot 2024-10-15 at 16.08.42](https://hackmd.io/_uploads/B1RI7js11g.png)
+
+5. Enter `:wq` to save and exit.
 ```
 :wq
 ```
@@ -180,14 +207,16 @@ sbatch vep.sh
 ```
 sacct
 ```
-![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
 
 > [!Note]
-> The expected runtime for this job is about 20~40 minutes.\
-> Step 6 should be done after job finished.
+> The expected runtime for this job is about 20~40 minutes.
 
-6. View Annotation Results: In the annotation folder, there will be a M2.VEP_filtered.vcf file. Check the file's integrity, and the detailed steps are listed below:
-123
+6. After execution, the following files will be generated:
+
+- **sample.HC.normed.vcf.gz**: The VCF after splitting multiallelic variants.
+- **sample.HC.VEP.vcf**:  After VEP annotation, the file sample.HC.VEP.vcf_summary.html is generated first, followed by the output in VCF format.
+- **sample.HC.VEP.vcf_warnings.txt**: Files containing statistical summaries and warnings after VEP annotation.
+- **sample.HC.VEP.tsv, sample.HC.VEP_filtered.tsv**: The VCF format converted to TSV format, with some fields removed in the filtered version. Each line represents a variant, and different transcripts are separated by a comma (",").
 
 ## Explanation of TSV Files
 
