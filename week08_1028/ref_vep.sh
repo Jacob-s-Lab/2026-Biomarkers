@@ -39,7 +39,7 @@ module load SAMTOOLS/1.18
 ###################
 echo "+----------VEP----------+"
 # Create a new directory for variant calling
-DIR_VP=${OUT_DIR}/annotation
+DIR_VP=${OUT_DIR}/annotation/annotationR
 mkdir -p ${DIR_VP}
 cd ${DIR_VP}
 
