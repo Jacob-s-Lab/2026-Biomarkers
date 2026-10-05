@@ -1,5 +1,5 @@
-Date：20251028
-Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-V) / [中文](#生物標記物與它們的產地實作課程五) 
+Date：20261028 \
+Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-v) / [中文](#生物標記物與它們的產地實作課程五) 
 
 # Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part V)
 
@@ -27,40 +27,34 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 ## Using GATK Mutect2 for somatic Variant Calling
 
 ### Step 1: Create a Path on the NCHC 
-1. Log in to the NCHC (For those who forgot how to log in, please refer to this [link](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)).
-2. Create a folder named "variantcalling" in the "work/username" directory. 
-```marksown=
-cd /work/username
-mkdir annotation
-```
-3.  Enter the "annotation" folder.
+1.  Enter the "variantcalling" folder.
  ```marksown=
-cd /work/username/annotation
+cd /work/username/variantcalling
 ```
-4.  Copy the executable files needed for the class.
+2.  Copy the executable files needed for the class.
 ```marksown=
-rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotation
+rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh /work/username/variantcalling
 ```
 
 ### Step 2: Modify the Analysis Executable
-1. Enter [variantcalling.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week6_1008/variantcalling.sh).
+1. Enter [m2_variantcalling.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/edit/main/week08_1028/ref_m2_variantcalling.sh).
 ```
-vim vep.sh
+vim m2_variantcalling.sh
 ```
 2. Please press <kbd>i</kbd> to modify the following code:
->The following serves as an example based on the files  `ref_vep.sh` .
+>The following serves as an example based on the files  `ref_m2_variantcalling.sh` .
 
 ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
 
 ```
 #!/usr/bin/sh
 #SBATCH -A ACD115175           # Account name/project number
-#SBATCH -J variantcalling_M2+annotation      # Job name
-#SBATCH -p ngscourse92G           # Partition Name (equivalent to PBS's -q Queue name)
-#SBATCH -c 14                   # Number of cores used (refer to Queue resource settings)
-#SBATCH --mem=92g              # Amount of memory used (refer to Queue resource settings)
-#SBATCH -o 115Biomarker_m2_annotation.out.log          # Path to the standard output file
-#SBATCH -e 115Biomarker_m2_annotation.err.log          # Path to the standard error ouput file
+#SBATCH -J m2_variantcalling      # Job name
+#SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
+#SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
+#SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
+#SBATCH -o 115Biomarker_m2_variantcalling.out.log          # Path to the standard output file
+#SBATCH -e 115Biomarker_m2_variantcalling.err.log          # Path to the standard error ouput file
 #SBATCH --mail-user=           # e-mail
 #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
 # For NCHC usage
@@ -69,6 +63,54 @@ vim vep.sh
 3. Make sure to replace `username` with your account and change the file path.
 
 ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
+
+4. Enter `:wq` to save and exit.
+```
+:wq
+```
+5. Execute the script \
+(1) Enter the following command to submit the edited draft as an sbatch job:
+```
+sbatch m2_variantcalling.sh
+```
+(2) If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
+![image](https://hackmd.io/_uploads/HymfEzrRR.png)
+
+(3) You can use the following command to check the status of the job execution:
+```
+sacct
+```
+![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
+
+> [!Note]
+> The expected runtime for this job is about 15 hours.\
+> Step 6 should be done after job finished.
+
+6. View Mutect2 Results: In the variantcallingR folder, there will be a M2.vcf file. Check the file's integrity, and the detailed steps are listed below: \
+(1) Open the variantcallingR folder: You can use a relative or absolute path.
+
+   ```
+   cd variantcallingR                                 # Use a relative path
+   cd /work/username/variantcalling/variantcallingR   # Or use an absolute path
+   ```
+(2) Confirm the file exists:
+
+   ```
+   ls
+   ```
+(3) Verify the file's integrity:
+   ```
+   less {ASSIGNED_FILE}.M2.vcf.gz
+   ```
+(4) Use <kbd>Shift</kbd> + <kbd>g</kbd> to view the bottom of the file.
+   ![image](https://hackmd.io/_uploads/SJofG57C0.png)
+
+(5) Exit:
+   ```
+   q
+   ```
+
+
 
 ## Use VEP for annotation
 
@@ -101,12 +143,12 @@ vim vep.sh
 ```
 #!/usr/bin/sh
 #SBATCH -A ACD115175           # Account name/project number
-#SBATCH -J variantcalling_M2+annotation      # Job name
+#SBATCH -J annotation      # Job name
 #SBATCH -p ngscourse92G           # Partition Name (equivalent to PBS's -q Queue name)
 #SBATCH -c 14                   # Number of cores used (refer to Queue resource settings)
 #SBATCH --mem=92g              # Amount of memory used (refer to Queue resource settings)
-#SBATCH -o 115Biomarker_m2_annotation.out.log          # Path to the standard output file
-#SBATCH -e 115Biomarker_m2_annotation.err.log          # Path to the standard error ouput file
+#SBATCH -o 115Biomarker_annotation.out.log          # Path to the standard output file
+#SBATCH -e 115Biomarker_annotation.err.log          # Path to the standard error ouput file
 #SBATCH --mail-user=           # e-mail
 #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
 # For NCHC usage
@@ -129,7 +171,7 @@ vim vep.sh
 5. Execute the script
 (1) Enter the following command to submit the edited draft as an sbatch job:
 ```
-sbatch m2_vep.sh
+sbatch vep.sh
 ```
 (2) If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
@@ -141,33 +183,10 @@ sacct
 ![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
 
 > [!Note]
-> The expected runtime for this job is about 2 hours.\
-> Step 6 & Step 7 should be done after job finished.
+> The expected runtime for this job is about 20~40 minutes.\
+> Step 6 should be done after job finished.
 
-6. View Mutect2 Results: In the variantcallingR folder, there will be a M2.vcf file. Check the file's integrity, and the detailed steps are listed below:
-(1) Open the variantcallingR folder: You can use a relative or absolute path.
-
-```
-cd variantcallingR                                 # Use a relative path
-cd /work/username/variantcalling/variantcallingR   # Or use an absolute path
-```
-(2) Confirm the file exists:
-
-```
-ls
-```
-(3) Verify the file's integrity:
-```
-less {ASSIGNED_FILE}.M2.vcf.gz
-```
-(4) Use <kbd>Shift</kbd> + <kbd>g</kbd> to view the bottom of the file.
-![image](https://hackmd.io/_uploads/SJofG57C0.png)
-
-(5) Exit:
-```
-q
-```
-7. View Annotation Results: In the annotation folder, there will be a M2.VEP_filtered.vcf file. Check the file's integrity, and the detailed steps are listed below:
+6. View Annotation Results: In the annotation folder, there will be a M2.VEP_filtered.vcf file. Check the file's integrity, and the detailed steps are listed below:
 123
 
 ## Explanation of TSV Files
