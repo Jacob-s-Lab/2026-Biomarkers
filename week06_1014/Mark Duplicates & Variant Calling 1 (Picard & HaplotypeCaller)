@@ -51,8 +51,6 @@ vim variantcalling.sh
 2. Please press <kbd>i</kbd> to modify the following code:
 >The following serves as an example based on the files  `variantcalling.sh` .
 
-![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
-
 ```
 #!/usr/bin/sh
 #SBATCH -A ACD114093           # Account name/project number
@@ -188,11 +186,6 @@ vim variantcalling.sh
 
 2. 請輸入 <kbd>i</kbd> 更改以下程式碼：
 > 以下以`variantcalling.sh`做為示範 (格式請依照裡面給你的範例，副檔名不用寫進去)
-
-
-![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
-
-
 
 ```
 #!/usr/bin/sh
