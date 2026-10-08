@@ -70,13 +70,13 @@ vim variantcalling.sh
 
 ```
 #!/usr/bin/sh
-#SBATCH -A ACD114093           # Account name/project number
+#SBATCH -A ACD115175           # Account name/project number
 #SBATCH -J variantcalling      # Job name
 #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
 #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
 #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
-#SBATCH -o out_vc.log          # Path to the standard output file
-#SBATCH -e err_vc.log          # Path to the standard error ouput file
+#SBATCH -o 115Biomarker_variantcalling.out_vc.log          # Path to the standard output file
+#SBATCH -e 115Biomarker_variantcalling.err_vc.log          # Path to the standard error ouput file
 #SBATCH --mail-user=           # e-mail
 #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
 # For NCHC usage
