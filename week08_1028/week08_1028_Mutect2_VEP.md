@@ -20,7 +20,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 
 ## Using GATK Mutect2 for somatic Variant Calling
 
-### Step 1: Create a Path on the NCHC 
+### Step 1: Enter Directory and Copy Script 
 1.  Enter the "variantcalling" folder.
       ```marksown=
       cd /work/username/variantcalling
