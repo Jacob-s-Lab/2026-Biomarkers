@@ -87,7 +87,10 @@ vim variantcalling.sh
 ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
 
 > [!Warning]
-> #### The step we add today: Variant calling
+> #### The step we add today:
+> ##### Mark Duplicates
+> ![image](https://hackmd.io/_uploads/rk9gQWgsgg.png)
+> ##### Variant calling
 > ![image](https://hackmd.io/_uploads/ry55CpE6xe.png)
 
 
@@ -300,7 +303,10 @@ vim variantcalling.sh
 ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
 
 > [!Warning]
-> #### 本次加入的步驟:Variant calling
+> #### 本次加入的步驟:
+> ##### Mark Duplicates
+> ![image](https://hackmd.io/_uploads/rk9gQWgsgg.png)
+> ##### Variant calling
 > ![螢幕擷取畫面 2025-09-11 180745](https://hackmd.io/_uploads/ry55CpE6xe.png)
 
 4. 輸入`:wq`儲存離開
