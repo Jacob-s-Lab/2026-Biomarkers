@@ -61,7 +61,7 @@ rsync -avz /work/u9482849/2026Biomarkers/variantcalling.sh ./
 ```
 
 ### Step 2: Modify the Analysis Executable
-1. Enter [variantcalling.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week6_1008/variantcalling.sh).
+1. Enter [variantcalling.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week06_1014/ref_variantcalling.sh).
 ```
 vim variantcalling.sh
 ```
@@ -276,7 +276,7 @@ rsync -avz /work/u9482849/2026Biomarkers/variantcalling.sh ./
 ### step 2 修改分析執行檔
 
 
-1. 進入 [variantcalling.sh](week06_1014/ref_variantcalling.sh).
+1. 進入 [variantcalling.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week06_1014/ref_variantcalling.sh).
 ```
 vim variantcalling.sh
 ```
