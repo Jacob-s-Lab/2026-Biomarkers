@@ -38,25 +38,25 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 2. Please press <kbd>i</kbd> to modify the following code:
       >The following serves as an example based on the files  `ref_m2_variantcalling.sh` .
 
-    ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
+   <img src="https://hackmd.io/_uploads/SktA2h3sfx.png" width="75%">
 
     ```
     #!/usr/bin/sh
     #SBATCH -A ACD115175           # Account name/project number
-    #SBATCH -J m2_variantcalling      # Job name
+    #SBATCH -J m2_variantcalling   # Job name
     #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
     #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
     #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
-    #SBATCH -o 115Biomarker_m2_variantcalling.out.log          # Path to the standard output file
-    #SBATCH -e 115Biomarker_m2_variantcalling.err.log          # Path to the standard error ouput file
+    #SBATCH -o 115Biomarker_m2_variantcalling.out.log         # Path to the standard output file
+    #SBATCH -e 115Biomarker_m2_variantcalling.err.log         # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
     #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
     ```
 
-3. Make sure to replace `username` with your account and change the file path.
+3. Make sure to replace `SUPERCOMPUTER_ACCOUNT` with your supercomputer username and `ASSIGNED_FILE` with your assigned sample ID.
 
-    ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
+   <img src="https://hackmd.io/_uploads/S1jn0h2sMl.png" width="50%">
 
 4. Enter `:wq` to save and exit.
       ```
@@ -138,7 +138,7 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
 2. Please press <kbd>i</kbd> to modify the following code:
       >The following serves as an example based on the files  `ref_vep.sh` .
 
-    ![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
+    <img src="https://hackmd.io/_uploads/SyGeSphoMx.png" width="85%">
 
     ```
     #!/usr/bin/sh
@@ -154,9 +154,9 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
     # For NCHC usage
     ```
 
-    Make sure to replace `username` with your account and change the file path.
+    Make sure to replace `SUPERCOMPUTER_ACCOUNT` with your supercomputer username and `ASSIGNED_FILE` with your assigned sample ID.
 
-    ![image](https://hackmd.io/_uploads/BJTXESBilx.png)
+    <img src="https://hackmd.io/_uploads/BkyOfp3ize.png" width="60%">
 
 
 3. Introduction to commands
@@ -191,11 +191,11 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
 
     ![Screenshot 2024-10-15 at 16.08.42](https://hackmd.io/_uploads/B1RI7js11g.png)
 
-5. Enter `:wq` to save and exit.
+4. Enter `:wq` to save and exit.
       ```
       :wq
       ```
-6. Execute the script \
+5. Execute the script \
 a. Enter the following command to submit the edited draft as an sbatch job:
       ```
       sbatch vep.sh
@@ -211,7 +211,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 > [!Note]
 > The expected runtime for this job is about 20~40 minutes.
 
-7. After execution, the following files will be generated:
+6. After execution, the following files will be generated:
 
 - **sample.HC.normed.vcf.gz**: The VCF after splitting multiallelic variants.
 - **sample.HC.VEP.vcf**:  After VEP annotation, the file sample.HC.VEP.vcf_summary.html is generated first, followed by the output in VCF format.
