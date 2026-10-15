@@ -4,8 +4,8 @@
 #SBATCH -p ngscourse92G              # Partition Name 等同PBS裡面的 -q Queue name
 #SBATCH -c 14                        # 使用的core數 請參考Queue資源設定
 #SBATCH --mem=92g                    # 使用的記憶體量 請參考Queue資源設定
-#SBATCH -o 115Biomarker_annotation.out.log    # Path to the standard output file
-#SBATCH -e 115Biomarker_annotation.err.log    # Path to the standard error ouput file
+#SBATCH -o 115Biomarker_annotation_HC.out.log    # Path to the standard output file
+#SBATCH -e 115Biomarker_annotation_HC.err.log    # Path to the standard error ouput file
 #SBATCH --mail-user=r15455017@ntu.edu.tw          # email
 #SBATCH --mail-type=FAIL,END                      # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
 
@@ -16,6 +16,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S')"
 # Please enter the R1 & R2 file name and your username
 user=u2777445
 sample=SRR13076390
+VCcaller=HC
 
 # 建立對應先前分析成果的目錄參數
 OUT_DIR=/work/${user}/
@@ -61,16 +62,16 @@ set -euo pipefail
 # split multiallelic
 echo "split multiallelic: start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
-${BCFTOOLS} norm -m -any ${DIR_VC}/${sample}.HC.vcf.gz \
+${BCFTOOLS} norm -m -any ${DIR_VC}/${sample}.${VCcaller}.vcf.gz \
     -Oz \
-    -o ${sample}.HC.normed.vcf.gz
-${BCFTOOLS} index -t -f ${sample}.HC.normed.vcf.gz
+    -o ${sample}.${VCcaller}.normed.vcf.gz
+${BCFTOOLS} index -t -f ${sample}.${VCcaller}.normed.vcf.gz
 echo "Split multiallelic: Finished"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 
-INPUT_VCF=${sample}.HC.normed.vcf.gz
-SAMPLE_ID=${sample}.HC.VEP
+INPUT_VCF=${sample}.${VCcaller}.normed.vcf.gz
+SAMPLE_ID=${sample}.${VCcaller}.VEP
 echo "INPUT VCF directory: " ${INPUT_VCF}
 echo "sample ID: " ${SAMPLE_ID}
 #############################
