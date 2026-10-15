@@ -49,6 +49,12 @@
 |     | |____SRR13076392.HC.VEP.vcf
 |     | |____SRR13076392.HC.VEP.vcf_summary.html
 |     | |____SRR13076392.HC.VEP.vcf_warnings.txt
+|     | |____SRR13076392.M2.normed.vcf.gz
+|     | |____SRR13076392.M2.normed.vcf.gz.tbi
+|     | |____SRR13076392.M2.VEP_filtered.tsv
+|     | |____SRR13076392.M2.VEP.tsv
+|     | |____SRR13076392.M2.VEP.vcf
+|     | |____SRR13076392.M2.VEP.vcf_summary.html
 |     |____115Biomarker_annotation.out.log
 |     |____115Biomarker_annotation.err.log
 |____home
