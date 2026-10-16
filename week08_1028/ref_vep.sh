@@ -13,12 +13,12 @@ set -v -x
 echo "start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
-# Please enter the R1 & R2 file name and your username
+# Please enter the sample name, Variantcalling caller and your username
 user=u2777445
 sample=SRR13076390
 VCcaller=HC
 
-# 建立對應先前分析成果的目錄參數
+# Define directory variables pointing to previous analysis results
 OUT_DIR=/work/${user}/
 DIR_VC=${OUT_DIR}/variantcalling/variantcallingR
 
@@ -31,7 +31,7 @@ pwd
 # Reference: Homo_sapiens_assembly38.fasta
 ref=/opt/ohpc/Taiwania3/pkg/biology/reference/Homo_sapiens/GATK/hg38/Homo_sapiens_assembly38.fasta
 
-# 載入 samtools 環境以供 CRAM 轉換使用
+# 載入環境
 module load biology
 module load SAMTOOLS/1.18
 
