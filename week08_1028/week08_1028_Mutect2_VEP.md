@@ -268,13 +268,14 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 ------------------------------------
 # 生物標記物與它們的產地實作課程(五)
 ## 本次課程主要內容
- 1. 利用BWA做alignment
- 2. 利用picard做mark duplicates
- 3. ❗**利用GATK做variant calling**❗
- 4. 學會看vcf檔案(variant calling的結果)
+ 1. 利用GATK Mutect2做variant calling
+ 2. 利用VEP做annotation
+
+## **本次課程的樹狀資料結構**
+[week08_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/week08_tree.txt)
 
 > [!Important]
-> #### GATK介紹
+> #### GATK Mutect2 介紹
 >　- GATK（Genome Analysis Toolkit）是一套功能強大的基因組學分析軟件工具集，專門設計來處理高通量 DNA 和 RNA sequence data，特別是處理變異檢測（variant calling）、數據品質控制以及數據後處理。GATK 被廣泛應用於研究中，用來分析與疾病相關的遺傳變異、癌症基因組學及個體基因組分析。
 > - 課程中使用的部分為HaplotypeCaller，是GATK 中最常用的變異檢測工具，專門用於檢測單核苷酸變異（SNPs）和插入/刪除變異（Indels）。
 >
@@ -288,8 +289,6 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 > (2)插入與刪除變異（Indels，Insertions and Deletions）：DNA 序列中插入或刪除了一個或多個核苷酸。
 > (3)結構變異（Structural Variants, SVs）：較大範圍的變異，可能涉及基因組的大塊重排、複製、轉位等。
 
-## 本次課程的樹狀資料結構
-[Variantcalling](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week6_1008/wk6_tree.txt)
 
 ### step1:在國網上建立路徑
 1. 登入國網（忘記怎麼登入的人請參見[連結](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)）
