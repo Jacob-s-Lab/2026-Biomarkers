@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 #SBATCH -A ACD115175                 # Account name/project number
-#SBATCH -J annotation                # Job name
+#SBATCH -J annotation_HC             # Job name
 #SBATCH -p ngscourse92G              # Partition Name 等同PBS裡面的 -q Queue name
 #SBATCH -c 14                        # 使用的core數 請參考Queue資源設定
 #SBATCH --mem=92g                    # 使用的記憶體量 請參考Queue資源設定
