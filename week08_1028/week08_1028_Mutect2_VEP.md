@@ -27,6 +27,10 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
       ```
 2.  Copy the executable files needed for the class.
       ```marksown=
+      rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh ./
+      ```
+      or
+      ```marksown=
       rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh /work/username/variantcalling
       ```
 
@@ -113,10 +117,12 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
 
 
 ## Use VEP for annotation
+> [!Important]
+> Use the **HaplotypeCaller (HC)** variant calling output for this annotation step.
 
 ### Step 1: Create a Path on the NCHC 
 1. Log in to the NCHC (For those who forgot how to log in, please refer to this [link](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)).
-2. Create a folder named "variantcalling" in the "work/username" directory. 
+2. Create a folder named "annotation" in the "/work/username" directory. 
       ```marksown=
       cd /work/username
       mkdir annotation
@@ -126,6 +132,10 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
       cd /work/username/annotation
       ```
 4.  Copy the executable files needed for the class.
+      ```marksown=
+      rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh ./
+      ```
+      or
       ```marksown=
       rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotation
       ```
@@ -138,28 +148,31 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
 2. Please press <kbd>i</kbd> to modify the following code:
       >The following serves as an example based on the files  `ref_vep.sh` .
 
-    <img src="https://hackmd.io/_uploads/SyGeSphoMx.png" width="85%">
+    <img src="https://hackmd.io/_uploads/BJspyiJ3Ml.png" width="85%">
 
     ```
     #!/usr/bin/sh
     #SBATCH -A ACD115175           # Account name/project number
-    #SBATCH -J annotation      # Job name
-    #SBATCH -p ngscourse92G           # Partition Name (equivalent to PBS's -q Queue name)
-    #SBATCH -c 14                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH -J annotation_HC       # Job name
+    #SBATCH -p ngscourse92G        # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 14                  # Number of cores used (refer to Queue resource settings)
     #SBATCH --mem=92g              # Amount of memory used (refer to Queue resource settings)
-    #SBATCH -o 115Biomarker_annotation.out.log          # Path to the standard output file
-    #SBATCH -e 115Biomarker_annotation.err.log          # Path to the standard error ouput file
+    #SBATCH -o 115Biomarker_annotation_HC.out.log      # Path to the standard output file
+    #SBATCH -e 115Biomarker_annotation_HC.err.log      # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
     #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
     ```
 
-    Make sure to replace `SUPERCOMPUTER_ACCOUNT` with your supercomputer username and `ASSIGNED_FILE` with your assigned sample ID.
+    Make sure to replace the following placeholders in your script:
+   * `SUPERCOMPUTER_ACCOUNT` with your supercomputer username
+   * `ASSIGNED_FILE` with your assigned sample ID
+   * `HC_or_M2` with the tool that generated your input VCF (**HC**:HaplotypeCaller, **M2**:Mutect2)
 
-    <img src="https://hackmd.io/_uploads/BkyOfp3ize.png" width="60%">
+       <img src="https://hackmd.io/_uploads/BJdA-iknMe.png" width="60%">
 
 
-3. Introduction to commands
+4. Introduction to commands
 * VEP PATH
 ![image](https://hackmd.io/_uploads/rJMI4jDixl.png)
 
@@ -217,6 +230,17 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 - **sample.HC.VEP.vcf**:  After VEP annotation, the file sample.HC.VEP.vcf_summary.html is generated first, followed by the output in VCF format.
 - **sample.HC.VEP.vcf_warnings.txt**: Files containing statistical summaries and warnings after VEP annotation.
 - **sample.HC.VEP.tsv, sample.HC.VEP_filtered.tsv**: The VCF format converted to TSV format, with some fields removed in the filtered version. Each line represents a variant, and different transcripts are separated by a comma (",").
+
+> [!Important]
+> To complete **HW2**, results from both HC and M2 VCF annotations are required. \
+> While the HC annotation was performed in class, please **run the M2 annotation after class once your M2 variant calling is finished**.
+> 
+> `vim vep.sh` \
+> Please change the following HC instances to M2: \
+> <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
+> Then, `sbatch vep.sh`. \
+> If you encounter any issues, feel free to email the TA or ask during the next class.
+
 
 ## Explanation of TSV Files
 
