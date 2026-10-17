@@ -285,7 +285,8 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 >    ```
 > If you encounter any issues, feel free to email the TA or ask during the next class.
 
-
+1. Download .tsv via rsync (Mac) or WINSCP (Windows)
+2. Open .tsv file, compare the differences between HC and M2 output to answer HW2 questions on NTU COOL.
 
 ------------------------------------
 # 生物標記物與它們的產地實作課程(五)
@@ -568,3 +569,5 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 >    ```
 > 如果遇到任何問題，歡迎隨時寄信給助教或在下次課堂詢問
 
+1. 用 rsync (Mac) 或 WINSCP (Windows) 下載.tsv
+2. 在本機開啟檔案，比較兩者找到的variants差異，回答NTU COOL上HW2的問題
