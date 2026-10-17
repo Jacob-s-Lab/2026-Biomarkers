@@ -6,6 +6,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 ## Main Content of the Course
 1. Using GATK Mutect2 for somatic Variant Calling
 2. Use VEP for annotation
+3. HW2 Instructions
 
 ## **The File Tree of This Course**
 [week08_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/week08_tree.txt)
@@ -54,7 +55,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     #SBATCH -o 115Biomarker_m2_variantcalling.out.log         # Path to the standard output file
     #SBATCH -e 115Biomarker_m2_variantcalling.err.log         # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
-    #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
     ```
 
@@ -71,7 +72,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
       ```
       sbatch m2_variantcalling.sh
       ```
-    b. If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
+    b. If submitted successfully, the following message will appear:
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
     c. You can use the following command to check the status of the job execution:
@@ -160,7 +161,7 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
     #SBATCH -o 115Biomarker_annotation_HC.out.log      # Path to the standard output file
     #SBATCH -e 115Biomarker_annotation_HC.err.log      # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
-    #SBATCH --mail-type=FAIL,END   # pecifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
     ```
 
@@ -213,7 +214,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
       ```
       sbatch vep.sh
       ```
-    b. If submitted successfully, the following message will appear (after the variantcalling.sh file completes running, an variantcallingR folder will be automatically created under the variantcalling directory to store the results):
+    b. If submitted successfully, the following message will appear:
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
     c. You can use the following command to check the status of the job execution:
@@ -222,7 +223,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
       ```
 
 > [!Note]
-> The expected runtime for this job is about 20~40 minutes.
+> The expected runtime for this job is about 10~40 minutes.(varies by file size)
 
 6. After execution, the following files will be generated:
 
@@ -231,18 +232,8 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 - **sample.HC.VEP.vcf_warnings.txt**: Files containing statistical summaries and warnings after VEP annotation.
 - **sample.HC.VEP.tsv, sample.HC.VEP_filtered.tsv**: The VCF format converted to TSV format, with some fields removed in the filtered version. Each line represents a variant, and different transcripts are separated by a comma (",").
 
-> [!Important]
-> To complete **HW2**, results from both HC and M2 VCF annotations are required. \
-> While the HC annotation was performed in class, please **run the M2 annotation after class once your M2 variant calling is finished**.
-> 
-> `vim vep.sh` \
-> Please change the following HC instances to M2: \
-> <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
-> Then, `sbatch vep.sh`. \
-> If you encounter any issues, feel free to email the TA or ask during the next class.
 
-
-## Explanation of TSV Files
+### Explanation of TSV Files
 
 > [!Caution]
 > #### Background Information
@@ -265,11 +256,26 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 12. **CLIN_SIG**: Clinical significance records in ClinVar database.
 13. **TWB_official_SNV_indel_AF**: The allele frequency of this variant in the Taiwan Biobank.(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
 
+
+## HW2 Instructions
+> [!Important]
+> To complete **HW2**, results from both HC and M2 VCF annotations are required. \
+> While the HC annotation was performed in class, please **run the M2 annotation after class once your M2 variant calling is finished**.
+> 
+> `vim vep.sh` \
+> Please change the following HC instances to M2: \
+> <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
+> Then, `sbatch vep.sh`. \
+> If you encounter any issues, feel free to email the TA or ask during the next class.
+
+
+
 ------------------------------------
 # 生物標記物與它們的產地實作課程(五)
 ## 本次課程主要內容
  1. 利用GATK Mutect2做variant calling
  2. 利用VEP做annotation
+ 3. HW2指引
 
 ## **本次課程的樹狀資料結構**
 [week08_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/week08_tree.txt)
@@ -277,138 +283,254 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 > [!Important]
 > #### GATK Mutect2 介紹
 >　- GATK（Genome Analysis Toolkit）是一套功能強大的基因組學分析軟件工具集，專門設計來處理高通量 DNA 和 RNA sequence data，特別是處理變異檢測（variant calling）、數據品質控制以及數據後處理。GATK 被廣泛應用於研究中，用來分析與疾病相關的遺傳變異、癌症基因組學及個體基因組分析。
-> - 課程中使用的部分為HaplotypeCaller，是GATK 中最常用的變異檢測工具，專門用於檢測單核苷酸變異（SNPs）和插入/刪除變異（Indels）。
->
->    https://gatk.broadinstitute.org/hc/en-us
->
-> #### 甚麼是variant calling?
-> - Variant calling（變異檢測)是生物信息學中的一個過程，用於從 DNA sequnece data 中檢測和識別基因組中的遺傳變異。這些變異可能是不同的 DNA sequence與reference genome 相比存在的差異。變異檢測的常見應用包括尋找疾病相關的基因突變、個人基因組分析以及研究群體中的遺傳多樣性。
-> 
-> - 變異通常可以分為以下幾類：
-> (1)單核苷酸變異（SNP，Single Nucleotide Polymorphisms）：單個核苷酸的改變。例如參考序列是 A，但在樣本中發現變為 T。
-> (2)插入與刪除變異（Indels，Insertions and Deletions）：DNA 序列中插入或刪除了一個或多個核苷酸。
-> (3)結構變異（Structural Variants, SVs）：較大範圍的變異，可能涉及基因組的大塊重排、複製、轉位等。
+> - 本次課程所使用的工具為 Mutect2，它是 GATK 專門用於體細胞變異偵測（somatic variant calling）的工具，專為偵測腫瘤樣本中的單核苷酸變異（SNVs）與小型插入／缺失（small Indels）所設計。不同於以生殖系倍性（germline ploidy）建立模型的 HaplotypeCaller，Mutect2 經過最佳化，即使在僅有腫瘤樣本的情況下，也能精準偵測低頻率的體細胞突變。
+>   [https://gatk.broadinstitute.org/hc/en-us](https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2)
 
+## 使用 GATK Mutect2 進行 Somatic Variant Calling
 
-### step1:在國網上建立路徑
-1. 登入國網（忘記怎麼登入的人請參見[連結](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)）
-2. 在`work/username`建立variantcalling資料夾
-```marksown=
-cd /work/username
-mkdir VP
-```
-3. 進入variantcalling資料夾
-```marksown=
-cd /work/username/VP
-```
-4. 複製上課所需執行檔
-```marksown=
-rsync -avz /work/evelyn92/2025Biomarker/variantcalling.sh /work/username/VP
-```
+### Step1:進入資料夾並複製執行檔
+1. 進入variantcalling資料夾
+      ```marksown=
+      cd /work/username/variantcalling
+      ```
+2. 複製上課所需執行檔
+      ```marksown=
+      rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh ./
+      ```
+      或
+      ```marksown=
+      rsync -avz /work/u2777445/2026Biomarker_TA/script/m2_variantcalling.sh /work/username/variantcalling
+      ```
 
-### step 2 修改分析執行檔
+### Step 2 修改分析執行檔
 
-
-1. 進入 [variantcalling.sh](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week6_1008/variantcalling.sh).
-```
-vim variantcalling.sh
-```
+1. 進入 [m2_variantcalling.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/edit/main/week08_1028/ref_m2_variantcalling.sh)
+      ```
+      vim m2_variantcalling.sh
+      ```
 
 2. 請輸入 <kbd>i</kbd> 更改以下程式碼：
-> 以下以`variantcalling.sh`做為示範 (格式請依照裡面給你的範例，副檔名不用寫進去)
+      > 以下以`ref_m2_variantcalling.sh`做為示範
 
+      <img src="https://hackmd.io/_uploads/SktA2h3sfx.png" width="75%">
 
-![image](https://hackmd.io/_uploads/Hy7pGF0qee.png)
-
-
-
-```
-#!/usr/bin/sh
-#SBATCH -A ACD114093                # Account name/project number
-#SBATCH -J variantcalling           # Job name:可修改
-#SBATCH -p ngscourse                # Partition Name:等同PBS裡面的 -q Queue name
-#SBATCH -c 2                        # 使用的core數:請參考Queue資源設定
-#SBATCH --mem=13g                   # 使用的記憶體量 請參考Queue資源設定
-#SBATCH -o out_vc.log               # Path to the standard output file:可修改
-#SBATCH -e err_vc.log               # Path to the standard error ouput file:可修改
-#SBATCH --mail-user=                # e-mail:可修改
-#SBATCH --mail-type=FAIL,END        # 指定送出email時機:可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
-```
-3. 將`username`的位子改成自己的主機帳號並修改成正確的檔案路徑
-![image](https://hackmd.io/_uploads/BJTXESBilx.png)
-
-> [!Warning]
-> #### 本次加入的步驟:Variant calling
-> ![螢幕擷取畫面 2025-09-11 180745](https://hackmd.io/_uploads/ry55CpE6xe.png)
+      ```
+      #!/usr/bin/sh
+      #SBATCH -A ACD115175           # Account name/project number
+      #SBATCH -J m2_variantcalling   # Job name
+      #SBATCH -p ngscourse           # Partition Name 等同PBS裡面的 -q Queue name
+      #SBATCH -c 2                   # 使用的core數 請參考Queue資源設定
+      #SBATCH --mem=13g              # 使用的記憶體量 請參考Queue資源設定
+      #SBATCH -o 115Biomarker_m2_variantcalling.out.log        # Path to the standard output file
+      #SBATCH -e 115Biomarker_m2_variantcalling.err.log        # Path to the standard error ouput file
+      #SBATCH --mail-user=           # e-mail
+      #SBATCH --mail-type=FAIL,END   # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
+      # For NCHC usage
+      ```
+3. 將 `SUPERCOMPUTER_ACCOUNT` 改為你的國網主機帳號，並將 `ASSIGNED_FILE` 改為你被分配到檔案的 sample ID。
+      <img src="https://hackmd.io/_uploads/S1jn0h2sMl.png" width="50%">
 
 4. 輸入`:wq`儲存離開
-```
-:wq
-```
+      ```
+      :wq
+      ```
 5. 執行script
 
-(1)輸入以下指令，來以sbatch job的方式送出編輯完成的草稿
-```
-sbatch variantcalling.sh
-```
-
-
-(2)若送出成功將會出現以下文字 (`variantcalling.sh`的檔案跑完後會自動在variantcalling資料夾下建立一個variantcallingR資料夾，將結果放在裡面)
-
+    a. 輸入以下指令，來以sbatch job的方式送出編輯完成的草稿
+      ```
+      sbatch m2_variantcalling.sh
+      ```
+    b. 若送出成功將會出現以下文字:
 ![image](https://hackmd.io/_uploads/HymfEzrRR.png)
 
+    c. 可使用以下指令查看工作執行情況
+    ```
+    sacct
+    ```
+    ![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
 
+> [!Note]
+> 預計執行時間為15~20小時 \
+> Step 6 請在job執行完成後再進行
 
-(3)可使用以下指令查看工作執行情況
-```
-sacct
-```
-![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
+6. 查看結果:在`variantcallingR`資料夾中會有 M2.vcf檔，請確認檔案完整性，詳細步驟逐條列在下面：
 
+    a. 開啟variantcallingR資料夾:可使用相對路徑或絕對路徑
+    ```marksown=
+    cd variantcallingR                                 #可使用相對路徑
+    cd /work/username/variantcalling/variantcallingR   #或使用絕對路徑
+    ```
 
+    b. 確認檔案存在:
+    ```
+    ls
+    ```
+    c. 確認檔案完整性:
+    ```
+    less {ASSIGNED_FILE}.M2.vcf.gz
+    ```
+    d. 利用 <kbd>shift</kbd>+<kbd>g</kbd> 查看檔案最底部
 
- 6. 查看結果:在`variantcallingR`資料夾中會有`vcf檔，並確認檔案完整性，詳細步驟逐條列在下面
+    ![image](https://hackmd.io/_uploads/SJofG57C0.png)
 
-(1)開啟variantcallingR資料夾:可使用相對路徑或絕對路徑
-```marksown=
-cd variantcallingR                           #可使用相對路徑
-cd /work/username/variantcalling/variantcallingR   #或使用絕對路徑
-```
+    e. 退出:
+    ```
+    q
+    ```
 
-(2)確認檔案存在:
-```
-ls
-```
-(3)確認檔案完整性:
-```
-less SRR13076392.HC.vcf.gz
-```
-(4)利用 <kbd>shift</kbd>+<kbd>g</kbd> 查看檔案最底部
-
-![image](https://hackmd.io/_uploads/SJofG57C0.png)
-
-
-(5)退出:
-```
-q
-```
-
-
- ## Vcf檔案講解說明
- 
-> [!CAUTION]
-> #### 前情提要
->由於GATK在執行variant calling的時間較長，所以執行以下步驟時使用的都是助教已經跑出的結果，請先複製助教的結果到variantcalling資料夾底下(兩個檔案都要)
-> ```
-> rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.vcf.gz ./
-> rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.vcf.gz.tbi ./
-> ```
-
-
-> [!IMPORTANT]
-> #### 何為vcf檔?
-> VCF（Variant Call Format）檔案是一種用於存儲基因變異數據的標準檔案格式，通常用來記錄 DNA sequence中與regerence genome不同的變異信息。VCF 檔案的主要應用是在基因組學研究中，特別是基於高通量測序（NGS）技術所產生的數據。這些檔案可以記錄多種類型的變異，包括單核苷酸多態性（SNPs）、插入或刪除變異（Indels）等。
-> https://www.htslib.org/doc/vcf.html
+> [!Important]
+> #### 甚麼是annotation?
+> Annotation是指對生物序列（如DNA、RNA、蛋白質）進行功能標注，幫助解釋其生物意義，主要有結構資訊，用於標記基因的位置，列如exon、intron等；和功能資訊，用於預測基因的生物功能、蛋白質的作用等，這樣可以幫助我們理解結構與功能的關聯。
 >
-> ![image](https://hackmd.io/_uploads/S17rF97RA.png)
-> ![image](https://hackmd.io/_uploads/BkeBEXHRR.png)
+> #### VEP介紹
+> VEP（Variant Effect Predictor）是由Ensembl開發的一款工具，用於分析遺傳資訊，特别是評估基因中的不同變異（如SNVs、insertion、deletion和Structural variants）對生物功能的影響，非常適合用於annotation。
+
+## 使用VEP做annotation
+> [!Important]
+> 請使用 **HaplotypeCaller** (HC) 的 variant calling output進行annotation
+
+### Step1:在國網上建立路徑
+1. 登入國網（忘記怎麼登入的人請參見[連結](https://hackmd.io/jcvG9iIiRW6DTUysi8AKug)）
+2. 在`work/username`建立annotation資料夾
+   ```marksown=
+   cd /work/username
+   mkdir annotation
+   ```
+3. 進入annotation資料夾
+   ```marksown=
+   cd /work/username/annotation
+   ```
+4. 複製上課所需執行檔
+   ```marksown=
+   rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh ./
+   ```
+   or
+   ```marksown=
+   rsync -avz /work/u2777445/2026Biomarker_TA/script/vep.sh /work/username/annotation
+   ```
+
+### Step 2: 修改分析執行檔
+1. 進入 [vep.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/ref_vep.sh).
+      ```
+      vim vep.sh
+      ```
+2. 請輸入 <kbd>i</kbd> 更改以下程式碼
+    >以下以`ref_vep.sh`作為示範
+
+    <img src="https://hackmd.io/_uploads/BJspyiJ3Ml.png" width="85%">
+
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J annotation_HC       # Job name
+    #SBATCH -p ngscourse92G        # Partition Name 等同PBS裡面的 -q Queue name
+    #SBATCH -c 14                  # 使用的core數 請參考Queue資源設定
+    #SBATCH --mem=92g              # 使用的記憶體量 請參考Queue資源設定
+    #SBATCH -o 115Biomarker_annotation_HC.out.log      # Path to the standard output file
+    #SBATCH -e 115Biomarker_annotation_HC.err.log      # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
+
+    更改改腳本中的以下位置:
+   * 將`SUPERCOMPUTER_ACCOUNT`替換為你的國網主機帳號
+   * 將`ASSIGNED_FILE`替換為你被分配到的sample ID (ex. SRR13076390)
+   * 將`HC_or_M2`替換為用來產生input VCF 的工具 (**HC**:HaplotypeCaller, **M2**:Mutect2)
+
+       <img src="https://hackmd.io/_uploads/BJdA-iknMe.png" width="60%">
+
+3. 指令介紹
+* VEP路徑
+![image](https://hackmd.io/_uploads/rJMI4jDixl.png)
+
+* 拆分單一位置多種變異以及座標向左對齊  \
+![image](https://hackmd.io/_uploads/rJgNiYo2gg.png)
+
+    ![Screenshot 2024-10-15 at 15.53.38](https://hackmd.io/_uploads/SJockiiyJe.png)
+
+    ![Screenshot 2024-10-15 at 15.54.49](https://hackmd.io/_uploads/H10RyisJkx.png)
+
+    ![Screenshot 2024-10-15 at 15.56.42](https://hackmd.io/_uploads/Sy5Ixjj11g.png)
+
+    ![Screenshot 2024-10-15 at 16.31.47](https://hackmd.io/_uploads/SJp9uiikJx.png)
+
+    [https://genome.sph.umich.edu/wiki/Variant_Normalization](https://)
+
+* VEP註解遺傳變異
+
+    ![image](https://hackmd.io/_uploads/HyGb3Ki3xl.png)
+
+* 原始VEP格式（VCF）
+
+    ![Screenshot 2024-10-15 at 16.09.19](https://hackmd.io/_uploads/SyxcSmis1kg.png)
+
+
+* 轉換為Tab分隔格式
+![Screenshot 2024-10-15 at 16.00.36](https://hackmd.io/_uploads/H1ULbso1kg.png)
+
+    ![Screenshot 2024-10-15 at 16.08.42](https://hackmd.io/_uploads/B1RI7js11g.png)
+
+4. 輸入`:wq`儲存離開
+      ```
+      :wq
+      ```
+5. 執行script
+
+    a. 輸入以下指令，以sbatch job的方式送出編輯完成的草稿
+      ```
+      sbatch vep.sh
+      ```
+    b. 若送出成功將會出現以下文字:
+![image](https://hackmd.io/_uploads/HymfEzrRR.png)
+
+    c. 可使用以下指令查看工作執行情況
+      ```
+      sacct
+      ```
+
+> [!Note]
+> 預計執行時間: 10~40分鐘 (因檔案大小而有差異)
+
+
+6. 執行完成後會產生以下檔案：
+- sample.HC.normed.vcf.gz：split multiallelic 後的 vcf
+- sample.HC.VEP.vcf：VEP annotate 後以 vcf 的格式輸出sample.HC.VEP.vcf_summary.html
+- sample.HC.VEP.vcf_warnings.txt：VEP annotate 完後的一些統計及警告的資料
+- sample.HC.VEP.tsv及sample.HC.VEP_filtered.tsv：將 vcf 的格式轉換成 tsv 的格式，以及將一些的欄位刪減後的 tsv。每一行為一個 variant，若有不同 transcript 會以 "," 分隔
+
+
+### TSV檔案講解說明
+ 
+> [!Caution]
+> #### 前情提要
+> 由於vep在執行annotation的時間較長，所以執行以下步驟時使用的都是助教已經跑出的結果，請先複製助教的結果。 *改
+> ```
+> rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.VEP_filtered.tsv ./  改成雲端下載連結？
+> ```
+
+1. CHROM：變異所在的染色體
+2. POS:變異所在的座標
+3. REF：參考資料之等位基因
+4. ALT：變異後的等位基因
+5. DP：定序深度
+6. Allele：與ALT相同
+7. Consequence：變異位點所影響之等位基因。(https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html)
+7. SYMBOL：基因的官方名稱。
+8. Gene：受影響基因的 ID（例如，ENSG00000223972 等）。
+9. gnomADe_EAS_AF：此變異在gnomAD Exome資料庫中的東亞人群等位基因頻率。
+10. gnomADg_EAS_AF：此變異在gnomAD Genome資料庫中的東亞人群等位基因頻率（如果存在）。
+12. CLIN_SIG：在ClinVar database中臨床意義。
+13. TWB_official_SNV_indel_AF：最新臺灣人體資料庫中此變異的等位基因頻率。(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
+
+
+## HW2指引
+> [!Important]
+> 寫HW2需要HC和M2 VCF annotation的結果 \
+> HC annotation已在課堂上完成，請在課後、**待你的 M2 variant calling 執行完畢後，執行 M2 annotation**。
+> 
+> `vim vep.sh` \
+> 請將以下紅框處的 HC 改為 M2： \
+> <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
+> `:wq`儲存離開，`sbatch vep.sh` 送出編輯完成的草稿 \
+> 如果遇到任何問題，歡迎隨時寄信給助教或在下次課堂詢問
