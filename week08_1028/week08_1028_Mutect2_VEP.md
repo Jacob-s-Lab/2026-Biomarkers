@@ -82,7 +82,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     ![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
 
 > [!Note]
-> The expected runtime for this job is about 15 hours.\
+> The expected runtime for this job is about 15~20 hours. (Varies by file size) \
 > Step 6 should be done after job finished.
 
 6. View Mutect2 Results: In the variantcallingR folder, there will be a M2.vcf file. Check the file's integrity, and the detailed steps are listed below: \
@@ -223,7 +223,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
       ```
 
 > [!Note]
-> The expected runtime for this job is about 10~40 minutes.(varies by file size)
+> The expected runtime for this job is about 10~40 minutes. (Varies by file size)
 
 6. After execution, the following files will be generated:
 
@@ -350,7 +350,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
     ![image](https://hackmd.io/_uploads/Bkor4GBAC.png)
 
 > [!Note]
-> 預計執行時間為15~20小時 \
+> 預計執行時間為15~20小時 (因檔案大小而有差異) \
 > Step 6 請在job執行完成後再進行
 
 6. 查看結果:在`variantcallingR`資料夾中會有 M2.vcf檔，請確認檔案完整性，詳細步驟逐條列在下面：
@@ -367,7 +367,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
     ```
     c. 確認檔案完整性:
     ```
-    less {ASSIGNED_FILE}.M2.vcf.gz
+    less ASSIGNED_FILE.M2.vcf.gz
     ```
     d. 利用 <kbd>shift</kbd>+<kbd>g</kbd> 查看檔案最底部
 
