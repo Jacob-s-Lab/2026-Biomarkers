@@ -6,7 +6,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 ## Main Content of the Course
 1. Using GATK Mutect2 for somatic Variant Calling
 2. Use VEP for annotation
-3. HW2 Instructions
+3. HW2: Comparing HaplotypeCaller and Mutect2 Variant Calling Results
 
 ## **The File Tree of This Course**
 [week08_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/week08_tree.txt)
@@ -167,7 +167,7 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
 
     Make sure to replace the following placeholders in your script:
    * `SUPERCOMPUTER_ACCOUNT` with your supercomputer username
-   * `ASSIGNED_FILE` with your assigned sample ID
+   * `ASSIGNED_FILE` with your assigned sample ID (ex. SRR13076390)
    * `HC_or_M2` with the tool that generated your input VCF (**HC**:HaplotypeCaller, **M2**:Mutect2)
 
        <img src="https://hackmd.io/_uploads/BJdA-iknMe.png" width="60%">
@@ -235,13 +235,14 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 
 ### Explanation of TSV Files
 
-> [!Caution]
-> #### Background Information
-> Since VEP takes a longer time to run the annotation, the steps below will use results that have already been processed by the teaching assistant. Please copy the TA's results first.
+> **Viewing the TSV File on NCHC**
 > ```
-> rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.VEP_filtered.tsv ./  改成雲端下載連結？
-> ```  
-    
+> cd /work/username/annotation/annotationR/
+> less -S ASSIGNED_FILE.HC.VEP.tsv
+> ```
+> <img src="https://hackmd.io/_uploads/H1vkudxhGe.png" width="90%">
+
+
 1. **CHROM**: The chromosome.
 2. **POS**: The position of the variant.
 3. **REF**: The reference allele.
@@ -257,15 +258,31 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 13. **TWB_official_SNV_indel_AF**: The allele frequency of this variant in the Taiwan Biobank.(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
 
 
-## HW2 Instructions
+## HW2: Comparing HaplotypeCaller and Mutect2 Variant Calling Results
+
 > [!Important]
-> To complete **HW2**, results from both HC and M2 VCF annotations are required. \
-> While the HC annotation was performed in class, please **run the M2 annotation after class once your M2 variant calling is finished**.
+> #### To complete HW2, you will need to compare the VCF annotation results between HC and M2.
+> The HC annotation was already done in class; please **execute the M2 annotation after class once your M2 variant calling finishes** to obtain the necessary files for comparison.
 > 
-> `vim vep.sh` \
-> Please change the following HC instances to M2: \
-> <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
-> Then, `sbatch vep.sh`. \
+> ### M2 Annotation Tutorial
+> 1. Enter "annotation" folder.
+>    ```
+>    cd /work/username/annotation/
+>    ```
+> 2. Copy ``vep.sh``, and rename it ``vep_m2.sh``.
+>    ```
+>    cp vep.sh vep_m2.sh
+>    ```
+> 3. Modify ``vep_m2.sh``
+>    ```
+>    vim vep_m2.sh
+>    ```
+>      Please change the following HC instances to **M2**: 
+>      <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
+> 4. Save and exit the file (`:wq`), then submit the job.
+>    ```
+>    sbatch vep_m2.sh
+>    ```
 > If you encounter any issues, feel free to email the TA or ask during the next class.
 
 
@@ -275,7 +292,7 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 ## 本次課程主要內容
  1. 利用GATK Mutect2做variant calling
  2. 利用VEP做annotation
- 3. HW2指引
+ 3. HW2:比較HaplotypeCaller和Mutect2的variant calling結果
 
 ## **本次課程的樹狀資料結構**
 [week08_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week08_1028/week08_tree.txt)
@@ -502,12 +519,12 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 
 ### TSV檔案講解說明
  
-> [!Caution]
-> #### 前情提要
-> 由於vep在執行annotation的時間較長，所以執行以下步驟時使用的都是助教已經跑出的結果，請先複製助教的結果。 *改
+> **在國網上查看TSV檔**
 > ```
-> rsync -avz /work/evelyn92/variantcalling/variantcallingR/SRR13076392.HC.VEP_filtered.tsv ./  改成雲端下載連結？
+> cd /work/username/annotation/annotationR/
+> less -S ASSIGNED_FILE.HC.VEP.tsv
 > ```
+> <img src="https://hackmd.io/_uploads/H1vkudxhGe.png" width="80%">
 
 1. CHROM：變異所在的染色體
 2. POS:變異所在的座標
@@ -524,13 +541,30 @@ a. Enter the following command to submit the edited draft as an sbatch job:
 13. TWB_official_SNV_indel_AF：最新臺灣人體資料庫中此變異的等位基因頻率。(https://www.sciencedirect.com/science/article/pii/S2090123223004058?via%3Dihub)
 
 
-## HW2指引
+## HW2:比較HaplotypeCaller和Mutect2的variant calling結果
+
 > [!Important]
-> 寫HW2需要HC和M2 VCF annotation的結果 \
-> HC annotation已在課堂上完成，請在課後、**待你的 M2 variant calling 執行完畢後，執行 M2 annotation**。
+> #### 完成 HW2 需要使用 HC 與 M2 的 VCF 註解結果進行比較分析
+> 課堂上已完成 HC annotation，請在課後、**待 M2 variant calling 跑完後，執行 M2 annotation** 以取得比較所需之檔案。
 > 
-> `vim vep.sh` \
-> 請將以下紅框處的 HC 改為 M2： \
-> <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
-> `:wq`儲存離開，`sbatch vep.sh` 送出編輯完成的草稿 \
+> ### M2 Annotation 教學
+> 1. 進入 "annotation" 資料夾
+>    ```
+>    cd /work/username/annotation/
+>    ```
+> 2. 複製 `vep.sh`, 並重新命名為 `vep_m2.sh`
+>    ```
+>    cp vep.sh vep_m2.sh
+>    ```
+> 3. 修改 ``vep_m2.sh``
+>    ```
+>    vim vep_m2.sh
+>    ```
+>      請將以下紅框處的 HC 改為 M2：
+>      <img src="https://hackmd.io/_uploads/HJlve3khMx.png" width="100%">
+> 4. 儲存並離開 (`:wq`)，送出編輯完成的草稿
+>    ```
+>    sbatch vep_m2.sh
+>    ```
 > 如果遇到任何問題，歡迎隨時寄信給助教或在下次課堂詢問
+
