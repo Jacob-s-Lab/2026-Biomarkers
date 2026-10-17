@@ -99,7 +99,7 @@ a. Open the variantcallingR folder: You can use a relative or absolute path.
    ```
     c. Verify the file's integrity:
    ```
-   less {ASSIGNED_FILE}.M2.vcf.gz
+   less ASSIGNED_FILE.M2.vcf.gz
    ```
     d. Use <kbd>Shift</kbd> + <kbd>g</kbd> to view the bottom of the file.
    ![image](https://hackmd.io/_uploads/SJofG57C0.png)
