@@ -6,7 +6,7 @@
 #SBATCH --mem=92g                    # 使用的記憶體量 請參考Queue資源設定
 #SBATCH -o 115Biomarker_annotation_HC.out.log    # Path to the standard output file
 #SBATCH -e 115Biomarker_annotation_HC.err.log    # Path to the standard error ouput file
-#SBATCH --mail-user=r15455017@ntu.edu.tw          # email
+#SBATCH --mail-user=b9999999@ntu.edu.tw          # email
 #SBATCH --mail-type=FAIL,END                      # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
 
 set -v -x
