@@ -60,4 +60,47 @@
 |     |____115Biomarker_annotation_HC.err.log
 |     |____115Biomarker_annotation_M2.out.log
 |     |____115Biomarker_annotation_M2.err.log
+|   |____hap
+|     |____hap.sh
+|     |____hap_M2.sh
+|     |____KnownPositives_hg38_Liftover.vcf
+|     |____High-Confidence_Regions_v1.2.bed.gz
+|     |____115_HC_hap
+|     | |____output_prefix.extended.csv
+|     | |____output_prefix.metrics.json.gz
+|     | |____output_prefix.roc.all.csv.gz
+|     | |____output_prefix.roc.Locations.INDEL.csv.gz
+|     | |____output_prefix.roc.Locations.INDEL.PASS.csv.gz
+|     | |____output_prefix.roc.Locations.SNP.csv.gz
+|     | |____output_prefix.roc.Locations.SNP.PASS.csv.gz
+|     | |____output_prefix.runinfo.json
+|     | |____output_prefix.summary.csv
+|     | |____output_prefix.vcf.gz
+|     | |____output_prefix.vcf.gz.tbi
+|     | |____SRR13076392.HC.modified.vcf.gz
+|     | |____SRR13076392.HC.modified.vcf.gz.csi
+|     |____115_M2_hap
+|     | |____output_prefix.extended.csv
+|     | |____output_prefix.metrics.json.gz
+|     | |____output_prefix.roc.all.csv.gz
+|     | |____output_prefix.roc.Locations.INDEL.csv.gz
+|     | |____output_prefix.roc.Locations.INDEL.PASS.csv.gz
+|     | |____output_prefix.roc.Locations.SNP.csv.gz
+|     | |____output_prefix.roc.Locations.SNP.PASS.csv.gz
+|     | |____output_prefix.runinfo.json
+|     | |____output_prefix.summary.csv
+|     | |____output_prefix.vcf.gz
+|     | |____output_prefix.vcf.gz.tbi
+|     | |____SRR13076392.M2.modified.vcf.gz
+|     | |____SRR13076392.M2.modified.vcf.gz.csi
+|     |____rocplot
+|     | |____rocplot.sh
+|     | |____rocplot.Rscript
+|     | |____rocplot_HCvsM2
+|     | |____115Biomarker_roc.out.log
+|     | |____115Biomarker_roc.err.log
+|     |____115Biomarker_hap_HC.out.log
+|     |____115Biomarker_hap_HC.err.log
+|     |____115Biomarker_hap_M2.out.log
+|     |____115Biomarker_hap_M2.err.log
 |____home
