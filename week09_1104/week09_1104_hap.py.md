@@ -1,45 +1,45 @@
 Date：20261104  
-Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-IIX) / [中文](#生物標記物與它們的產地實作課程八)
+Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-vi) / [中文](#生物標記物與它們的產地實作課程六)
 
-## Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part IIX)
+## Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part VI)
 
 ## Main Content of the Course
 
 #### Using `hap.py` to compare the analysis results of HaplotypeCaller and Mutect2 to understand their performance and accuracy in differnt scenarios.
 
-> [!Warning]
-> ### Prerequisite: Prepare the results of the 3 WGS data from the previous tutorial, each processed with two variant calling methods: HaplotypeCaller and Mutect2!! 
-> #### If not yet completed, please first copy the TA's files.
-> ```markdown=
-> cd /work/username
-> mkdir vcf_for_happy
-> cd vcf_for_happy
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S14_VC/SRR13076392_S14_L002.sorted.markdup.m2.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S15_VC/SRR13076393_S15_L002.sorted.markdup.m2.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S18_VC/SRR13076396_S18_L002.sorted.markdup.m2.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S14_VC/SRR13076392_S14_L002.sorted.markdup.hc.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S15_VC/SRR13076393_S15_L002.sorted.markdup.hc.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S18_VC/SRR13076396_S18_L002.sorted.markdup.hc.vcf.gz ./
-> ```
-
 > [!Important]
 > #### What is `hap.py`?
 > 
-> `Hap.py` (Haplotype Comparison Tools) is a tool used for comparing genomic variants. It is often utilized to evaluate the accuracy of variant calling algorithms, especially in identifying variants such as SNPs and Indels in somatic or germline cells. `hap.py` can be used to compare variant calling results with known standards (e.g., a gold standard VCF) to assess the sensitivity, precision, and other metrics of variant detection methods.
+> `hap.py` (Haplotype Comparison Tools) is a tool used for comparing genomic variants. It is often utilized to evaluate the accuracy of variant calling algorithms, especially in identifying variants such as SNPs and Indels in somatic or germline cells. `hap.py` can be used to compare variant calling results with known standards (e.g., a gold standard VCF) to assess the sensitivity, precision, and other metrics of variant detection methods.
 
-### Step 1 : Run [`hap.py`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week9_1029/hap.sh)
-1. Copy the executable files and reference files required for the class.
-```markdown=
-cd /work/username
-rsync -avz /work/evelyn92/hap.sh ./
-rsync -avz /work/evelyn92/KnownPositives_hg38_Liftover.vcf ./
-rsync -avz /work/evelyn92/High-Confidence_Regions_v1.2.bed.gz ./
-``` 
+## The File Tree of This Course
+[hap_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/week09_tree.txt)
 
-2. Open `hap.sh` and enter the correct path names.  \
-(1) 🔴 **Red** part: Change the TA's username to your own.  \
-(2) 🔵 **Blue** file names: Modify according to your files.  \
-(3) 🟡 **Yellow** part: Change to your own file path.
+
+### Step 1 : Run [hap.py](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_hap.sh)
+1. Create a folder named "hap" in the "work/username" directory. Enter "hap" folder.
+    ```
+    cd /work/username
+    mkdir hap
+    cd /work/username/hap
+    ```
+2. Copy the executable files and reference files required for the class.
+    ```
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/hap.sh ./
+    rsync -avz /work/u2777445/KnownPositives_hg38_Liftover.vcf ./
+    rsync -avz /work/u2777445/High-Confidence_Regions_v1.2.bed.gz ./
+    ``` 
+
+3. Open `hap.sh` and enter the correct path names.
+    ```
+    vim hap.sh
+    ```
+- 🔴 **Red** part: Change the TA's username to your own.
+- 🔵 **Blue** file names: Modify according to your files.
+- 🟡 **Yellow** part: Change to your own file path.
+
+    <img src="" width="75%">
+    <img src="" width="75%">
 
 ![螢幕擷取畫面 2025-10-15 152422](https://hackmd.io/_uploads/SypGyRhaex.png)
 ![螢幕擷取畫面 2025-10-15 153242](https://hackmd.io/_uploads/SJ6710hpxe.png)
@@ -49,12 +49,12 @@ rsync -avz /work/evelyn92/High-Confidence_Regions_v1.2.bed.gz ./
 > #### Reminder: 
 > **The bcftools command is used to remove multiallelic variants from the VCF file so that `hap.py` can read it.**
 
-3. Run `hap.sh`.
+4. Run `hap.sh`.
 ```
 sbatch hap.sh
 ```
 
-4. Get the results: a total of 11 files.
+5. Get the results: a total of 11 files.
 - output_prefix.runinfo.json
 - output_prefix.metrics.json.gz
 - output_prefix.roc.Locations.SNP.csv.gz
@@ -67,26 +67,32 @@ sbatch hap.sh
 - output_prefix.vcf.gz
 - output_prefix.vcf.gz.tbi
 
-### Step 2: Use [`rocplot.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week9_1029/rocplot.sh) results to create an ROC plot.
+6. Copy `hap.sh` and rename it `hap_M2.sh`. Modify HC files to M2 files, and then run `hap_M2.sh`.
+   
+
+### Step 2: Use [rocplot.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_rocplot_HC.sh) results to create an ROC plot.
 
 1. Copy the executable files required for the class.
-```markdown=
-rsync -avz /work/evelyn92/rocplot/rocplot.sh ./
-rsync -avz /work/evelyn92/rocplot/rocplot_test.Rscript ./
-```
+    ```
+    rsync -avz /work/evelyn92/rocplot/rocplot.sh ./
+    rsync -avz /work/evelyn92/rocplot/rocplot_test.Rscript ./
+    ```
 2. Enter R and load the required packages.
-```markdown=
-R
-install.packages("ggplot2")
-61
-install.packages("tools")
-q()
-n
-```
+    ```
+    R
+    install.packages("ggplot2")
+    61
+    install.packages("tools")
+    q()
+    n
+    ```
 
-3. Change to the correct path.  \
-   (1) 🔵 **Blue** part: Make sure whether it is a HaplotypeCaller or Mutect2 file.  \
-   (2) 🔴 **Red** part: Replace with your own username.
+3. Change to the correct path.
+- 🔵 **Blue** part: Make sure whether it is a HaplotypeCaller or Mutect2 file.
+- 🔴 **Red** part: Replace with your own username.
+
+    <img src="" width="75%">
+    
 ![螢幕擷取畫面 2025-10-15 215643](https://hackmd.io/_uploads/rJljF_76agl.png)
 
 4. Run `rocplot.sh`.
@@ -96,22 +102,21 @@ sbatch rocplot.sh
 5. The results are saved in the rocplot_HC or rocplot_M2 folders, each containing two plots.
 For example:
 
-- Comparison of **SNP results** for S14, S15, S18 using Mutect2:
-![hap_plot.SNP](https://hackmd.io/_uploads/BJBePXa6ex.png)
+- Comparison of **SNP results** for HaplotypeCaller and Mutect2:
+  <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="75%">
+
+- Comparison of **Indel results** for HaplotypeCaller and Mutect2:
+  <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="75%">
 
 
-- Comparison of **Indel results** for S14, S15, S18 using Mutect2:
-![hap_plot.INDEL](https://hackmd.io/_uploads/rkm-v76Txl.png)
-
-
-
-6. You can also open IGV to compare the results from `hap.py`.
+6. You can also open **IGV** to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
 - Comparison between tools:
-Example: Comparison of SNPs from S18 Mutect2 and HaplotypeCaller. At position 241,884,674, the variant can be found with HaplotypeCaller, but not with Mutect2.
+Example: Comparison of SNPs from `SRR13076390` HaplotypeCaller and Mutect2. At position ???, the variant can be found with HaplotypeCaller, but not with Mutect2.
+<img src="" width="75%">
 ![螢幕擷取畫面 2025-10-15 214642](https://hackmd.io/_uploads/Hy6D8XpTeg.png)
 
-- Comparison between samples: 
+- Comparison between samples: ??
 Example: Comparison of SNPs for S14, S15, S18 using Mutect2.
 ![樣本間比較](https://hackmd.io/_uploads/SkmUH7pTeg.png)
 
@@ -121,30 +126,18 @@ Example: Comparison of SNPs for S14, S15, S18 using Mutect2.
 
 
 --------------------------------
-# 生物標記物與它們的產地實作課程(八)
+# 生物標記物與它們的產地實作課程(六)
 ## 本次課程主要內容
     
 #### 學習利用`hap.py`比較 Haplotypecaller 和 Mutect2 的分析結果，以了解它們在不同情境下的性能和準確性。
 
-
-> [!Warning]
-> ### 前情提要：需先準備好之前 tutorial 做完的三個 WGS data 分別做兩種 variant calling: HaplotypeCaller 及 Mutect2 的結果！！
-> #### 如果尚未完成請先複製助教的檔案～
->  ```markdown=
-> cd /work/username
-> mkdir vcf_for_happy
-> cd vcf_for_happy
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S14_VC/SRR13076392_S14_L002.sorted.markdup.m2.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S15_VC/SRR13076396_S15_L002.sorted.markdup.m2.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S18_VC/SRR13076396_S18_L002.sorted.markdup.m2.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S14_VC/SRR13076392_S14_L002.sorted.markdup.hc.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S15_VC/SRR13076393_S15_L002.sorted.markdup.hc.vcf.gz ./
-> rsync -avzP /work/evelyn92/result/tutorial_result/tutorial_VC/S18_VC/SRR13076396_S18_L002.sorted.markdup.hc.vcf.gz ./
-> ```
-
 > [!Important]
 > #### 什麼是`hap.py`？
 > `hap.py`（Haplotype Comparison Tools）是一個用於比較基因組變異的工具。它經常被用來評估 variant calling 算法的準確性，特別是在體細胞或生殖細胞中的 SNPs 和 Indels 等變異的識別。`hap.py` 可以用來對比 variant calling 結果與已知的標準答案（例如 gold standard VCF ），以評估變異檢測方法的靈敏度 (Recall)、精確度 (Precision)等指標。
+
+## **本次課程的樹狀資料結構**
+[hap_file tree](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/week09_tree.txt)
+
 
 ### step 1 : 執行 [`hap.py`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week9_1029/hap.sh)
 
