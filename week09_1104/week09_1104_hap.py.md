@@ -1,4 +1,4 @@
-Date：20251029  
+Date：20261104  
 Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-IIX) / [中文](#生物標記物與它們的產地實作課程八)
 
 ## Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part IIX)
