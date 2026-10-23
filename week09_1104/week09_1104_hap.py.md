@@ -137,7 +137,6 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     sbatch rocplot.sh
     ```
 5. The results are saved in the rocplot_HCvsM2 folder, containing two plots.
-<br>
 
 - Comparison of **SNP results**: HaplotypeCaller vs. Mutect2
   <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="80%">
@@ -155,12 +154,15 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 6. You can also open **IGV** to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
 - Comparison between tools
-<br>Example: Comparison of SNPs for `SRR13076390` using HaplotypeCaller and Mutect2. At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, but not with Mutect2.
+<br>Example: Comparison of SNPs for `SRR13076390` using HaplotypeCaller and Mutect2. \
+At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, but not with Mutect2.
     <img src="https://hackmd.io/_uploads/B1VlOou3Mx.png" width="100%">
 
 - Comparison between samples
-<br>Example: Comparison of SNPs across `SRR13076390`, `SRR13076392`, `SRR13076393` using Mutect2.
-    <img src="" width="100%">
+<br>Example: Comparison of SNPs across `SRR13076390`, `SRR13076392`, `SRR13076393` using Mutect2. \
+At position chr2:47,466,649, the variant is shared across all three samples.  \
+At position chr2:47,466,617, the variant is sample-specific and only detected in `SRR13076392`.
+    <img src="https://hackmd.io/_uploads/BkFvglt2Ml.png" width="100%">
 
 
 
