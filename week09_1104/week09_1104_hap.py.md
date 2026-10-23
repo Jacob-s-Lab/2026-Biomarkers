@@ -146,13 +146,13 @@ sbatch hap.sh
 6. You can also open **IGV** to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
 - Comparison between tools
-<br>Example: Comparison of SNPs from `SRR13076390` HaplotypeCaller and Mutect2. At position ???, the variant can be found with HaplotypeCaller, but not with Mutect2.
-<img src="" width="75%">
-
-![螢幕擷取畫面 2025-10-15 214642](https://hackmd.io/_uploads/Hy6D8XpTeg.png)
+<br>Example: Comparison of SNPs from `SRR13076390` HaplotypeCaller and Mutect2. At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, but not with Mutect2.
+    <img src="https://hackmd.io/_uploads/B1VlOou3Mx.png" width="100%">
 
 - Comparison between samples ??
-<br>Example: Comparison of SNPs for S14, S15, S18 using Mutect2.
+<br>Example: Comparison of SNPs for `SRR13076390`, `SRR13076391`, `SRR13076392` using HaplotypeCaller.
+    <img src="" width="75%">
+
 ![樣本間比較](https://hackmd.io/_uploads/SkmUH7pTeg.png)
 
 
