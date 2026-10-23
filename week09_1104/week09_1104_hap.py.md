@@ -26,8 +26,8 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 2. Copy the executable files and reference files required for the class.
     ```
     rsync -avz /work/u2777445/2026Biomarker_TA/script/hap.sh ./
-    rsync -avz /work/u2777445/KnownPositives_hg38_Liftover.vcf ./
-    rsync -avz /work/u2777445/High-Confidence_Regions_v1.2.bed.gz ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/KnownPositives_hg38_Liftover.vcf ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/High-Confidence_Regions_v1.2.bed.gz ./
     ``` 
 
 3. Open `hap.sh` and enter the correct path names.
@@ -96,7 +96,7 @@ sbatch hap.sh
 2. Copy the executable files required for the class.
     ```
     rsync -avz /work/u2777445/2026Biomarker_TA/script/rocplot.sh ./
-    rsync -avz /work/u2777445/rocplot.Rscript ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/rocplot/rocplot.Rscript ./
     ```
 3. Enter R and load the required packages.
     ```
