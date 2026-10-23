@@ -79,9 +79,7 @@ sbatch hap.sh
 - output_prefix.vcf.gz
 - output_prefix.vcf.gz.tbi
 
-6. Copy `hap.sh` and rename it `hap_M2.sh`. Modify every `HC` into `M2`, and then run `hap_M2.sh`.
-
-   <img src="" width="75%">
+**6. Copy `hap.sh` and rename it `hap_M2.sh`. Change every `HC` into `M2`, and then run `hap_M2.sh`.**
 
 > [!Warning]
 > #### Make sure to replace all "HC" in the script, or your previous files will be overwritten.
@@ -92,7 +90,7 @@ sbatch hap.sh
 1. Create a folder named "rocplot" in the "work/username/hap" directory. Enter "rocplot" folder.
     ```
     cd /work/username/hap
-    mkdir hap
+    mkdir rocplot
     cd /work/username/hap/rocplot
     ```
 2. Copy the executable files required for the class.
@@ -110,37 +108,51 @@ sbatch hap.sh
     n
     ```
 
-4. Change to the correct path.
-- 🔵 **Blue** part: Make sure whether it is a HaplotypeCaller or Mutect2 file.
-- 🔴 **Red** part: Replace with your own username.
+4. Modify `rocplot.sh`.
 
-    <img src="" width="75%">
-    
-![螢幕擷取畫面 2025-10-15 215643](https://hackmd.io/_uploads/rJljF_76agl.png)
+- Slurm
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J 115_roc             # Job name
+    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
+    #SBATCH -o 115Biomarker_roc.out.log         # Path to the standard output file
+    #SBATCH -e 115Biomarker_roc.err.log         # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
+
+- Replace with your own username.
+
+    <img src="https://hackmd.io/_uploads/HJIzbod3zl.png" width="50%">
 
 4. Run `rocplot.sh`.
-```
-sbatch rocplot.sh
-```
+    ```
+    sbatch rocplot.sh
+    ```
 5. The results are saved in the rocplot_HC or rocplot_M2 folders, each containing two plots.
-For example:
+<br>For example:
 
-- Comparison of **SNP results** for HaplotypeCaller and Mutect2:
+- Comparison of **SNP results** for HaplotypeCaller and Mutect2
   <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="75%">
 
-- Comparison of **Indel results** for HaplotypeCaller and Mutect2:
+- Comparison of **Indel results** for HaplotypeCaller and Mutect2
   <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="75%">
 
 
 6. You can also open **IGV** to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
-- Comparison between tools:
-Example: Comparison of SNPs from `SRR13076390` HaplotypeCaller and Mutect2. At position ???, the variant can be found with HaplotypeCaller, but not with Mutect2.
+- Comparison between tools
+<br>Example: Comparison of SNPs from `SRR13076390` HaplotypeCaller and Mutect2. At position ???, the variant can be found with HaplotypeCaller, but not with Mutect2.
 <img src="" width="75%">
+
 ![螢幕擷取畫面 2025-10-15 214642](https://hackmd.io/_uploads/Hy6D8XpTeg.png)
 
-- Comparison between samples: ??
-Example: Comparison of SNPs for S14, S15, S18 using Mutect2.
+- Comparison between samples ??
+<br>Example: Comparison of SNPs for S14, S15, S18 using Mutect2.
 ![樣本間比較](https://hackmd.io/_uploads/SkmUH7pTeg.png)
 
 
