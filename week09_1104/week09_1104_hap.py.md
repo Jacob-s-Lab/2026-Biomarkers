@@ -1,7 +1,7 @@
 Date：20261104  
 Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-vi) / [中文](#生物標記物與它們的產地實作課程六)
 
-## Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part VI)
+# Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part VI)
 
 ## Main Content of the Course
 
@@ -137,29 +137,30 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     sbatch rocplot.sh
     ```
 5. The results are saved in the rocplot_HCvsM2 folder, containing two plots.
-<br>For example:
+<br>
 
-- Comparison of **SNP results** for HaplotypeCaller and Mutect2
-  <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="75%">
+- Comparison of **SNP results**: HaplotypeCaller vs. Mutect2
+  <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="80%">
 
-- Comparison of **Indel results** for HaplotypeCaller and Mutect2
-  <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="75%">
+- Comparison of **INDEL results**: HaplotypeCaller vs. Mutect2
+  <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="80%">
+
+> #### Comparison between samples
+> - Comparison of **SNP results** across `SRR13076390`, `SRR13076392`, and `SRR13076393` (using Mutect2)
+>   <img src="https://hackmd.io/_uploads/H1hZP1KnMe.png" width="80%">
+> - Comparison of **INDEL results** across `SRR13076390`, `SRR13076392`, and `SRR13076393` (using Mutect2)
+>   <img src="https://hackmd.io/_uploads/H1IWvJKhze.png" width="80%">
 
 
 6. You can also open **IGV** to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
 - Comparison between tools
-<br>Example: Comparison of SNPs from `SRR13076390` HaplotypeCaller and Mutect2. At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, but not with Mutect2.
+<br>Example: Comparison of SNPs for `SRR13076390` using HaplotypeCaller and Mutect2. At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, but not with Mutect2.
     <img src="https://hackmd.io/_uploads/B1VlOou3Mx.png" width="100%">
 
-- Comparison between samples ??
-<br>Example: Comparison of SNPs for `SRR13076390`, `SRR13076391`, `SRR13076392` using HaplotypeCaller.
-    <img src="" width="75%">
-
-![樣本間比較](https://hackmd.io/_uploads/SkmUH7pTeg.png)
-
-
-
+- Comparison between samples
+<br>Example: Comparison of SNPs across `SRR13076390`, `SRR13076392`, `SRR13076393` using Mutect2.
+    <img src="" width="100%">
 
 
 
