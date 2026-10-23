@@ -14,11 +14,11 @@ set -v -x
 echo "start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
-#REFERENCE_PATH=/opt/ohpc/Taiwania3/pkg/biology/reference
+#Please enter your username and sample name
 user=u9482849
 truth=/work/${user}/hap/KnownPositives_hg38_Liftover.vcf
 query=/work/${user}/variantcalling/variantcallingR/SRR13076390.HC.vcf.gz
-
+#Reference path
 REFERENCE_DIR=/opt/ohpc/Taiwania3/pkg/biology/reference
 
 # module load old-module
