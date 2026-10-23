@@ -89,12 +89,18 @@ sbatch hap.sh
 
 ### Step 2: Use [rocplot.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_rocplot_HC.sh) results to create an ROC plot.
 
-1. Copy the executable files required for the class.
+1. Create a folder named "rocplot" in the "work/username/hap" directory. Enter "rocplot" folder.
+    ```
+    cd /work/username/hap
+    mkdir hap
+    cd /work/username/hap/rocplot
+    ```
+2. Copy the executable files required for the class.
     ```
     rsync -avz /work/u2777445/2026Biomarker_TA/script/rocplot.sh ./
     rsync -avz /work/u2777445/rocplot.Rscript ./
     ```
-2. Enter R and load the required packages.
+3. Enter R and load the required packages.
     ```
     R
     install.packages("ggplot2")
@@ -104,7 +110,7 @@ sbatch hap.sh
     n
     ```
 
-3. Change to the correct path.
+4. Change to the correct path.
 - 🔵 **Blue** part: Make sure whether it is a HaplotypeCaller or Mutect2 file.
 - 🔴 **Red** part: Replace with your own username.
 
