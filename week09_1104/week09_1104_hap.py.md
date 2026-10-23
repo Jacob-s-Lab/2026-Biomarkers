@@ -50,9 +50,10 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     ```
     
 - 🔴 **Red** part: Enter your username.
-- 🟡 **Yellow** part: Enter your sample ID. (ex.SRR13076390)  <br> *Forgot your sample ID? Check [here](https://cool.ntu.edu.tw/courses/65400/files/10266690?module_item_id=2715043).*
+- 🟡 **Yellow** part: Enter your sample ID. (e.g., SRR13076390)  <br> *Forgot your sample ID? Check [here](https://cool.ntu.edu.tw/courses/65400/files/10266690?module_item_id=2715043).*
+- 🔵 **Blue** part: Enter your variant calling tool (`HC` or `M2`)
 
-    <img src="https://hackmd.io/_uploads/rkPFmqO2Mg.png" width="75%">
+    <img src="https://hackmd.io/_uploads/SyPgUaO3Mx.png" width="75%">
    
 
 
@@ -62,9 +63,9 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 > <img src="https://hackmd.io/_uploads/r17WD9u3fl.png" width="50%">
 
 4. Run `hap.sh`.
-```
-sbatch hap.sh
-```
+    ```
+    sbatch hap.sh
+    ```
 
 5. Get the results: a total of 11 files.
 - output_prefix.runinfo.json
@@ -79,10 +80,12 @@ sbatch hap.sh
 - output_prefix.vcf.gz
 - output_prefix.vcf.gz.tbi
 
-**6. Copy `hap.sh` and rename it `hap_M2.sh`. Change every `HC` into `M2`, and then run `hap_M2.sh`.**
+6. Copy `hap.sh` and rename it `hap_M2.sh`. **Set vctool=M2** in the script, and then run hap_M2.sh.
 
+   <img src="https://hackmd.io/_uploads/BkjAu6u3fg.png" width="10%">
+    
 > [!Warning]
-> #### Make sure to replace all "HC" in the script, or your previous files will be overwritten.
+> #### Make sure to set vctool to "M2", or your previous HC files will be overwritten.
 
 
 ### Step 2: Use [rocplot.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_rocplot_HC.sh) results to create an ROC plot.
@@ -118,8 +121,8 @@ sbatch hap.sh
     #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
     #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
     #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
-    #SBATCH -o 115Biomarker_roc.out.log         # Path to the standard output file
-    #SBATCH -e 115Biomarker_roc.err.log         # Path to the standard error ouput file
+    #SBATCH -o 115Biomarker_roc_HCvsM2.out.log         # Path to the standard output file
+    #SBATCH -e 115Biomarker_roc_HCvsM2.err.log         # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
     #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
@@ -133,7 +136,7 @@ sbatch hap.sh
     ```
     sbatch rocplot.sh
     ```
-5. The results are saved in the rocplot_HC or rocplot_M2 folders, each containing two plots.
+5. The results are saved in the rocplot_HCvsM2 folder, containing two plots.
 <br>For example:
 
 - Comparison of **SNP results** for HaplotypeCaller and Mutect2
