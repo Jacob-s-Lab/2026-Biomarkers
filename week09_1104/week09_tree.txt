@@ -97,8 +97,8 @@
 |     | |____rocplot.sh
 |     | |____rocplot.Rscript
 |     | |____rocplot_HCvsM2
-|     | |____115Biomarker_roc.out.log
-|     | |____115Biomarker_roc.err.log
+|     | |____115Biomarker_roc_HCvsM2.out.log
+|     | |____115Biomarker_roc_HCvsM2.err.log
 |     |____115Biomarker_hap_HC.out.log
 |     |____115Biomarker_hap_HC.err.log
 |     |____115Biomarker_hap_M2.out.log
