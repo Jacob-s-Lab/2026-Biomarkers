@@ -14,10 +14,12 @@ set -v -x
 echo "start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
-#Please enter your username and sample name
+#Please enter your username, sample name, and variant calling tool (HC or M2)
 user=u9482849
+sample=SRR13076390
+vctool=HC
 truth=/work/${user}/hap/KnownPositives_hg38_Liftover.vcf
-query=/work/${user}/variantcalling/variantcallingR/SRR13076390.HC.vcf.gz
+query=/work/${user}/variantcalling/variantcallingR/${sample}.${vctool}.vcf.gz
 #Reference path
 REFERENCE_DIR=/opt/ohpc/Taiwania3/pkg/biology/reference
 
@@ -33,14 +35,13 @@ DIR_hap=/work/${user}/hap
 
 mkdir -p ${DIR_hap}
 
-DIR_HC_hap=${DIR_hap}/115_HC_hap
+DIR_VC_hap=${DIR_hap}/115_${vctool}_hap
 
-mkdir -p ${DIR_HC_hap}
+mkdir -p ${DIR_VC_hap}
 
-cd ${DIR_HC_hap}
+cd ${DIR_VC_hap}
 
-
-echo "pwd for HC hap: "
+echo "pwd for ${vctool} hap: "
 pwd
 
 
@@ -53,17 +54,17 @@ bcftools view \
 -M2 \
 ${query} \
 -Oz \
--o ${DIR_HC_hap}/SRR13076390.HC.modified.vcf.gz
+-o ${DIR_VC_hap}/${sample}.${vctool}.modified.vcf.gz
 
 
-bcftools index ${DIR_HC_hap}/SRR13076390.HC.modified.vcf.gz
+bcftools index ${DIR_VC_hap}/${sample}.${vctool}.modified.vcf.gz
 
 
 echo "bcftools finished"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 
-query_modified=${DIR_HC_hap}/SRR13076390.HC.modified.vcf.gz
+query_modified=${DIR_VC_hap}/${sample}.${vctool}.modified.vcf.gz
 
 
 export HGREF=${REFERENCE_DIR}/Homo_sapiens/GATK/hg38/Homo_sapiens_assembly38.fasta
@@ -75,8 +76,8 @@ echo "$(date '+%Y-%m-%d %H:%M:%S')"
 
 /opt/ohpc/Taiwania3/pkg/biology/illumina_hap.py/hap.py_v0.3.15/bin/hap.py ${truth} ${query_modified} \
 --filter-nonref \
--f /work/${user}/High-Confidence_Regions_v1.2.bed.gz \
--o ${DIR_HC_hap}/output_prefix \
+-f ${DIR_hap}/High-Confidence_Regions_v1.2.bed.gz \
+-o ${DIR_VC_hap}/output_prefix \
 -r ${REFERENCE_DIR}/Homo_sapiens/GATK/hg38/Homo_sapiens_assembly38.fasta \
 --leftshift \
 --bcftools-norm
