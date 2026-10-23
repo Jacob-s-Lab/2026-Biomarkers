@@ -34,20 +34,32 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     ```
     vim hap.sh
     ```
-- 🔴 **Red** part: Change the TA's username to your own.
-- 🔵 **Blue** file names: Modify according to your files.
-- 🟡 **Yellow** part: Change to your own file path.
+- Slurm
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J 115_HC_hap          # Job name
+    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
+    #SBATCH -o 115Biomarker_hap_HC.out.log         # Path to the standard output file
+    #SBATCH -e 115Biomarker_hap_HC.err.log         # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
+    
+- 🔴 **Red** part: Enter your username.
+- 🟡 **Yellow** part: Enter your sample ID. (ex.SRR13076390)  <br> *Forgot your sample ID? Check [here](https://cool.ntu.edu.tw/courses/65400/files/10266690?module_item_id=2715043).*
 
-    <img src="" width="75%">
-    <img src="" width="75%">
-
-![螢幕擷取畫面 2025-10-15 152422](https://hackmd.io/_uploads/SypGyRhaex.png)
-![螢幕擷取畫面 2025-10-15 153242](https://hackmd.io/_uploads/SJ6710hpxe.png)
+    <img src="https://hackmd.io/_uploads/rkPFmqO2Mg.png" width="75%">
+   
 
 
 > [!Important]
 > #### Reminder: 
 > **The bcftools command is used to remove multiallelic variants from the VCF file so that `hap.py` can read it.**
+> <img src="https://hackmd.io/_uploads/r17WD9u3fl.png" width="50%">
 
 4. Run `hap.sh`.
 ```
@@ -67,15 +79,20 @@ sbatch hap.sh
 - output_prefix.vcf.gz
 - output_prefix.vcf.gz.tbi
 
-6. Copy `hap.sh` and rename it `hap_M2.sh`. Modify HC files to M2 files, and then run `hap_M2.sh`.
-   
+6. Copy `hap.sh` and rename it `hap_M2.sh`. Modify every `HC` into `M2`, and then run `hap_M2.sh`.
+
+   <img src="" width="75%">
+
+> [!Warning]
+> #### Make sure to replace all "HC" in the script, or your previous files will be overwritten.
+
 
 ### Step 2: Use [rocplot.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_rocplot_HC.sh) results to create an ROC plot.
 
 1. Copy the executable files required for the class.
     ```
-    rsync -avz /work/evelyn92/rocplot/rocplot.sh ./
-    rsync -avz /work/evelyn92/rocplot/rocplot_test.Rscript ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/rocplot.sh ./
+    rsync -avz /work/u2777445/rocplot.Rscript ./
     ```
 2. Enter R and load the required packages.
     ```
