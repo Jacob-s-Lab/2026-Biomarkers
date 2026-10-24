@@ -151,7 +151,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 >   <img src="https://hackmd.io/_uploads/H1IWvJKhze.png" width="80%">
 
 
-6. You can also open **IGV** to compare the results from `hap.py`.
+6. You can also open [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
 - Comparison between tools
 <br>Example: Comparison of SNPs for `SRR13076390` using HaplotypeCaller and Mutect2. \
