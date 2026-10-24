@@ -155,12 +155,12 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 
 6. You can also open [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
-- Comparison between tools
+- **Comparison between tools**
 <br>Example: Comparison of SNPs for `SRR13076390` using HaplotypeCaller and Mutect2. \
 At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, but not with Mutect2.
     <img src="https://hackmd.io/_uploads/B1VlOou3Mx.png" width="100%">
 
-- Comparison between samples
+- **Comparison between samples**
 <br>Example: Comparison of SNPs across `SRR13076390`, `SRR13076392`, `SRR13076393` using Mutect2. \
 At position `chr2:47,466,649`, the variant is shared across all three samples.  \
 At position `chr2:47,466,617`, the variant is sample-specific and only detected in `SRR13076392`.
@@ -319,12 +319,12 @@ At position `chr2:47,466,617`, the variant is sample-specific and only detected 
 
 6. 也可以打開 [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) 比較`hap.py`的結果。
 結果儲存於```output_prefix.vcf.gz```
-- 工具間的比較
+- **工具間的比較**
 <br>例子: `SRR13076390` Mutect2 及 HaplotypeCaller 的 SNP 比較。 \
 `chr1:239,220,118` 這個位點可以在 HaplotypeCaller 被找到，但在 Mutect2 找不到。
     <img src="https://hackmd.io/_uploads/B1VlOou3Mx.png" width="100%">
 
-- 樣本間的比較
+- **樣本間的比較**
 <br>例子: `SRR13076390`, `SRR13076392`, `SRR13076393` Mutect2 的 SNP 比較。 \
 三個樣本都有在 `chr2:47,466,649` 找到變異。 `chr2:47,466,617` 僅在 `SRR13076392` 找到。
     <img src="https://hackmd.io/_uploads/BkFvglt2Ml.png" width="100%">
