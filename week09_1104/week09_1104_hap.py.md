@@ -206,13 +206,13 @@ At position `chr2:47,466,617`, the variant is sample-specific and only detected 
     #!/usr/bin/sh
     #SBATCH -A ACD115175           # Account name/project number
     #SBATCH -J 115_HC_hap          # Job name
-    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
-    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
-    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
-    #SBATCH -o 115Biomarker_hap_HC.out.log         # Path to the standard output file
-    #SBATCH -e 115Biomarker_hap_HC.err.log         # Path to the standard error ouput file
+    #SBATCH -p ngscourse           # Partition Name (等同PBS裡面的 -q Queue name)
+    #SBATCH -c 2                   # 使用的core數 請參考Queue資源設定
+    #SBATCH --mem=13g              # 使用的記憶體量 請參考Queue資源設定
+    #SBATCH -o 115Biomarker_hap_HC.out.log       # Path to the standard output file
+    #SBATCH -e 115Biomarker_hap_HC.err.log       # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
-    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    #SBATCH --mail-type=FAIL,END   # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
     ```
     
@@ -284,13 +284,13 @@ At position `chr2:47,466,617`, the variant is sample-specific and only detected 
     #!/usr/bin/sh
     #SBATCH -A ACD115175           # Account name/project number
     #SBATCH -J 115_roc             # Job name
-    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
-    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
-    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
-    #SBATCH -o 115Biomarker_roc_HCvsM2.out.log         # Path to the standard output file
-    #SBATCH -e 115Biomarker_roc_HCvsM2.err.log         # Path to the standard error ouput file
+    #SBATCH -p ngscourse           # Partition Name (等同PBS裡面的 -q Queue name)
+    #SBATCH -c 2                   # 使用的core數 請參考Queue資源設定
+    #SBATCH --mem=13g              # 使用的記憶體量 請參考Queue資源設定
+    #SBATCH -o 115Biomarker_roc_HCvsM2.out.log       # Path to the standard output file
+    #SBATCH -e 115Biomarker_roc_HCvsM2.err.log       # Path to the standard error ouput file
     #SBATCH --mail-user=           # e-mail
-    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    #SBATCH --mail-type=FAIL,END   # 指定送出email時機 可為NONE, BEGIN, END, FAIL, REQUEUE, ALL
     # For NCHC usage
     ```
 
