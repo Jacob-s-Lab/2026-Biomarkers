@@ -80,12 +80,14 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 - output_prefix.vcf.gz
 - output_prefix.vcf.gz.tbi
 
-6. Copy `hap.sh` and rename it `hap_M2.sh`. **Set vctool=M2** in the script, and then run hap_M2.sh.
-
-   <img src="https://hackmd.io/_uploads/BkjAu6u3fg.png" width="10%">
+6. Copy `hap.sh` and rename it `hap_M2.sh`. Replace all `HC` with **M2** in the script (including Slurm settings and all variables), and then run hap_M2.sh.
+    ```
+    cp hap.sh hap_M2.sh
+    vim hap_M2.sh
+    ```
     
 > [!Warning]
-> #### Make sure to set vctool to "M2", or your previous HC files will be overwritten.
+> #### Make sure to set `vctool` to "M2", or your previous HC files will be overwritten.
 
 
 ### Step 2: Use [rocplot.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_rocplot_HC.sh) results to create an ROC plot.
@@ -160,8 +162,8 @@ At position `chr1:239,220,118`, the variant can be found with HaplotypeCaller, b
 
 - Comparison between samples
 <br>Example: Comparison of SNPs across `SRR13076390`, `SRR13076392`, `SRR13076393` using Mutect2. \
-At position chr2:47,466,649, the variant is shared across all three samples.  \
-At position chr2:47,466,617, the variant is sample-specific and only detected in `SRR13076392`.
+At position `chr2:47,466,649`, the variant is shared across all three samples.  \
+At position `chr2:47,466,617`, the variant is sample-specific and only detected in `SRR13076392`.
     <img src="https://hackmd.io/_uploads/BkFvglt2Ml.png" width="100%">
 
 
@@ -182,31 +184,54 @@ At position chr2:47,466,617, the variant is sample-specific and only detected in
 
 ### step 1 : 執行 [`hap.py`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week9_1029/hap.sh)
 
-1. 複製上課所需執行檔與標準檔。
-```markdown=
-cd /work/username
-rsync -avz /work/evelyn92/hap.sh ./
-rsync -avz /work/evelyn92/KnownPositives_hg38_Liftover.vcf ./
-rsync -avz /work/evelyn92/High-Confidence_Regions_v1.2.bed.gz ./
-```
+1. 在 `work/username` 下建立並進入 `hap` 資料夾。
+    ```
+    cd /work/username
+    mkdir hap
+    cd /work/username/hap
+    ```
+2. 複製上課所需執行檔與標準檔。
+    ```
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/hap.sh ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/KnownPositives_hg38_Liftover.vcf ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/High-Confidence_Regions_v1.2.bed.gz ./
+    ``` 
 
-2. 打開`hap.sh`並寫入正確的路徑名稱。  \
-   (1)🔴 **紅色** 部分：助教的 **username** 改成自己的。  \
-   (2)🔵 **藍色** 的檔案名稱：隨你的檔案改變。  \
-   (3)🟡 **黃色** 部分：改成自己的檔案路徑。
-![螢幕擷取畫面 2025-10-15 152422](https://hackmd.io/_uploads/SypGyRhaex.png)
-![螢幕擷取畫面 2025-10-15 153242](https://hackmd.io/_uploads/SJ6710hpxe.png)
+3. 開啟 `hap.sh` 並修改。
+    ```
+    vim hap.sh
+    ```
+- Slurm
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J 115_HC_hap          # Job name
+    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
+    #SBATCH -o 115Biomarker_hap_HC.out.log         # Path to the standard output file
+    #SBATCH -e 115Biomarker_hap_HC.err.log         # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
+    
+- 🔴 **紅色** 部分: 輸入你的國網主機帳號
+- 🟡 **黃色** 部分: 輸入你的 sample ID (e.g., SRR13076390)  <br> *忘記sample ID請[點此](https://cool.ntu.edu.tw/courses/65400/files/10266690?module_item_id=2715043)查詢*
+- 🔵 **藍色** 部分: 輸入使用的 variant calling 工具 (`HC` 或 `M2`)
+
+    <img src="https://hackmd.io/_uploads/SyPgUaO3Mx.png" width="75%">
 
 > [!Important]
 > #### 提醒：
 > **bcftools 命令的部分是將 vcf 檔中的 multialelic 去除，以便`hap.py`可以讀取。**
 > 
 
-3. 執行```hap.sh```
-```
-sbatch hap.sh
-```
-4. 得到結果 : 共11個檔案。
+4. 執行```hap.sh```
+    ```
+    sbatch hap.sh
+    ```
+5. 得到結果 : 共11個檔案。
 - output_prefix.runinfo.json
 - output_prefix.metrics.json.gz
 - output_prefix.roc.Locations.SNP.csv.gz
@@ -219,54 +244,87 @@ sbatch hap.sh
 - output_prefix.vcf.gz
 - output_prefix.vcf.gz.tbi
 
-
+6. 複製 `hap.sh` 並命名為 `hap_M2.sh`. 將 `hap_M2.sh` 內所有的 `HC` 替換為 **M2**（包含 Slurm 設定與腳本內的所有變數），完成後執行 `hap_M2.sh`。
+    ```
+    cp hap.sh hap_M2.sh
+    vim hap_M2.sh
+    ```
+    
+> [!Warning]
+> #### 請務必將 `vctool` 設定為 M2，否則先前產生的 HC 檔案會被覆蓋掉。
 
 
 ### step 2 : 利用 [`rocplot.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week9_1029/rocplot.sh) 結果製作 ROC 圖
 
-1. 複製上課所需執行檔。
-```markdown=
-rsync -avz /work/evelyn92/rocplot/rocplot.sh ./
-rsync -avz /work/evelyn92/rocplot/rocplot_test.Rscript ./
-```
-2. 進入R，載入需要的 package
-```markdown=
-R
-install.packages("ggplot2")
-61
-install.packages("tools")
-q()
-n
-```
+1. 在 `work/username/hap` 下建立並進入 `rocplot` 資料夾。
+    ```
+    cd /work/username/hap
+    mkdir rocplot
+    cd /work/username/hap/rocplot
+    ```
+2. 複製上課所需執行檔。
+    ```
+    rsync -avz /work/u2777445/2026Biomarker_TA/script/rocplot.sh ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/rocplot/rocplot.Rscript ./
+    ```
+3. 進入R，載入需要的 package
+    ```
+    R
+    install.packages("ggplot2")
+    61
+    install.packages("tools")
+    q()
+    n
+    ```
 
-3. 更改正確路徑  \
-   (1)🔵 **藍色** 的部分：須注意是 **Haplotypecaller 或是 Mutect2 的檔案**。  \
-   (2)🔴 **紅色** 的部分：需換成自己的 **username**。
-![螢幕擷取畫面 2025-10-15 215643](https://hackmd.io/_uploads/rJljF_76agl.png)
+4. 修改 `rocplot.sh`
+
+- Slurm
+    ```
+    #!/usr/bin/sh
+    #SBATCH -A ACD115175           # Account name/project number
+    #SBATCH -J 115_roc             # Job name
+    #SBATCH -p ngscourse           # Partition Name (equivalent to PBS's -q Queue name)
+    #SBATCH -c 2                   # Number of cores used (refer to Queue resource settings)
+    #SBATCH --mem=13g              # Amount of memory used (refer to Queue resource settings)
+    #SBATCH -o 115Biomarker_roc_HCvsM2.out.log         # Path to the standard output file
+    #SBATCH -e 115Biomarker_roc_HCvsM2.err.log         # Path to the standard error ouput file
+    #SBATCH --mail-user=           # e-mail
+    #SBATCH --mail-type=FAIL,END   # Specifies when to send email; can be NONE, BEGIN, END, FAIL, REQUEUE, ALL
+    # For NCHC usage
+    ```
+
+- 輸入你的國網主機帳號
+
+    <img src="https://hackmd.io/_uploads/HJIzbod3zl.png" width="50%">
 
 5. 執行`rocplot.sh`
-```
-sbatch rocplot.sh
-```
-5. 得到結果存於 rocplot_HC 或 rocplot_M2 資料夾，裡面各有兩張圖。
+    ```
+    sbatch rocplot.sh
+    ```
+6. 得到結果存於 rocplot_HCvsM2 資料夾，裡面有兩張圖。
+
+- **SNP 結果比較**：HaplotypeCaller vs. Mutect2
+  <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="80%">
+
+- **INDEL 結果比較**：HaplotypeCaller vs. Mutect2
+  <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="80%">
+
+> #### 樣本間的比較
+> - **SNP 結果比較**：`SRR13076390`、`SRR13076392` 與 `SRR13076393`（使用 Mutect2）
+>   <img src="https://hackmd.io/_uploads/H1hZP1KnMe.png" width="80%">
+> - **INDEL 結果比較**：`SRR13076390`、`SRR13076392` 與 `SRR13076393`（使用 Mutect2）
+>   <img src="https://hackmd.io/_uploads/H1IWvJKhze.png" width="80%">
 
 
-例如：
-- S14, S15, S18 Mutect2 在 SNP 的結果比較：
-![hap_plot.SNP](https://hackmd.io/_uploads/SJz1Ym6Tee.png)
-
-
-
-
-- S14, S15, S18 Mutect2 在 Indel 的結果比較：
-![hap_plot.INDEL](https://hackmd.io/_uploads/H17xYQTaxx.png)
-
-
-6. 也可以打開 IGV 比較`hap.py`的結果。
+6. 也可以打開 [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) 比較`hap.py`的結果。
 結果儲存於```output_prefix.vcf.gz```
-- 工具間的比較：
-    舉例：S18 Mutect2 及 Haplotypecaller 的 SNP 比較，在 chr1 的241,884,674這個位點可以在 Haplotypecaller 被找到，但在 Mutect2 找不到。
-![螢幕擷取畫面 2025-10-15 214642](https://hackmd.io/_uploads/S1CWFQpTee.png)
-- 樣本間的比較：
-    舉例：S14, S15, S18 Mutect2 的 SNP 比較。
-![樣本間比較](https://hackmd.io/_uploads/BkJmFQapee.png)
+- 工具間的比較
+<br>例子: `SRR13076390` Mutect2 及 HaplotypeCaller 的 SNP 比較。 \
+`chr1:239,220,118` 這個位點可以在 HaplotypeCaller 被找到，但在 Mutect2 找不到。
+    <img src="https://hackmd.io/_uploads/B1VlOou3Mx.png" width="100%">
+
+- 樣本間的比較
+<br>例子: `SRR13076390`, `SRR13076392`, `SRR13076393` Mutect2 的 SNP 比較。 \
+三個樣本都有在 `chr2:47,466,649` 找到變異。 `chr2:47,466,617` 僅在 `SRR13076392` 找到。
+    <img src="https://hackmd.io/_uploads/BkFvglt2Ml.png" width="100%">
