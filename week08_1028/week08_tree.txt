@@ -37,8 +37,8 @@
 |     | |____SRR13076392.M2.vcf.gz.tbi
 |     |____115Biomarker_variantcalling.out_vc.log
 |     |____115Biomarker_variantcalling.err_vc.log
-|     |____115Biomarker_m2_variantcalling.out_vc.log
-|     |____115Biomarker_m2_variantcalling.err_vc.log
+|     |____115Biomarker_m2_variantcalling.out.log
+|     |____115Biomarker_m2_variantcalling.err.log
 |   |____annotation
 |     |____vep.sh
 |     |____vep_m2.sh
