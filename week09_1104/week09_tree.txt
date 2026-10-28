@@ -65,6 +65,7 @@
 |     |____hap_M2.sh
 |     |____KnownPositives_hg38_Liftover.vcf
 |     |____High-Confidence_Regions_v1.2.bed.gz
+|     |____High-Confidence_Regions_v1.2.bed.gz.tbi
 |     |____115_HC_hap
 |     | |____output_prefix.extended.csv
 |     | |____output_prefix.metrics.json.gz
