@@ -63,6 +63,7 @@ set -euo pipefail
 echo "split multiallelic: start"
 echo "$(date '+%Y-%m-%d %H:%M:%S')"
 ${BCFTOOLS} norm -m -any ${DIR_VC}/${sample}.${VCcaller}.vcf.gz \
+    -t ^chrM \
     -Oz \
     -o ${sample}.${VCcaller}.normed.vcf.gz
 ${BCFTOOLS} index -t -f ${sample}.${VCcaller}.normed.vcf.gz
