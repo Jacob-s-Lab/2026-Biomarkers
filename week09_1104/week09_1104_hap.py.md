@@ -28,7 +28,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     rsync -avz /work/u2777445/2026Biomarker_TA/script/hap.sh ./
     rsync -avz /work/u2777445/2026Biomarker_TA/hap/KnownPositives_hg38_Liftover.vcf ./
     rsync -avz /work/u2777445/2026Biomarker_TA/hap/High-Confidence_Regions_v1.2.bed.gz ./
-    rsync -avz /work/u2777445/2026Biomarker_TA/hap/High-Confidence_Regions_v1.2.bed.gz.tbi ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/hg38_cds.merged.bed ./
     ``` 
 
 3. Open `hap.sh` and enter the correct path names.
@@ -196,7 +196,7 @@ At position `chr2:47,466,617`, the variant is sample-specific and only detected 
     rsync -avz /work/u2777445/2026Biomarker_TA/script/hap.sh ./
     rsync -avz /work/u2777445/2026Biomarker_TA/hap/KnownPositives_hg38_Liftover.vcf ./
     rsync -avz /work/u2777445/2026Biomarker_TA/hap/High-Confidence_Regions_v1.2.bed.gz ./
-    rsync -avz /work/u2777445/2026Biomarker_TA/hap/High-Confidence_Regions_v1.2.bed.gz.tbi ./
+    rsync -avz /work/u2777445/2026Biomarker_TA/hap/hg38_cds.merged.bed ./
     ``` 
 
 3. 開啟 `hap.sh` 並修改。
