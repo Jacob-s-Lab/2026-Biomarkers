@@ -142,16 +142,16 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 5. The results are saved in the rocplot_HCvsM2 folder, containing two plots.
 
 - Comparison of **SNP results**: HaplotypeCaller vs. Mutect2
-  <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="80%">
+  <img src="https://hackmd.io/_uploads/ByptFOg6zg.png" width="80%">
 
 - Comparison of **INDEL results**: HaplotypeCaller vs. Mutect2
-  <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="80%">
+  <img src="https://hackmd.io/_uploads/ry7WYdxpGx.png" width="80%">
 
 > #### Comparison between samples
 > - Comparison of **SNP results** across `SRR13076390`, `SRR13076392`, and `SRR13076393` (using Mutect2)
->   <img src="https://hackmd.io/_uploads/H1hZP1KnMe.png" width="80%">
+>   <img src="https://hackmd.io/_uploads/r1BDtdlTfl.png" width="80%">
 > - Comparison of **INDEL results** across `SRR13076390`, `SRR13076392`, and `SRR13076393` (using Mutect2)
->   <img src="https://hackmd.io/_uploads/H1IWvJKhze.png" width="80%">
+>   <img src="https://hackmd.io/_uploads/HkiPF_l6fx.png" width="80%">
 
 
 6. You can also open [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) to compare the results from `hap.py`.
@@ -307,16 +307,16 @@ At position `chr2:47,466,617`, the variant is sample-specific and only detected 
 6. 得到結果存於 rocplot_HCvsM2 資料夾，裡面有兩張圖。
 
 - **SNP 結果比較**：HaplotypeCaller vs. Mutect2
-  <img src="https://hackmd.io/_uploads/Hk_rUK_3Ml.png" width="80%">
+  <img src="https://hackmd.io/_uploads/ByptFOg6zg.png" width="80%">
 
 - **INDEL 結果比較**：HaplotypeCaller vs. Mutect2
-  <img src="https://hackmd.io/_uploads/Hyl88tOhfx.png" width="80%">
+  <img src="https://hackmd.io/_uploads/ry7WYdxpGx.png" width="80%">
 
 > #### 樣本間的比較
 > - **SNP 結果比較**：`SRR13076390`、`SRR13076392` 與 `SRR13076393`（使用 Mutect2）
->   <img src="https://hackmd.io/_uploads/H1hZP1KnMe.png" width="80%">
+>   <img src="https://hackmd.io/_uploads/r1BDtdlTfl.png" width="80%">
 > - **INDEL 結果比較**：`SRR13076390`、`SRR13076392` 與 `SRR13076393`（使用 Mutect2）
->   <img src="https://hackmd.io/_uploads/H1IWvJKhze.png" width="80%">
+>   <img src="https://hackmd.io/_uploads/HkiPF_l6fx.png" width="80%">
 
 
 6. 也可以打開 [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) 比較`hap.py`的結果。
