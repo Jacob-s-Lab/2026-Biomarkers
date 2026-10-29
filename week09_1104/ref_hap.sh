@@ -77,6 +77,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S')"
 /opt/ohpc/Taiwania3/pkg/biology/illumina_hap.py/hap.py_v0.3.15/bin/hap.py ${truth} ${query_modified} \
 --filter-nonref \
 -f ${DIR_hap}/High-Confidence_Regions_v1.2.bed.gz \
+-T ${DIR_hap}/hg38_cds.merged.bed \
 -o ${DIR_VC_hap}/output_prefix \
 -r ${REFERENCE_DIR}/Homo_sapiens/GATK/hg38/Homo_sapiens_assembly38.fasta \
 --leftshift \
