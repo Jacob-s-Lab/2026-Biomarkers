@@ -9,7 +9,9 @@
 #SBATCH --mail-user=b99999999@ntu.edu.tw
 #SBATCH --mail-type=FAIL,END
 
-# Path
+set -v -x
+
+# Please enter your username and sampleID
 user=u2777445
 sampleID=SRR13076390
 mkdir -p /work/${user}/HLA_typing
