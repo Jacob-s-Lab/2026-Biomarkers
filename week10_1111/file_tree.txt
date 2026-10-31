@@ -112,11 +112,11 @@
 |     |____HLA_typing_T1K.out.log
 |     |____HLA_typing_T1K.err.log
 |   |____HLA_typing
-|     |____
-|     |____
-|     |____
-|     |____
-|     |____
-|     |____
-|     |____
+|     |____SRR13076392_aligned_1.fa
+|     |____SRR13076392_aligned_2.fa
+|     |____SRR13076392_allele.tsv
+|     |____SRR13076392_allele.vcf
+|     |____SRR13076392_candidate_1.fq
+|     |____SRR13076392_candidate_2.fq
+|     |____SRR13076392_genotype.tsv
 |____home
