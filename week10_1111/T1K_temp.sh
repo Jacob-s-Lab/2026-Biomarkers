@@ -1,9 +1,9 @@
 #!/usr/bin/sh
 #SBATCH -A ACD115175 
 #SBATCH -J HLA_typing_T1K
-#SBATCH -p ngscourse
-#SBATCH -c 2
-#SBATCH --mem=13g
+#SBATCH -p ngscourse92G
+#SBATCH -c 14
+#SBATCH --mem=92g
 #SBATCH -o HLA_typing_T1K.out.log
 #SBATCH -e HLA_typing_T1K.err.log
 #SBATCH --mail-user=b99999999@ntu.edu.tw
@@ -22,6 +22,7 @@ T1K_PATH=/opt/ohpc/Taiwania3/pkg/biology/T1K/T1K_v1.0.5
 ${T1K_PATH}/run-t1k \
 -1 ${sampleR1} \
 -2 ${sampleR2} \
+-t 12 \
 --preset hla \
 -f /work/${user}/T1K/hlaidx_dna_seq.fa \
 --od /work/${user}/HLA_typing \
