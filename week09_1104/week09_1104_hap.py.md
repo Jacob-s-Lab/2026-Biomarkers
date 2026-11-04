@@ -90,6 +90,9 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 > [!Warning]
 > #### Make sure to set `vctool` to "M2", or your previous HC files will be overwritten.
 
+> [!Important] 
+> **Wait for the hap.py job to complete before proceeding to Step 2.**
+
 
 ### Step 2: Use [rocplot.sh](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week09_1104/ref_rocplot_HC.sh) results to create an ROC plot.
 
@@ -157,7 +160,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 >   <img src="https://hackmd.io/_uploads/HkiPF_l6fx.png" width="80%">
 
 
-6. You can also open [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) to compare the results from `hap.py`.
+7. You can also open [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) to compare the results from `hap.py`.
 The results are saved in ```output_prefix.vcf.gz.```
 - **Comparison between tools**
 <br>Example: Comparison of SNPs for `SRR13076390` using HaplotypeCaller and Mutect2. \
@@ -258,6 +261,8 @@ At position `chr17:7,743,278`, the variant is sample-specific and only detected 
 > [!Warning]
 > #### 請務必將 `vctool` 設定為 M2，否則先前產生的 HC 檔案會被覆蓋掉。
 
+> [!Important] 
+> **請等hap執行完成再進行Step2**
 
 ### step 2 : 利用 [`rocplot.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week9_1029/rocplot.sh) 結果製作 ROC 圖
 
@@ -325,7 +330,7 @@ At position `chr17:7,743,278`, the variant is sample-specific and only detected 
 >   <img src="https://hackmd.io/_uploads/HkiPF_l6fx.png" width="80%">
 
 
-6. 也可以打開 [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) 比較`hap.py`的結果。
+7. 也可以打開 [**IGV**](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week04_0930/week04_0930_BWA.md#step-1-use-thinlinc-to-open-igv) 比較`hap.py`的結果。
 結果儲存於```output_prefix.vcf.gz```
 - **工具間的比較**
 <br>例子: `SRR13076390` Mutect2 及 HaplotypeCaller 的 SNP 比較。 \
