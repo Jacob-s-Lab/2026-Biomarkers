@@ -139,12 +139,15 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     ```
     sbatch rocplot.sh
     ```
-5. The results are saved in the rocplot_HCvsM2 folder, containing two plots.
+5. View the ROC plots:
+- The results are saved in the rocplot_HCvsM2 folder, download the folder to your local computer to view the plots.
+- Need a refresher on file transfer? Check [here](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-2-file-transfer).*
 
-- Comparison of **SNP results**: HaplotypeCaller vs. Mutect2
+
+(1) Comparison of **SNP results**: HaplotypeCaller vs. Mutect2
   <img src="https://hackmd.io/_uploads/ByptFOg6zg.png" width="80%">
 
-- Comparison of **INDEL results**: HaplotypeCaller vs. Mutect2
+(2) Comparison of **INDEL results**: HaplotypeCaller vs. Mutect2
   <img src="https://hackmd.io/_uploads/ry7WYdxpGx.png" width="80%">
 
 > #### Comparison between samples
@@ -304,7 +307,10 @@ At position `chr17:7,743,278`, the variant is sample-specific and only detected 
     ```
     sbatch rocplot.sh
     ```
-6. 得到結果存於 rocplot_HCvsM2 資料夾，裡面有兩張圖。
+6. 檢視 ROC 分析結果
+
+分析結果儲存於 rocplot_HCvsM2 資料夾中，內含兩張 ROC 比較圖。請將資料夾下載至個人電腦，以檢視分析結果。
+忘記如何下載檔案？請[點此](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-2%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99%E5%82%B3%E8%BC%B8)查詢
 
 - **SNP 結果比較**：HaplotypeCaller vs. Mutect2
   <img src="https://hackmd.io/_uploads/ByptFOg6zg.png" width="80%">
