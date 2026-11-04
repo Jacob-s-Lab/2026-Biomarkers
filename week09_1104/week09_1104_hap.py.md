@@ -135,11 +135,11 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 
     <img src="https://hackmd.io/_uploads/HJIzbod3zl.png" width="50%">
 
-4. Run `rocplot.sh`.
+5. Run `rocplot.sh`.
     ```
     sbatch rocplot.sh
     ```
-5. View the ROC plots:
+6. View the ROC plots:
 - The results are saved in the rocplot_HCvsM2 folder, download the folder to your local computer to view the plots.
 - Need a refresher on file transfer? Check [here](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week01_0909/week01_NCHC_account.md#step-2-file-transfer).*
 
