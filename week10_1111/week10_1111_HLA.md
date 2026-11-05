@@ -37,13 +37,14 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 sbatch T1K_temp.sh
 ```
 3. Result: A total of 7 files, all located in the HLA typing folder.
-- S14_aligned_1.fa: Records the portion of the reference sequence that R1 aligned to.
-- S14_aligned_2.fa: Records the portion of the reference sequence that R2 aligned to.
-- S14_allele.tsv: Records the simplified HLA typing results.
-- S14_allele.vcf: Records the variant sites identified by alignment to the HLA gene.
-- S14_candidate_1.fq: R1 reads identified as likely related to HLA sequences.
-- S14_candidate_2.fq: R2 reads identified as likely related to HLA sequences.
-- S14_genotype.tsv: Records the main analysis results for reviewing HLA genotypes.
+- SRR13076390_aligned_1.fa: Records the portion of the reference sequence that R1 aligned to.
+- SRR13076390_aligned_2.fa: Records the portion of the reference sequence that R2 aligned to.
+- SRR13076390_allele.tsv: Records the simplified HLA typing results.
+- SRR13076390_allele.vcf: Records the variant sites identified by alignment to the HLA gene.
+- SRR13076390_candidate_1.fq: R1 reads identified as likely related to HLA sequences.
+- SRR13076390_candidate_2.fq: R2 reads identified as likely related to HLA sequences.
+- SRR13076390_genotype.tsv: Records the main analysis results for reviewing HLA genotypes.
+
 
 :bangbang: **We need the HLA typing results for S14, which are all stored in the file [`S14_genotype.tsv`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/S14_genotype.tsv).**:bangbang:
 ![截圖 2024-12-10 下午1.48.11](https://hackmd.io/_uploads/B1GNI8HEJe.png)  
@@ -105,13 +106,16 @@ Column Descriptions (using the first row as an example):
 sbatch T1K_temp.sh
 ```
 3. 得到結果 : 共7個檔案,都在 HLA typing 資料夾中。
-- S14_aligned_1.fa ：紀錄參考序列中R1比對到的部分。
-- S14_aligned_2.fa ：紀錄參考序列中R2比對到的部分。
-- S14_allele.tsv ：紀錄簡易的HLA分型結果。
-- S14_allele.vcf ：紀錄與HLA基因比對的變異位點。
-- S14_candidate_1.fq ：R1被認為與HLA相關的序列。
-- S14_candidate_2.fq ：R2被認為與HLA相關的序列。
-- S14_genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
+- SRR13076390_aligned_1.fa ：紀錄參考序列中R1比對到的部分。
+- SRR13076390_aligned_2.fa ：紀錄參考序列中R2比對到的部分。
+- SRR13076390_allele.tsv ：紀錄簡易的HLA分型結果。
+- SRR13076390_allele.vcf ：紀錄與HLA基因比對的變異位點。
+- SRR13076390_candidate_1.fq ：R1被認為與HLA相關的序列。
+- SRR13076390_candidate_2.fq ：R2被認為與HLA相關的序列。
+- SRR13076390
+_genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
+
+<img width="901" height="188" alt="截圖 2026-11-05 上午11 00 49" src="https://github.com/user-attachments/assets/67144665-15eb-417c-a371-415a4d29d6db" />
 
 :bangbang: **我們需要 S14 的 HLA typing 結果都在 [`S14_genotype.tsv`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/S14_genotype.tsv) 這個檔案中。**:bangbang:
 ![截圖 2024-12-10 下午1.48.11](https://hackmd.io/_uploads/B1GNI8HEJe.png)
