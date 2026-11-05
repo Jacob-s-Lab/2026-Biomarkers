@@ -8,12 +8,12 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 > [!Warning]
 > ### Prerequisite:Please first copy the necessary files for the course.
-> ```markdown=
+> ```
 > cd /work/username
 > mkdir T1K
 > cd T1K
-> rsync -avzP /work/evelyn92/HLA_typing/T1K/T1K_temp.sh ./
-> rsync -avzP /work/evelyn92/HLA_typing/T1K/hla_dna_seq.fa ./
+> rsync -avz /work/u9482849/T1K/T1K_temp.sh ./
+> rsync -avz /work/u9482849/T1K/hla_dna_seq.fa ./
 > ```
 
 
@@ -28,8 +28,9 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 ### Step 1: Execute `T1K_temp.sh`
 1. Open [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) and enter the correct path names.  \
     (1) :red_circle: **Red** section: Replace the TA's username with your own.  \
-    (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.<img width="837" height="176" alt="截圖 2026-11-05 上午11 54 12" src="https://github.com/user-attachments/assets/9fa9e03f-9c9e-4219-ae16-0acd0bc94c19" />
-
+    (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.
+   
+    <img width="949" height="214" alt="截圖 2026-11-05 中午12 40 59" src="https://github.com/user-attachments/assets/5d6419c6-ef14-4946-b716-faeb1c8a822e" />
 
 
        
@@ -38,6 +39,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 sbatch T1K_temp.sh
 ```
 3. Result: A total of 7 files, all located in the HLA typing folder.
+```
 - SRR13076390_aligned_1.fa: Records the portion of the reference sequence that R1 aligned to.
 - SRR13076390_aligned_2.fa: Records the portion of the reference sequence that R2 aligned to.
 - SRR13076390_allele.tsv: Records the simplified HLA typing results.
@@ -45,10 +47,10 @@ sbatch T1K_temp.sh
 - SRR13076390_candidate_1.fq: R1 reads identified as likely related to HLA sequences.
 - SRR13076390_candidate_2.fq: R2 reads identified as likely related to HLA sequences.
 - SRR13076390_genotype.tsv: Records the main analysis results for reviewing HLA genotypes.
+```
 
-
-:bangbang: **We need the HLA typing results for S14, which are all stored in the file.
-<img width="985" height="260" alt="截圖 2026-11-05 上午11 51 47" src="https://github.com/user-attachments/assets/f84e4acc-b568-47b7-8756-06b0ff5de2a5" />
+:bangbang: **We need the HLA typing results, which are all stored in the file. [`SRR13076390_genotype.tsv`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/SRR13076390_genotype.tsv)
+<img width="1173" height="254" alt="截圖 2026-11-05 下午2 00 48" src="https://github.com/user-attachments/assets/057926af-19e2-48cb-b96e-989bfe72de1a" />
 
 
 
@@ -56,14 +58,14 @@ Column Descriptions (using the first row as an example):
 - HLA-A: Gene name.
 - 2: Number of gene alleles found.
 - HLA-A*02:01:01: First gene allele.
-- 90.834386: Confidence score.
-- 35: Read depth.
+- 1109.002429: Abundance of first allele.
+- 60: Quality score of first allele.
 - HLA-A*03:01:01: Second gene allele.
-- 72.496481: Confidence score.
-- 8: Read depth.
-- HLA-A*03:279N: Additional possible gene allele.
-- 16.559770: Score.
-- 1: Read depth.
+- 722.066683: Abundance of second allele.
+- 60: Quality score of second allele.
+- HLA-A*31:14N: Additional possible gene allele.
+- 187.988517: Abundance.
+- 2: Quality score.
 
 
 
@@ -79,12 +81,12 @@ Column Descriptions (using the first row as an example):
 
 > [!Warning]
 > ### 前情提要：請先複製課程所需檔案
-> ```markdown=
+> ```
 > cd /work/username
 > mkdir T1K
 > cd T1K
-> rsync -avzP /work/evelyn92/HLA_typing/T1K/T1K_temp.sh ./
-> rsync -avzP /work/evelyn92/HLA_typing/T1K/hla_dna_seq.fa ./
+> rsync -avz /work/u9482849/T1K/T1K_temp.sh ./
+> rsync -avz /work/u9482849/T1K/hla_dna_seq.fa ./
 > ```
 
 > [!Important]
@@ -99,7 +101,8 @@ Column Descriptions (using the first row as an example):
 1. 打開 [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) 並寫入正確的路徑名稱。  \
     (1) :red_circle: **紅色** 部分：助教的 **username** 改成自己的。  \
     (2) :yellow_circle: **黃色** 部分：改成自己的檔案名稱。
-<img width="895" height="184" alt="截圖 2026-11-05 上午11 50 27" src="https://github.com/user-attachments/assets/a2bd7c22-0304-441d-8a34-5a90d20c2fc5" />
+
+   <img width="949" height="214" alt="截圖 2026-11-05 中午12 40 59" src="https://github.com/user-attachments/assets/5d6419c6-ef14-4946-b716-faeb1c8a822e" />
 
 
 
@@ -110,29 +113,30 @@ sbatch T1K_temp.sh
 ```
 3. 得到結果 : 共7個檔案,都在 HLA typing 資料夾中。
    ```
--     SRR13076390_aligned_1.fa ：紀錄參考序列中R1比對到的部分。
--     SRR13076390_aligned_2.fa ：紀錄參考序列中R2比對到的部分。
--     SRR13076390_allele.tsv ：紀錄簡易的HLA分型結果。
--     SRR13076390_allele.vcf ：紀錄與HLA基因比對的變異位點。
--     SRR13076390_candidate_1.fq ：R1被認為與HLA相關的序列。
--     SRR13076390_candidate_2.fq ：R2被認為與HLA相關的序列。
--     SRR13076390_genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
-- ```
+   SRR13076390_aligned_1.fa ：紀錄參考序列中R1比對到的部分。
+   SRR13076390_aligned_2.fa ：紀錄參考序列中R2比對到的部分。
+   SRR13076390_allele.tsv ：紀錄簡易的HLA分型結果。
+   SRR13076390_allele.vcf ：紀錄與HLA基因比對的變異位點。
+   SRR13076390_candidate_1.fq ：R1被認為與HLA相關的序列。
+   SRR13076390_candidate_2.fq ：R2被認為與HLA相關的序列。
+   SRR13076390_genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
+     ```
   
 
 
-:bangbang: **我們需要 S14 的 HLA typing 結果都在 [`S14_genotype.tsv`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/S14_genotype.tsv) 這個檔案中。**:bangbang:
-![截圖 2024-12-10 下午1.48.11](https://hackmd.io/_uploads/B1GNI8HEJe.png)
+:bangbang: **我們需要 S14 的 HLA typing 結果都在 [`SRR13076390_genotype.tsv`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/SRR13076390_genotype.tsv)
+<img width="1173" height="254" alt="截圖 2026-11-05 下午2 00 48" src="https://github.com/user-attachments/assets/057926af-19e2-48cb-b96e-989bfe72de1a" />
+
 
 欄位介紹（第一列為例）：
 - HLA-A: 基因名稱。
-- 2: 基因數量。
-- HLA-A*02:01:01:第一個基因亞型。
-- 90.834386：信賴分數。
-- 35:深度。
-- HLA-A*03:01:01：第二個基因亞型。
-- 72.496481：信賴分數。
-- 8:深度。
-- HLA-A*03:279N：額外有可能的基因亞型。
-- 16.559770：分數。
-- 1:深度。
+- 2: 不同等位基因數量。
+- HLA-A*02:01:01：第一個等位基因。
+- 1109.002429：第一個等位基因豐度。
+- 60:第一個等位基因品質分數。
+- HLA-A*03:01:01：第二個等位基因。
+- 722.066683：第二個等位基因豐度。
+- 60:第二個等位基因品質分數。
+- HLA-A*03:279N：額外有可能的等位基因。
+- 16.559770：額外有可能的等位基因豐度。
+- 2:額外有可能的等位基因品質分數。
