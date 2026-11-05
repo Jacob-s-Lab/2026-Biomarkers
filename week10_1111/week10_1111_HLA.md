@@ -28,8 +28,8 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 ### Step 1: Execute `T1K_temp.sh`
 1. Open [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) and enter the correct path names.  \
     (1) :red_circle: **Red** section: Replace the TA's username with your own.  \
-    (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.
-<img width="895" height="184" alt="截圖 2026-11-05 上午11 50 27" src="https://github.com/user-attachments/assets/a2bd7c22-0304-441d-8a34-5a90d20c2fc5" />
+    (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.<img width="837" height="176" alt="截圖 2026-11-05 上午11 54 12" src="https://github.com/user-attachments/assets/9fa9e03f-9c9e-4219-ae16-0acd0bc94c19" />
+
 
 
        
@@ -47,8 +47,10 @@ sbatch T1K_temp.sh
 - SRR13076390_genotype.tsv: Records the main analysis results for reviewing HLA genotypes.
 
 
-:bangbang: **We need the HLA typing results for S14, which are all stored in the file [`S14_genotype.tsv`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/S14_genotype.tsv).**:bangbang:
-![截圖 2024-12-10 下午1.48.11](https://hackmd.io/_uploads/B1GNI8HEJe.png)  
+:bangbang: **We need the HLA typing results for S14, which are all stored in the file.
+<img width="985" height="260" alt="截圖 2026-11-05 上午11 51 47" src="https://github.com/user-attachments/assets/f84e4acc-b568-47b7-8756-06b0ff5de2a5" />
+
+
 
 Column Descriptions (using the first row as an example):
 - HLA-A: Gene name.
@@ -107,14 +109,16 @@ Column Descriptions (using the first row as an example):
 sbatch T1K_temp.sh
 ```
 3. 得到結果 : 共7個檔案,都在 HLA typing 資料夾中。
-- SRR13076390_aligned_1.fa ：紀錄參考序列中R1比對到的部分。
-- SRR13076390_aligned_2.fa ：紀錄參考序列中R2比對到的部分。
-- SRR13076390_allele.tsv ：紀錄簡易的HLA分型結果。
-- SRR13076390_allele.vcf ：紀錄與HLA基因比對的變異位點。
-- SRR13076390_candidate_1.fq ：R1被認為與HLA相關的序列。
-- SRR13076390_candidate_2.fq ：R2被認為與HLA相關的序列。
-- SRR13076390
-_genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
+   ```
+-     SRR13076390_aligned_1.fa ：紀錄參考序列中R1比對到的部分。
+-     SRR13076390_aligned_2.fa ：紀錄參考序列中R2比對到的部分。
+-     SRR13076390_allele.tsv ：紀錄簡易的HLA分型結果。
+-     SRR13076390_allele.vcf ：紀錄與HLA基因比對的變異位點。
+-     SRR13076390_candidate_1.fq ：R1被認為與HLA相關的序列。
+-     SRR13076390_candidate_2.fq ：R2被認為與HLA相關的序列。
+-     SRR13076390_genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
+- ```
+  
 
 
 :bangbang: **我們需要 S14 的 HLA typing 結果都在 [`S14_genotype.tsv`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/S14_genotype.tsv) 這個檔案中。**:bangbang:
