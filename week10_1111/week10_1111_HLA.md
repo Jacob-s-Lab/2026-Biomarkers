@@ -28,8 +28,9 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 ### Step 1: Execute `T1K_temp.sh`
 1. Open [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) and enter the correct path names.  \
     (1) :red_circle: **Red** section: Replace the TA's username with your own.  \
-    (2) :yellow_circle: **Yellow** section: Change it to your own file path.
-   ![螢幕擷取畫面 2025-10-16 152220](https://hackmd.io/_uploads/H1WRTfA6gx.png)
+    (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.
+<img width="895" height="184" alt="截圖 2026-11-05 上午11 50 27" src="https://github.com/user-attachments/assets/a2bd7c22-0304-441d-8a34-5a90d20c2fc5" />
+
 
        
 3. Execute`T1K_temp.sh`
@@ -95,8 +96,8 @@ Column Descriptions (using the first row as an example):
 
 1. 打開 [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) 並寫入正確的路徑名稱。  \
     (1) :red_circle: **紅色** 部分：助教的 **username** 改成自己的。  \
-    (2) :yellow_circle: **黃色** 部分：改成自己的檔案路徑。
-   ![螢幕擷取畫面 2025-10-16 152220](https://hackmd.io/_uploads/H1WRTfA6gx.png)
+    (2) :yellow_circle: **黃色** 部分：改成自己的檔案名稱。
+<img width="895" height="184" alt="截圖 2026-11-05 上午11 50 27" src="https://github.com/user-attachments/assets/a2bd7c22-0304-441d-8a34-5a90d20c2fc5" />
 
 
 
