@@ -26,7 +26,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 
 ### Step 1: Execute `T1K_temp.sh`
-1. Open [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) and enter the correct path names.  \
+1. Open [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/T1K_temp.sh) and enter the correct path names.  \
     (1) :red_circle: **Red** section: Replace the TA's username with your own.  \
     (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.
    
@@ -55,19 +55,19 @@ sbatch T1K_temp.sh
 
 
 Column Descriptions (using the first row as an example):
-- HLA-A: Gene name.
-- 2: Number of gene alleles found.
-- HLA-A*02:01:01: First gene allele.
-- 1109.002429: Abundance of first allele.
-- 60: Quality score of first allele.
-- HLA-A*03:01:01: Second gene allele.
-- 722.066683: Abundance of second allele.
-- 60: Quality score of second allele.
-- HLA-A*31:14N: Additional possible gene allele.
-- 187.988517: Abundance.
-- 2: Quality score.
-
-
+| Description | Example |
+|:--|:--|
+| Gene name | HLA-A |
+| Number of different alleles identified | 2 |
+| First allele | HLA-A*02:01:01 |
+| Abundance of first allele | 1109.002429 |
+| Quality score of first allele | 60 |
+| Second allele | HLA-A*03:01:01 |
+| Abundance of second allele | 722.066683 |
+| Quality score of second allele | 60 |
+| Additional possible allele | HLA-A*31:14N |
+| Abundance of additional allele | 187.988517 |
+| Quality score of additional allele | 2 |
 
 
 
@@ -98,7 +98,7 @@ Column Descriptions (using the first row as an example):
 
 ### step 1 : 執行 `T1K_temp.sh`
 
-1. 打開 [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/T1K_temp.sh) 並寫入正確的路徑名稱。  \
+1. 打開 [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/T1K_temp.sh) 並寫入正確的路徑名稱。  \
     (1) :red_circle: **紅色** 部分：助教的 **username** 改成自己的。  \
     (2) :yellow_circle: **黃色** 部分：改成自己的檔案名稱。
 
@@ -127,16 +127,17 @@ sbatch T1K_temp.sh
 :bangbang: **我們需要 S14 的 HLA typing 結果都在 [`SRR13076390_genotype.tsv`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/SRR13076390_genotype.tsv)
 <img width="1173" height="254" alt="截圖 2026-11-05 下午2 00 48" src="https://github.com/user-attachments/assets/057926af-19e2-48cb-b96e-989bfe72de1a" />
 
-
 欄位介紹（第一列為例）：
-- HLA-A: 基因名稱。
-- 2: 不同等位基因數量。
-- HLA-A*02:01:01：第一個等位基因。
-- 1109.002429：第一個等位基因豐度。
-- 60:第一個等位基因品質分數。
-- HLA-A*03:01:01：第二個等位基因。
-- 722.066683：第二個等位基因豐度。
-- 60:第二個等位基因品質分數。
-- HLA-A*03:279N：額外有可能的等位基因。
-- 16.559770：額外有可能的等位基因豐度。
-- 2:額外有可能的等位基因品質分數。
+| 說明 | 範例 |
+|:--|:--|
+| 基因名稱 | HLA-A |
+| 不同等位基因數量 | 2 |
+| 第一個等位基因 | HLA-A*02:01:01 |
+| 第一個等位基因豐度 | 1109.002429 |
+| 第一個等位基因品質分數 | 60 |
+| 第二個等位基因 | HLA-A*03:01:01 |
+| 第二個等位基因豐度 | 722.066683 |
+| 第二個等位基因品質分數 | 60 |
+| 額外有可能的等位基因 | HLA-A*03:279N |
+| 額外有可能的等位基因豐度 | 16.559770 |
+| 額外有可能的等位基因品質分數 | 2 |
