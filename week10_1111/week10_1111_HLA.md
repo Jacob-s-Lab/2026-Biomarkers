@@ -115,7 +115,6 @@ sbatch T1K_temp.sh
 - SRR13076390
 _genotype.tsv ：紀錄主要分析結果用於查看HLA分型。
 
-<img width="901" height="188" alt="截圖 2026-11-05 上午11 00 49" src="https://github.com/user-attachments/assets/67144665-15eb-417c-a371-415a4d29d6db" />
 
 :bangbang: **我們需要 S14 的 HLA typing 結果都在 [`S14_genotype.tsv`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week12_1119/S14_genotype.tsv) 這個檔案中。**:bangbang:
 ![截圖 2024-12-10 下午1.48.11](https://hackmd.io/_uploads/B1GNI8HEJe.png)
