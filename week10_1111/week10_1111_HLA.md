@@ -60,14 +60,14 @@ Column Descriptions (using the first row as an example):
 | Gene name | HLA-A |
 | Number of different alleles identified | 2 |
 | First allele | HLA-A*02:01:01 |
-| Abundance of first allele | 1109.002429 |
-| Quality score of first allele | 60 |
+| Abundance | 1109.002429 |
+| Quality score | 60 |
 | Second allele | HLA-A*03:01:01 |
-| Abundance of second allele | 722.066683 |
-| Quality score of second allele | 60 |
+| Abundance | 722.066683 |
+| Quality score | 60 |
 | Additional possible allele | HLA-A*31:14N |
-| Abundance of additional allele | 187.988517 |
-| Quality score of additional allele | 2 |
+| Abundance | 187.988517 |
+| Quality score | 2 |
 
 
 
@@ -133,11 +133,11 @@ sbatch T1K_temp.sh
 | 基因名稱 | HLA-A |
 | 不同等位基因數量 | 2 |
 | 第一個等位基因 | HLA-A*02:01:01 |
-| 第一個等位基因豐度 | 1109.002429 |
-| 第一個等位基因品質分數 | 60 |
+| 豐度 | 1109.002429 |
+| 品質分數 | 60 |
 | 第二個等位基因 | HLA-A*03:01:01 |
-| 第二個等位基因豐度 | 722.066683 |
-| 第二個等位基因品質分數 | 60 |
+| 豐度 | 722.066683 |
+| 品質分數 | 60 |
 | 額外有可能的等位基因 | HLA-A*03:279N |
-| 額外有可能的等位基因豐度 | 16.559770 |
-| 額外有可能的等位基因品質分數 | 2 |
+| 豐度 | 16.559770 |
+| 品質分數 | 2 |
