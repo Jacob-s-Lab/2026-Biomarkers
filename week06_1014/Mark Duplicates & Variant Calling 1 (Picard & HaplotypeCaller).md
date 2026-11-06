@@ -1,7 +1,7 @@
 Date：20261014  
 Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-V) / [中文](#生物標記物與它們的產地實作課程五) 
 
-# Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part V)
+# Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part IV)
 
 ## Main Content of the Course
 1. Use Picard to mark duplicates
@@ -221,7 +221,7 @@ https://igv.org/doc/desktop/#
 > 
 
 ------------------------------------
-# 生物標記物與它們的產地實作課程(五)
+# 生物標記物與它們的產地實作課程(四)
 ## 本次課程主要內容
  1. 利用picard做mark duplicates
  2. 利用GATK做variant calling
