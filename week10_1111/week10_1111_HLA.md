@@ -13,7 +13,7 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 > mkdir T1K
 > cd T1K
 > rsync -avz /work/u9482849/T1K/T1K_temp.sh ./
-> rsync -avz /work/u9482849/T1K/hla_dna_seq.fa ./
+> rsync -avz /work/u9482849/T1K/hlaidx_dna_seq.fa ./
 > ```
 
 
@@ -86,7 +86,7 @@ Column Descriptions (using the first row as an example):
 > mkdir T1K
 > cd T1K
 > rsync -avz /work/u9482849/T1K/T1K_temp.sh ./
-> rsync -avz /work/u9482849/T1K/hla_dna_seq.fa ./
+> rsync -avz /work/u9482849/T1K/hlaidx_dna_seq.fa ./
 > ```
 
 > [!Important]
