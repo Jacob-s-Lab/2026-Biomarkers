@@ -1,7 +1,7 @@
 Date：20261111 
-Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-X) / [中文](#生物標記物與它們的產地實作課程十)
+Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-Course-part-VII) / [中文](#生物標記物與它們的產地實作課程七)
 
-# Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part X)
+# Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part VII)
 ## The main content of this course
 
 #### Learning to use `T1K` for HLA typing.
@@ -73,7 +73,7 @@ Column Descriptions (using the first row as an example):
 
 
  ------------------
-# 生物標記物與它們的產地實作課程(十)
+# 生物標記物與它們的產地實作課程(七)
 ## 本次課程主要內容
     
 #### 學習利用 T1K 做 HLA typing。
@@ -124,7 +124,7 @@ sbatch T1K_temp.sh
   
 
 
-:bangbang: **我們需要 S14 的 HLA typing 結果都在 [`SRR13076390_genotype.tsv`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/SRR13076390_genotype.tsv)
+:bangbang: **我們需要的 HLA typing 結果都在 [`SRR13076390_genotype.tsv`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/SRR13076390_genotype.tsv)
 <img width="1173" height="254" alt="截圖 2026-11-05 下午2 00 48" src="https://github.com/user-attachments/assets/057926af-19e2-48cb-b96e-989bfe72de1a" />
 
 欄位介紹（第一列為例）：
