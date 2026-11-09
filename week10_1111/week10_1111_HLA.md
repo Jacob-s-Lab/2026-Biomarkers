@@ -27,6 +27,9 @@ Language：[EN](#Fantastic-Genomic-Biomarkers-and-Where-to-Find-Them-Practical-C
 
 ### Step 1: Execute `T1K_temp.sh`
 1. Open [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/T1K_temp.sh) and enter the correct path names.  \
+   ```
+   vim T1K_temp.sh
+   ```
     (1) :red_circle: **Red** section: Replace the TA's username with your own.  \
     (2) :yellow_circle: **Yellow** section: Change it to your own sampleID.
    
@@ -99,6 +102,9 @@ Column Descriptions (using the first row as an example):
 ### step 1 : 執行 `T1K_temp.sh`
 
 1. 打開 [`T1K_temp.sh`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week10_1111/T1K_temp.sh) 並寫入正確的路徑名稱。  \
+   ```
+   vim T1K_temp.sh
+   ```
     (1) :red_circle: **紅色** 部分：助教的 **username** 改成自己的。  \
     (2) :yellow_circle: **黃色** 部分：改成自己的檔案名稱。
 
