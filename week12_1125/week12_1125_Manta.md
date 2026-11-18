@@ -34,28 +34,28 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     ![螢幕擷取畫面 2025-10-16 143900](https://hackmd.io/_uploads/B1NI7zC6xl.png)
 
 2. Execute `manta_modified.sh`
-```
-sbatch manta_modified.sh
-```
+    ```
+    sbatch manta_modified.sh
+    ```
 3. Get two folders: `raw` and `filter`.
-#### `raw` folder：
-- candidateSV.vcf.gz
-- candidateSV.vcf.gz.tbi
-- candidateSmallIndels.vcf.gz
-- candidateSmallIndels.vcf.gz.tbi
-- diploidSV.vcf
-- diploidSV.vcf.gz.tbi
+    #### `raw` folder：
+    - candidateSV.vcf.gz
+    - candidateSV.vcf.gz.tbi
+    - candidateSmallIndels.vcf.gz
+    - candidateSmallIndels.vcf.gz.tbi
+    - diploidSV.vcf
+    - diploidSV.vcf.gz.tbi
 
-#### `filter` folder：
-:bangbang: **The large deletion and insertion variants you want to check are all in this folder.**:bangbang:  
+    #### `filter` folder：
+    :bangbang: **The large deletion and insertion variants you want to check are all in this folder.**:bangbang:  
 
-**File names with "pass": Filtered for rows with the PASS field.**
-**File names with "recode": Filtered for regions in the confident interval.**
-- thalassemia_hg38_manta.vcf : All information.
-- thalassemia_hg38_manta_del_pass.vcf
-- thalassemia_hg38_manta_del_pass_filtered.recode.vcf
-- thalassemia_hg38_manta_ins_pass.recode.vcf
-- thalassemia_hg38_manta_ins_pass.vcf
+    **File names with "pass": Filtered for rows with the PASS field.**
+    **File names with "recode": Filtered for regions in the confident interval.**
+    - thalassemia_hg38_manta.vcf : All information.
+    - thalassemia_hg38_manta_del_pass.vcf
+    - thalassemia_hg38_manta_del_pass_filtered.recode.vcf
+    - thalassemia_hg38_manta_ins_pass.recode.vcf
+    - thalassemia_hg38_manta_ins_pass.vcf
 
 ### Step 2: Use IGV to confirm Deletion sites
 > [!Note]
@@ -78,7 +78,7 @@ sbatch manta_modified.sh
     - Color alignments by -> insert size and pair orientation
     - Sort alignments by -> insert size
 
-![image](https://hackmd.io/_uploads/rkY2rfCael.png)
+    ![image](https://hackmd.io/_uploads/rkY2rfCael.png)
 
 
 
@@ -110,7 +110,7 @@ sbatch manta_modified.sh
 > ```
 
 
-### step 1 : 執行`manta`
+### Step 1 : 執行`manta`
 
 
 1. 打開 [`manta_modified.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week11_1112/manta_modified.sh) 並寫入正確的路徑名稱。
@@ -118,31 +118,31 @@ sbatch manta_modified.sh
     ![螢幕擷取畫面 2025-10-16 143900](https://hackmd.io/_uploads/r1EqUMATxe.png)
     
 2. 執行 `manta_modified.sh`
-```
-sbatch manta_modified.sh
-```
+    ```
+    sbatch manta_modified.sh
+    ```
 3. 得到兩個資料夾: `raw` 和 `filter`
-#### `raw` 資料夾：
-- candidateSV.vcf.gz
-- candidateSV.vcf.gz.tbi
-- candidateSmallIndels.vcf.gz
-- candidateSmallIndels.vcf.gz.tbi
-- diploidSV.vcf
-- diploidSV.vcf.gz.tbi
+    #### `raw` 資料夾：
+    - candidateSV.vcf.gz
+    - candidateSV.vcf.gz.tbi
+    - candidateSmallIndels.vcf.gz
+    - candidateSmallIndels.vcf.gz.tbi
+    - diploidSV.vcf
+    - diploidSV.vcf.gz.tbi
 
-#### `filter` 資料夾：
-:bangbang: **要看的大片段 deletion、insertion variants 都在這個資料夾** :bangbang: 。
+    #### `filter` 資料夾：
+    :bangbang: **要看的大片段 deletion、insertion variants 都在這個資料夾** :bangbang: 。
 
-**檔名後有加上`pass`：篩選 filter 為 PASS 的欄位。**
-**檔名後有加上`recode`：篩選 confident interval 的區域。**
-- thalassemia_hg38_manta.vcf : 紀錄全部資訊。
-- thalassemia_hg38_manta_del_pass.vcf
-- thalassemia_hg38_manta_del_pass_filtered.recode.vcf
-- thalassemia_hg38_manta_ins_pass.recode.vcf
-- thalassemia_hg38_manta_ins_pass.vcf
+    **檔名後有加上`pass`：篩選 filter 為 PASS 的欄位。**
+    **檔名後有加上`recode`：篩選 confident interval 的區域。**
+    - thalassemia_hg38_manta.vcf : 紀錄全部資訊。
+    - thalassemia_hg38_manta_del_pass.vcf
+    - thalassemia_hg38_manta_del_pass_filtered.recode.vcf
+    - thalassemia_hg38_manta_ins_pass.recode.vcf
+    - thalassemia_hg38_manta_ins_pass.vcf
 
 
-### step 2 : 利用 `IGV` 確認 Deletion 位點
+### Step 2 : 利用 `IGV` 確認 Deletion 位點
 > [!Note]
 > 上課所使用的樣本是 thalassemia 的樣本，這種樣本會在 chr16 中 *HBA1* 及 *HBA2* genes 的位置看到大片段 deletion。
 >
@@ -162,4 +162,4 @@ sbatch manta_modified.sh
     - View as pairs
     - Color alignments by -> insert size and pair orientation
     - Sort alignments by -> insert size
-![image](https://hackmd.io/_uploads/HkCTSz0plx.png)
+    ![image](https://hackmd.io/_uploads/HkCTSz0plx.png)
