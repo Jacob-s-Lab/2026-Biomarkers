@@ -73,10 +73,12 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     - Chr selection: chr16
     - Position selection: `chr16:162,130-189,352`
 2. Right-click to select:
-    - Expanded view
+    - Expanded
     - View as pairs
     - Color alignments by -> insert size and pair orientation
     - Sort alignments by -> insert size
+   <img width="795" height="624" alt="截圖 2026-11-23 下午2 48 07" src="https://github.com/user-attachments/assets/49a47035-985f-4fe3-a661-b2b61450669a" />
+
 
     ![image](https://hackmd.io/_uploads/rkY2rfCael.png)
 
@@ -158,8 +160,9 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
     - 位置選擇: `chr16:162,130-189,352`
 
 2. 按右鍵選擇：
-    - Expanded view
+    - Expanded
     - View as pairs
     - Color alignments by -> insert size and pair orientation
     - Sort alignments by -> insert size
+      <img width="795" height="624" alt="截圖 2026-11-23 下午2 48 07" src="https://github.com/user-attachments/assets/49a47035-985f-4fe3-a661-b2b61450669a" />
     ![image](https://hackmd.io/_uploads/HkCTSz0plx.png)
