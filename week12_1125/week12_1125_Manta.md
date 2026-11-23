@@ -29,13 +29,13 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 
 
 ### Step 1: Execute `Manta`
-1. Open [`manta_modified.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week11_1112/manta_modified.sh) and update the file with the correct path names.
+1. Open [`manta.sh`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week12_1125/ref_manta.sh) and update the file with the correct path names.
     - :red_circle: **red** part: Replace the TA's username with your own username.
     ![螢幕擷取畫面 2025-10-16 143900](https://hackmd.io/_uploads/B1NI7zC6xl.png)
 
-2. Execute `manta_modified.sh`
+2. Execute `manta.sh`
     ```
-    sbatch manta_modified.sh
+    sbatch manta.sh
     ```
 3. Get two folders: `raw` and `filter`.
     #### `raw` folder：
@@ -113,13 +113,13 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 ### Step 1 : 執行`manta`
 
 
-1. 打開 [`manta_modified.sh`](https://github.com/Jacob-s-Lab/2025-Biomarkers/blob/main/week11_1112/manta_modified.sh) 並寫入正確的路徑名稱。
+1. 打開 [`manta.sh`](https://github.com/Jacob-s-Lab/2026-Biomarkers/blob/main/week12_1125/ref_manta.sh) 並寫入正確的路徑名稱。
      - :red_circle: **紅色** 部分：助教的 **username** 改成自己的。
     ![螢幕擷取畫面 2025-10-16 143900](https://hackmd.io/_uploads/r1EqUMATxe.png)
     
-2. 執行 `manta_modified.sh`
+2. 執行 `manta.sh`
     ```
-    sbatch manta_modified.sh
+    sbatch manta.sh
     ```
 3. 得到兩個資料夾: `raw` 和 `filter`
     #### `raw` 資料夾：
