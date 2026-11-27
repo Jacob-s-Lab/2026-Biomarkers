@@ -1,5 +1,5 @@
 Date：20261216  
-Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-ix) / [中文](#生物標記物與它們的產地實作課程-九)
+Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-course-part-ix) / [中文](#生物標記物與它們的產地實作課程九)
 
 # Fantastic Genomic Biomarkers and Where to Find Them Practical Course (part IX)
 
