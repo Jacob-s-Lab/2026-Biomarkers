@@ -16,7 +16,7 @@ Language：[EN](#fantastic-genomic-biomarkers-and-where-to-find-them-practical-c
 >
 > More details: [COSMIC Mutational Signatures - SBS](https://cancer.sanger.ac.uk/signatures/sbs/)
 
-> [!WARNING]
+> [!NOTE]
 > ### Please copy the required files for the course first.
 >
 > Replace `username` with your own NCHC username.
@@ -251,7 +251,7 @@ Download and open the following PDF file (using sample 96 as an example):
 > 單鹼基替換（Single Base Substitution, SBS）可依據六種鹼基替換類型，以及突變位置相鄰的 5' 與 3' 鹼基，進一步分類為 96 種突變類型。
 > 詳細資訊：[COSMIC Mutational Signatures - SBS](https://cancer.sanger.ac.uk/signatures/sbs/)
 
-> [!WARNING]
+> [!NOTE]
 > ### 前情提要：請先複製課程所需檔案。
 > 請將 `username` 替換為自己的國網中心（NCHC）帳號。
 > ```
